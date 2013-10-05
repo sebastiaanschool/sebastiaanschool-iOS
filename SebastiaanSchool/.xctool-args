@@ -1,0 +1,5 @@
+[
+	"-workspace", "SebastiaanSchool.xcworkspace",
+	"-scheme", "SebastiaanSchool"
+]
+

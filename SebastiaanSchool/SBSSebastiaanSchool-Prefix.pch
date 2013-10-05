@@ -1,0 +1,59 @@
+//
+// Prefix header for all source files of the 'ParseStarterProject' target in the 'ParseStarterProject' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_3
+#warning "This project uses features only available in iPhone SDK 4.3 and later."
+#endif
+
+#ifdef __OBJC__
+
+    // Forward NSLog to TestFlight
+    #define NSLog TFLog
+
+    // DLog will output like NSLog only when the DEBUG variable is set
+
+    #ifdef DEBUG
+    #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+    #else
+    #   define DLog(...)
+    #endif
+
+    // ALog will always output like NSLog
+
+    #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+    // ULog will show the UIAlertView only when the DEBUG variable is set
+
+    #ifdef DEBUG
+    #   define ULog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+    #else
+    #   define ULog(...)
+    #endif
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
+
+    #import <Parse/Parse.h>
+
+    #import "TestFlight.h"
+    #import "GeneratedConstants.h"
+
+    #import "SBSStyle.h"
+    #import "SBSSecurity.h"
+
+    #import "NSUserDefaults+SBS.h"
+    #import "UIView+AF1.h"
+    #import "UIView+JLFrameAdditions.h"
+
+    #define IS_IOS_7 (([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]) >= 7)
+    #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+    #define IS_PHONE ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+    #define IS_PAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+
+
+
+#endif

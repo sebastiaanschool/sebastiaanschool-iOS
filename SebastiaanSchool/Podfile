@@ -1,0 +1,5 @@
+platform :ios
+pod 'TestFlightSDK', '2.0.0'
+pod 'Facebook-iOS-SDK', '~> 3.7'
+pod 'Parse', '~> 1.2'
+pod 'hpple', '~> 0.1'
