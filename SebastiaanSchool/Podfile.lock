@@ -3,7 +3,7 @@ PODS:
   - hpple (0.2.0)
   - Parse-iOS-SDK (1.2.15):
     - Facebook-iOS-SDK (~> 3.7)
-  - TestFlightSDK (2.0)
+  - TestFlightSDK (2.0.2)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
@@ -15,6 +15,6 @@ SPEC CHECKSUMS:
   Facebook-iOS-SDK: 55a22fe8bcaacd638cde9014af6b3ee85f4d71fb
   hpple: dde62f905f482bbec50186280d1a1be2c881241b
   Parse-iOS-SDK: 1fd9797daf2ebac19f5fc041d9015e797df1594a
-  TestFlightSDK: 940906d4b2550cf397c6f2d2fcc4ebfdcd8ae858
+  TestFlightSDK: 0811097c1f831afb71f68ccd07ae71325cb90f43
 
-COCOAPODS: 0.23.0
+COCOAPODS: 0.26.2
