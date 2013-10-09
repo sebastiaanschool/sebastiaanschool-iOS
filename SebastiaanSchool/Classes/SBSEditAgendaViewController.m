@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [TestFlight passCheckpoint:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
+    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonPressed:)];

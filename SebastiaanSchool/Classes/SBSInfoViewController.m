@@ -36,7 +36,7 @@
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     }
 
-    [TestFlight passCheckpoint:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
+    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
     if (IS_IOS_7) {
         self.iconImageView.image = [UIImage imageNamed:@"big-logo"];
     } else {
@@ -132,23 +132,24 @@
     if (sender == self.callButton) {
         NSURL *url = [NSURL URLWithString:@"telprompt://+31555335355"];
         if([[UIApplication sharedApplication] canOpenURL:url]) {
-            [TestFlight passCheckpoint:@"Call button tapped on phone."];
+            [self trackEvent:@"Call button tapped on phone."];
             [[UIApplication sharedApplication] openURL:url];
         } else {
-            [TestFlight passCheckpoint:@"Call button tapped on non-phone."];
+            [self trackEvent:@"Call button tapped on non-phone."];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Your device does not support phone calls. Please call 055 53 35 355 with your phone.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
             [alert show];
         }
     } else if(sender == self.twitterButton) {
         NSURL *twitterAppUrl = [NSURL URLWithString:@"twitter://user?id=424159127"];
         if([[UIApplication sharedApplication] canOpenURL:twitterAppUrl]) {
-            [TestFlight passCheckpoint:@"Twitter button tapped with Twitter App."];
+            [self trackEvent:@"Twitter button tapped with Twitter App."];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?id=424159127"]];
         } else {
-            [TestFlight passCheckpoint:@"Twitter button tapped without Twitter App."];
+            [self trackEvent:@"Twitter button tapped without Twitter App."];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/KBSebastiaan"]];
         }
     } else if (sender == self.yurlButton) {
+        [self trackEvent:@"Yurls button tapped"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://sebastiaan.yurls.net"]];
     } else {
         UIViewController *vc;
@@ -170,7 +171,7 @@
         } else {
             NSAssert(NO, @"Unknown button tapped.");
         }
-        [TestFlight passCheckpoint:[NSString stringWithFormat:@"%@ button tapped on phone.", vc.title]];
+        [self trackEvent:[NSString stringWithFormat:@"%@ button tapped on phone.", vc.title]];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

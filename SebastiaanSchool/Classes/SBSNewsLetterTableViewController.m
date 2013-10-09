@@ -55,7 +55,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [TestFlight passCheckpoint:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
+    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 
     if (IS_IOS_7) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -79,7 +79,7 @@
 }
 
 - (void)refreshNewsletters {
-    [TestFlight passCheckpoint:@"Refreshing newsletters"];
+    [self trackEvent:@"Refreshing newsletters"];
 
     PFQuery * configQuery = [SBSConfig query];
     

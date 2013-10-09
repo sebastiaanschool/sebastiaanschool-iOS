@@ -56,7 +56,7 @@
     }
     
 	// Do any additional setup after loading the view.
-    [TestFlight passCheckpoint:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
+    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

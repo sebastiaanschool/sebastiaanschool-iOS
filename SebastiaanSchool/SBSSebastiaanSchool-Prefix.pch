@@ -39,8 +39,11 @@
 
     #import <Parse/Parse.h>
 
-    #import "TestFlight.h"
+    #import <TestFlight.h>
+
     #import "GeneratedConstants.h"
+
+    #import "NSObject+SBSAnalytics.h"
 
     #import "SBSStyle.h"
     #import "SBSSecurity.h"
