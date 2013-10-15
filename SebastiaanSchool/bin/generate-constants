@@ -63,16 +63,28 @@ case "${PROFILE_TYPE}" in
 		;;
 esac
 
-if [ -n "${PARSE_APPLICATION_ID}"]
+if [ -z "${DEV_PARSE_APPLICATION_ID}" ]
 then
-    echo "${PROGNAME}: Parse PARSE_APPLICATION_ID not set in environment" 1>&2
+    echo "${PROGNAME}: Parse DEV_PARSE_APPLICATION_ID not set in environment" 1>&2
     exit 3
 fi
 
-if [ -n "${PARSE_CLIENT_KEY}"]
+if [ -z "${DEV_PARSE_CLIENT_KEY}" ]
+then
+    echo "${PROGNAME}: Parse DEV_PARSE_CLIENT_KEY not set in environment" 1>&2
+    exit 4
+fi
+
+if [ -z "${PARSE_APPLICATION_ID}" ]
+then
+    echo "${PROGNAME}: Parse PARSE_APPLICATION_ID not set in environment" 1>&2
+    exit 5
+fi
+
+if [ -z "${PARSE_CLIENT_KEY}" ]
 then
     echo "${PROGNAME}: Parse PARSE_CLIENT_KEY not set in environment" 1>&2
-    exit 4
+    exit 6
 fi
 
 
