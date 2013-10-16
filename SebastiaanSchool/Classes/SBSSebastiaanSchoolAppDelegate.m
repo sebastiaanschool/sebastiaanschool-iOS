@@ -100,6 +100,9 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 }
 
 - (void)handleRemoteNotification:(NSDictionary *) notificationPayload {
+    if (notificationPayload == nil) {
+        return;
+    }
     // Extract the notification data
     NSNumber * notificationType = [notificationPayload objectForKey:@"t"];
     switch ((SBSNotificationType)notificationType.intValue) {
