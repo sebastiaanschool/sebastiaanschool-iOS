@@ -57,8 +57,15 @@
 -(void)updateBarButtonItemAnimated:(BOOL)animated {
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBulletinButtonPressed:)];
+            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
             [self.navigationItem setRightBarButtonItem:addButton animated:animated];
+            addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                SBSEditBulletinViewController *editBuletinVC = [[SBSEditBulletinViewController alloc]init];
+                editBuletinVC.delegate = self;
+                [self.navigationController pushViewController:editBuletinVC animated:YES];
+
+                return [RACSignal empty];
+            }];
         }
     } else {
         [self.navigationItem setRightBarButtonItem:nil animated:animated];
@@ -81,12 +88,6 @@
     [query orderByDescending:@"createdAt"];
     
     return query;
-}
-
-- (void)addBulletinButtonPressed:(id)sender {
-    SBSEditBulletinViewController *editBuletinVC = [[SBSEditBulletinViewController alloc]init];
-    editBuletinVC.delegate = self;
-    [self.navigationController pushViewController:editBuletinVC animated:YES];
 }
 
 #pragma mark - SBSAddBulletinViewController delegates

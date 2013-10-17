@@ -68,12 +68,42 @@
 
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (editing) {
-            UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditingTeamMembers)];
+            UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+            doneButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                if (self.editedObjects != nil) {
+                    [[self.navigationItem rightBarButtonItems] makeObjectsPerformSelector:@selector(setEnabled:) withObject:@(NO)];
+                    [PFObject saveAllInBackground:self.editedObjects block:^(BOOL succeeded, NSError *error) {
+                        [self updateBarButtonItemsAnimated:YES editing:NO];
+                        [self loadObjects];
+                        [self setEditing:NO animated:YES];
+                    }];
+                    self.editedObjects = nil;
+                } else {
+                    [self updateBarButtonItemsAnimated:YES editing:NO];
+                    [self setEditing:NO animated:YES];
+                }
+
+                return [RACSignal empty];
+            }];
             buttons = @[doneButton];
             
         } else {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTeamMember)];
-            UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editTeamMembers)];
+            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+            addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                SBSEditTeamMemberViewController *addTeamMemberVC = [[SBSEditTeamMemberViewController alloc]init];
+                addTeamMemberVC.delegate = self;
+                [self.navigationController pushViewController:addTeamMemberVC animated:YES];
+
+                return [RACSignal empty];
+            }];
+            UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:nil action:nil];
+            editButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                NSAssert([[SBSSecurity instance] currentUserStaffUser], @"User has to be a staff user");
+                [self updateBarButtonItemsAnimated:YES editing:YES];
+                [self setEditing:YES animated:YES];
+
+                return [RACSignal empty];
+            }];
             buttons = @[editButton, addButton];
         }
     }
@@ -95,33 +125,6 @@
     [query orderByAscending:@"order"];
     
     return query;
-}
-
-- (void)addTeamMember {
-    SBSEditTeamMemberViewController *addTeamMemberVC = [[SBSEditTeamMemberViewController alloc]init];
-    addTeamMemberVC.delegate = self;
-    [self.navigationController pushViewController:addTeamMemberVC animated:YES];
-}
-
-- (void)editTeamMembers {
-    NSAssert([[SBSSecurity instance] currentUserStaffUser], @"User has to be a staff user");
-    [self updateBarButtonItemsAnimated:YES editing:YES];
-    [self setEditing:YES animated:YES];
-}
-
-- (void) doneEditingTeamMembers {
-    if (self.editedObjects != nil) {
-        [[self.navigationItem rightBarButtonItems] makeObjectsPerformSelector:@selector(setEnabled:) withObject:@(NO)];
-        [PFObject saveAllInBackground:self.editedObjects block:^(BOOL succeeded, NSError *error) {
-            [self updateBarButtonItemsAnimated:YES editing:NO];
-            [self loadObjects];
-            [self setEditing:NO animated:YES];
-        }];
-        self.editedObjects = nil;
-    } else {
-        [self updateBarButtonItemsAnimated:YES editing:NO];
-        [self setEditing:NO animated:YES];
-    }
 }
 
 #pragma mark - SBSAddTeamMemberDelegate implementation

@@ -70,7 +70,11 @@
 -(void)updateBarButtonItemAnimated:(BOOL)animated {
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshNewsletters)];
+            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:nil action:nil];
+            addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                [self refreshNewsletters];
+                return [RACSignal empty];
+            }];
             [self.navigationItem setRightBarButtonItem:addButton animated:animated];
         }
     } else {

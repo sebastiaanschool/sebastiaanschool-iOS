@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
 @property (weak, nonatomic) IBOutlet UITextView *endDateTextView;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
 - (IBAction)deleteButtonPressed:(id)sender;
 
 @end
@@ -40,7 +41,26 @@
     [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
+    self.navigationItem.rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        SBSAgendaItem *agendaItem = self.agendaItem;
+        if (self.agendaItem == nil) {
+            agendaItem = [[SBSAgendaItem alloc]init];
+        }
+        
+        if (self.nameTextView.text.length !=0 && self.startDateTextView.text.length != 0 && self.endDateTextView.text.length != 0) {
+            agendaItem.name = self.nameTextView.text;
+            agendaItem.start = [(UIDatePicker *)self.startDateTextView.inputView date];
+            agendaItem.end = [(UIDatePicker *)self.endDateTextView.inputView date];
+            if (self.agendaItem == nil) {
+                [self.delegate createAgendaItem:agendaItem];
+            } else {
+                [self.delegate updateAgendaItem:agendaItem];
+            }
+        }
+        
+        return [RACSignal empty];
+    }];
     
     self.nameLabel.text = NSLocalizedString(@"Name", nil);
     self.startDateLabel.text = NSLocalizedString(@"Start", nil);
@@ -97,24 +117,6 @@
         self.deleteButton.hidden = NO;
         self.title = NSLocalizedString(@"Edit Agenda Item", nil);
         
-    }
-}
-
--(void)saveButtonPressed:(id) sender {
-    SBSAgendaItem *agendaItem = self.agendaItem;
-    if (self.agendaItem == nil) {
-        agendaItem = [[SBSAgendaItem alloc]init];
-    }
-    
-    if (self.nameTextView.text.length !=0 && self.startDateTextView.text.length != 0 && self.endDateTextView.text.length != 0) {
-        agendaItem.name = self.nameTextView.text;
-        agendaItem.start = [(UIDatePicker *)self.startDateTextView.inputView date];
-        agendaItem.end = [(UIDatePicker *)self.endDateTextView.inputView date];
-        if (self.agendaItem == nil) {
-            [self.delegate createAgendaItem:agendaItem];
-        } else {
-            [self.delegate updateAgendaItem:agendaItem];
-        }
     }
 }
 

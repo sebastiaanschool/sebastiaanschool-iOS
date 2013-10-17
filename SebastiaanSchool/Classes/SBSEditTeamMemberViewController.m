@@ -36,7 +36,41 @@
     [super viewDidLoad];
     [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonPressed:)];
+    self.displayNameTextView.text = self.contact.displayName;
+    self.detailTextView.text = self.contact.detailText;
+    self.emailTextView.text = self.contact.email;
+
+    UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
+    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        SBSContactItem *contact = self.contact;
+        if (self.contact == nil) {
+            contact = [[SBSContactItem alloc]init];
+        }
+        if (self.displayNameTextView.text.length != 0 && self.detailTextView.text.length) {
+            contact.displayName = self.displayNameTextView.text;
+            contact.detailText = self.detailTextView.text;
+            contact.email = self.emailTextView.text;
+            
+            if (self.contact == nil) {
+                [self.delegate createTeamMember:contact];
+            } else {
+                [self.delegate updateTeamMember:contact];
+            }
+        }
+
+        return RACSignal.empty;
+    }];
+
+    RACSignal *formValid = [RACSignal
+        combineLatest:@[self.displayNameTextView.rac_textSignal, self.detailTextView.rac_textSignal]
+        reduce:^(NSString * displayName, NSString * detail) {
+            NSLog(@"formValid: %@ %@", displayName, detail);
+            return @(displayName.length > 0 && detail.length > 0);
+        }];
+    [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];
+    
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
     
     self.displayNameLabel.text = NSLocalizedString(@"Name", nil);
     self.detailLabel.text = NSLocalizedString(@"Detail content", nil);
@@ -47,10 +81,6 @@
     [SBSStyle applyStyleToTextView:self.emailTextView];
     
     [self updateLayout];
-    
-    self.displayNameTextView.text = self.contact.displayName;
-    self.detailTextView.text = self.contact.detailText;
-    self.emailTextView.text = self.contact.email;
     
     [SBSStyle applyStyleToDeleteButton:self.deleteButton];
 
@@ -73,24 +103,6 @@
         self.deleteButton.hidden = NO;
         self.title = NSLocalizedString(@"Edit Team Member", nil);
         
-    }
-}
-
--(void)saveButtonPressed:(id) sender {
-    SBSContactItem *contact = self.contact;
-    if (self.contact == nil) {
-        contact = [[SBSContactItem alloc]init];
-    }
-    if (self.displayNameTextView.text.length != 0 && self.detailTextView.text.length) {
-        contact.displayName = self.displayNameTextView.text;
-        contact.detailText = self.detailTextView.text;
-        contact.email = self.emailTextView.text;
-        
-        if (self.contact == nil) {
-            [self.delegate createTeamMember:contact];
-        } else {
-            [self.delegate updateTeamMember:contact];
-        }
     }
 }
 

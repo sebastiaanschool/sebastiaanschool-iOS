@@ -69,7 +69,14 @@
 -(void)updateBarButtonItemAnimated:(BOOL)animated {
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAgendaItemButtonPressed:)];
+            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+            addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                SBSEditAgendaViewController *editAgendaVC = [[SBSEditAgendaViewController alloc]init];
+                editAgendaVC.delegate = self;
+                [self.navigationController pushViewController:editAgendaVC animated:YES];
+
+                return [RACSignal empty];
+            }];
             [self.navigationItem setRightBarButtonItem:addButton animated:animated];
         }
     } else {
@@ -93,12 +100,6 @@
     [query orderByAscending:@"start"];
     
     return query;
-}
-
-- (void)addAgendaItemButtonPressed:(id)sender {
-    SBSEditAgendaViewController *editAgendaVC = [[SBSEditAgendaViewController alloc]init];
-    editAgendaVC.delegate = self;
-    [self.navigationController pushViewController:editAgendaVC animated:YES];
 }
 
 #pragma mark - SBSEditAgendaViewController delegates

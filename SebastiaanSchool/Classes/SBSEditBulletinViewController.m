@@ -33,8 +33,44 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
+    
+    self.titleTextView.text = self.bulletin.title;
+    self.bodyTextView.text = self.bulletin.body;
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonPressed:)];
+    UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
+    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        SBSBulletin *bulletin = self.bulletin;
+        if (self.bulletin == nil) {
+            bulletin = [[SBSBulletin alloc]init];
+        }
+        
+        if (self.titleTextView.text.length !=0) {
+            bulletin.title = self.titleTextView.text;
+            if (self.bodyTextView.text.length !=0) {
+                bulletin.body = self.bodyTextView.text;
+            } else {
+                bulletin.body = nil;
+            }
+            if (self.bulletin == nil) {
+                [self.delegate createBulletin:bulletin];
+            } else {
+                [self.delegate updateBulletin:bulletin];
+            }
+        }
+
+        return [RACSignal empty];
+    }];
+    
+    RACSignal *formValid = [RACSignal
+                            combineLatest:@[self.titleTextView.rac_textSignal]
+                            reduce:^(NSString * title) {
+                                NSLog(@"formValid: %@", title);
+                                return @(title.length > 0);
+                            }];
+    [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];
+
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
     
     self.titleLabel.text = NSLocalizedString(@"Message", nil);
     self.bodyLabel.text = NSLocalizedString(@"Message content", nil);
@@ -44,9 +80,6 @@
     [SBSStyle applyStyleToTextView:self.bodyTextView];
 
     [self updateLayout];
-    
-    self.titleTextView.text = self.bulletin.title;
-    self.bodyTextView.text = self.bulletin.body;
     
     [SBSStyle applyStyleToDeleteButton:self.deleteButton];
 
@@ -68,25 +101,6 @@
         self.deleteButton.hidden = NO;
         self.title = NSLocalizedString(@"Edit Bulletin", nil);
         
-    }
-}
-
--(void)saveButtonPressed:(id) sender {
-    SBSBulletin *bulletin = self.bulletin;
-    if (self.bulletin == nil) {
-        bulletin = [[SBSBulletin alloc]init];
-    }
-    
-    if (self.titleTextView.text.length !=0) {
-        bulletin.title = self.titleTextView.text;
-        if (self.bodyTextView.text.length !=0) {
-            bulletin.body = self.bodyTextView.text;
-        }
-        if (self.bulletin == nil) {
-            [self.delegate createBulletin:bulletin];
-        } else {
-            [self.delegate updateBulletin:bulletin];
-        }
     }
 }
 

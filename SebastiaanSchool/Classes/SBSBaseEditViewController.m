@@ -116,17 +116,16 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         _textViewAccessoryView = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, [SBSStyle phoneWidth], 44.0)];
         _textViewAccessoryView.barStyle = UIBarStyleBlack;
         _textViewAccessoryView.translucent = YES;
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(accessoryDoneButtonPressed:)];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+        doneButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            [self.view endEditing:NO];
+            return [RACSignal empty];
+        }];
 
         _textViewAccessoryView.items = @[[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], doneButton];
     }
     
     return _textViewAccessoryView;
 }
-
--(void)accessoryDoneButtonPressed:(id) sender {
-    [self.view endEditing:NO];
-}
-
 
 @end
