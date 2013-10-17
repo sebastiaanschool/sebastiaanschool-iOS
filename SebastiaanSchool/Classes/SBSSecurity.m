@@ -6,11 +6,11 @@
 //
 //
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, SBSUserType) {
     UNKNOWN,
     STAFF_USER,
     REGULAR_USER,
-}USER_TYPE;
+};
 
 static NSArray *observedKeys;
 static NSString * const userTypeKeypath = @"userType";
@@ -20,7 +20,7 @@ NSString * const SBSUserRoleDidChangeNotification = @"SBSUserRoleDidChangeNotifi
 
 @interface SBSSecurity ()
 
-@property (nonatomic, assign) USER_TYPE userType;
+@property (nonatomic, assign) SBSUserType userType;
 
 @end
 
