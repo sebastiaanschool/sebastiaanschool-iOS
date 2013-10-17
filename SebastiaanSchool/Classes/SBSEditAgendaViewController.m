@@ -132,7 +132,7 @@
 - (IBAction)deleteButtonPressed:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"Delete Agenda Item?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles: nil];
     
-    [actionSheet showInView:[UIApplication sharedApplication].delegate.window.rootViewController.view];
+    [self displayActionSheet:actionSheet];
 }
 
 - (void)startDatePickerChanged:(id)sender {

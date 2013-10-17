@@ -1,4 +1,4 @@
-@interface SBSSebastiaanSchoolAppDelegate : NSObject <UIApplicationDelegate> {
+@interface SBSSebastiaanSchoolAppDelegate : UIResponder <UIApplicationDelegate> {
 
 }
 

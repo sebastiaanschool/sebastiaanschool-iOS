@@ -232,7 +232,7 @@
         
         UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), contactItemName] delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
         
-        [actionSheet showInView:[UIApplication sharedApplication].delegate.window.rootViewController.view];
+        [self displayActionSheet:actionSheet];
     }
 }
 
