@@ -64,7 +64,6 @@
     RACSignal *formValid = [RACSignal
                             combineLatest:@[self.titleTextView.rac_textSignal]
                             reduce:^(NSString * title) {
-                                NSLog(@"formValid: %@", title);
                                 return @(title.length > 0);
                             }];
     [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];

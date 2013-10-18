@@ -90,7 +90,7 @@
     [configQuery findObjectsInBackgroundWithBlock:^(NSArray *configObjects, NSError *error) {
         if (error) {
             // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            ULog(@"Error: %@ %@", error, [error userInfo]);
             return;
         }
         
@@ -128,7 +128,7 @@
         NSString * baseUrlString = newsletterDiscoveryBaseUrl;
 
         if (hrefElements.count != spanElements.count) {
-            NSLog(@"Refreshing newsletters failed: non matching href and span counts.");
+            ULog(@"Refreshing newsletters failed: non matching href and span counts.");
             return;
         }
         
@@ -150,7 +150,7 @@
         [query findObjectsInBackgroundWithBlock:^(NSArray *newsletterObjects, NSError *error) {
           if (error) {
               // Log details of the failure
-              NSLog(@"Error: %@ %@", error, [error userInfo]);
+              ULog(@"Error: %@ %@", error, [error userInfo]);
               return;
           }
           // The find succeeded.
