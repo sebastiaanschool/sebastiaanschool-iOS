@@ -239,14 +239,7 @@
 
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         // Delete the row from the data source
-        [agendaItem deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-                [self loadObjects];
-            } else {
-                ULog(@"Failed to delete buletin");
-            }
-        }];
+        [self deleteAgendaItem:agendaItem];
     } else {
         __weak typeof(self) weakSelf = self;
     

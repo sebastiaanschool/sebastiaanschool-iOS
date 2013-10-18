@@ -246,16 +246,8 @@
     }
     
     // Delete the row from the data source
-    PFObject *deletedTeamMember = [self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-    [deletedTeamMember deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Failed to delete buletin");
-        }
-    }];
-
+    SBSContactItem *deletedTeamMember = (SBSContactItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+    [self deleteTeamMember:deletedTeamMember];
 }
 
 
