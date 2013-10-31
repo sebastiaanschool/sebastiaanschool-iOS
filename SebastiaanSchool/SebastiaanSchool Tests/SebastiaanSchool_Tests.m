@@ -7,6 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <OCMock.h>
+
+#import "SBSConfig.h"
 
 @interface SebastiaanSchool_Tests : XCTestCase
 
@@ -28,7 +31,9 @@
 
 - (void)testExample
 {
+    id mock = [OCMockObject mockForClass:[SBSConfig class]];
 #warning XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [mock verify];
 }
 
 @end

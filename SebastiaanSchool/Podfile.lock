@@ -1,19 +1,21 @@
 PODS:
   - Facebook-iOS-SDK (3.9.0)
   - hpple (0.2.0)
+  - OCMock (2.2.1)
   - Parse-iOS-SDK (1.2.15):
     - Facebook-iOS-SDK (~> 3.7)
-  - ReactiveCocoa (2.1.3):
+  - ReactiveCocoa (2.1.5):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/Core (2.1.3):
+  - ReactiveCocoa/Core (2.1.5):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.1.3)
+  - ReactiveCocoa/no-arc (2.1.5)
   - TestFlightSDK (2.1.1-beta)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
   - hpple
+  - OCMock
   - Parse-iOS-SDK
   - ReactiveCocoa
   - TestFlightSDK
@@ -21,8 +23,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Facebook-iOS-SDK: 5e1416dbdfc17b2620c2ca31c02e6feec042f2c1
   hpple: dde62f905f482bbec50186280d1a1be2c881241b
+  OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   Parse-iOS-SDK: 1fd9797daf2ebac19f5fc041d9015e797df1594a
-  ReactiveCocoa: 0142b823f4737effe6100f9fbb0a43bdcb629aae
+  ReactiveCocoa: 967339c6f6984beef304cb8bbe05581d6863bb09
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
 
-COCOAPODS: 0.26.2
+COCOAPODS: 0.27.1

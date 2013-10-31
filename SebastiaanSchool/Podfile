@@ -1,6 +1,12 @@
-platform :ios, '5.1'
+platform :ios, '6'
 pod 'TestFlightSDK'
 pod 'Facebook-iOS-SDK'
 pod 'Parse-iOS-SDK'
 pod 'hpple'
 pod 'ReactiveCocoa'
+
+target :test do
+    link_with 'SebastiaanSchool Tests'
+
+    pod 'OCMock'
+end
