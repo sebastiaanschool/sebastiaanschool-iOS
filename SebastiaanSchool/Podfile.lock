@@ -25,7 +25,7 @@ SPEC CHECKSUMS:
   hpple: dde62f905f482bbec50186280d1a1be2c881241b
   OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   Parse-iOS-SDK: 1fd9797daf2ebac19f5fc041d9015e797df1594a
-  ReactiveCocoa: 967339c6f6984beef304cb8bbe05581d6863bb09
+  ReactiveCocoa: e497a250d3d7e4822a724dbabf8b96b6a534a35f
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
 
 COCOAPODS: 0.27.1
