@@ -7,5 +7,6 @@
 //
 
 @interface UIResponder (SBS)
+- (void)trackEvent:(NSString *)name;
 - (void) displayActionSheet:(UIActionSheet *)actionsheet;
 @end

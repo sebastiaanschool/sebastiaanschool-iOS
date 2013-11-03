@@ -17,4 +17,9 @@
     [[self nextResponder] displayActionSheet:actionsheet];
 }
 
+- (void)trackEvent:(NSString *)name {
+    [PFAnalytics trackEvent:name];
+    [TestFlight passCheckpoint:name];
+}
+
 @end

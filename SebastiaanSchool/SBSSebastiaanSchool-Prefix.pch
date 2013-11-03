@@ -43,8 +43,6 @@
 
     #import "GeneratedConstants.h"
 
-    #import "NSObject+SBSAnalytics.h"
-
     #import "SBSStyle.h"
     #import "SBSSecurity.h"
 
