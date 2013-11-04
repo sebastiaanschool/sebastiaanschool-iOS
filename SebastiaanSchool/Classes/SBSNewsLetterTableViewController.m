@@ -127,6 +127,10 @@
         NSArray *spanElements = [doc searchWithXPathQuery:newsletterDiscoveryTitleXpath];
         NSString * baseUrlString = newsletterDiscoveryBaseUrl;
 
+        if (hrefElements.count == 0 || spanElements.count == 0) {
+            ULog(@"Refreshing newsletters failed: zero arrays returned: href elements: %@ span elements: %@", hrefElements, spanElements);
+            return;
+        }
         if (hrefElements.count != spanElements.count) {
             ULog(@"Refreshing newsletters failed: non matching href and span counts.");
             return;
