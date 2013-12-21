@@ -28,4 +28,4 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e497a250d3d7e4822a724dbabf8b96b6a534a35f
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.28.0
