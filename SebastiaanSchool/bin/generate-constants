@@ -10,6 +10,11 @@ set -x
 # Abort on implicit errors.
 set -e
 
+if [ ! -f "${PROJECT_DIR}/bin/setEnv.sh" ]; then
+    echo "File not found!"
+    cp "${PROJECT_DIR}/bin/setEnv-Example.sh" "${PROJECT_DIR}/bin/setEnv.sh"
+fi
+
 source "${PROJECT_DIR}/bin/setEnv.sh"
 
 PROGNAME="${0##*/}"
