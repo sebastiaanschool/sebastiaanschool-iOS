@@ -12,5 +12,8 @@
 // Positive values make the view appear to be above the surface
 // Negative values are below.
 // The unit is in points
+/**
+ *  Additional property on UIViews allowing parallax behavior. The intensity is applied to a view on both the X and Y axis.
+ */
 @property (nonatomic) CGFloat parallaxIntensity;
 @end

@@ -12,6 +12,7 @@ extern NSString * const SERVER_URL;
 extern NSString * const PARSE_APPLICATION_ID;
 extern NSString * const PARSE_CLIENT_KEY;
 
+/** For testflight we need an APP token. This constant contains that value. */
 extern NSString * const TEST_FLIGHT_APP_TOKEN;
 
 void bootstrapTestFlight(void);
