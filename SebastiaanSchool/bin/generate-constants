@@ -31,9 +31,9 @@ fi
 # PROVISIONING_PROFILE: set if explicit, empty for auto-selection. 
 
 PROFILE_ID="$3"
-if [ ${TRAVIS} ]
+if [ -z "${TRAVIS}" ]
 then
-    # Simulater build. Always developer build.
+    # Travis build. Always developer build.
     PROFILE_TYPE='Sandbox:Developer'
 elif [ -n "${PROFILE_ID}" ]
 then
