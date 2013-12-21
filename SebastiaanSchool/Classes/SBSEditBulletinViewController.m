@@ -37,8 +37,10 @@
     self.titleTextView.text = self.bulletin.title;
     self.bodyTextView.text = self.bulletin.body;
 
+    @weakify(self);
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
     rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
         SBSBulletin *bulletin = self.bulletin;
         if (self.bulletin == nil) {
             bulletin = [[SBSBulletin alloc]init];

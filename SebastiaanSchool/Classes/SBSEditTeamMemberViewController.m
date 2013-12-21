@@ -39,9 +39,11 @@
     self.displayNameTextView.text = self.contact.displayName;
     self.detailTextView.text = self.contact.detailText;
     self.emailTextView.text = self.contact.email;
-
+    
+    @weakify(self);
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
     rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
         SBSContactItem *contact = self.contact;
         if (self.contact == nil) {
             contact = [[SBSContactItem alloc]init];

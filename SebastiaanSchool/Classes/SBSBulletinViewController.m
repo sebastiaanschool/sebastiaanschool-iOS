@@ -59,7 +59,9 @@
         if (self.navigationItem.rightBarButtonItem == nil) {
             UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
             [self.navigationItem setRightBarButtonItem:addButton animated:animated];
+            @weakify(self);
             addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
                 SBSEditBulletinViewController *editBuletinVC = [[SBSEditBulletinViewController alloc]init];
                 editBuletinVC.delegate = self;
                 [self.navigationController pushViewController:editBuletinVC animated:YES];
@@ -93,7 +95,9 @@
 #pragma mark - SBSAddBulletinViewController delegates
 
 -(void)createBulletin:(PFObject *)newBulletin {
+    @weakify(self);
     [newBulletin saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -106,7 +110,9 @@
 }
 
 -(void)updateBulletin:(PFObject *)updatedBulletin {
+    @weakify(self);
     [updatedBulletin saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -119,7 +125,9 @@
 }
 
 -(void)deleteBulletin:(PFObject *)deletedBulletin {
+    @weakify(self);
     [deletedBulletin deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];

@@ -69,10 +69,11 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     ALog(@"Finish web");
     [self.activityIndicator stopAnimating];
-    __weak SBSNewsLetterViewController * weakSelf = self;
+    @weakify(self);
     if (IS_IOS_7) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
-            [weakSelf.webView.scrollView setContentOffset:CGPointMake(0.0f,-weakSelf.topLayoutGuide.length) animated:YES];
+            @strongify(self);
+            [self.webView.scrollView setContentOffset:CGPointMake(0.0f,-self.topLayoutGuide.length) animated:YES];
         });
     }
 }

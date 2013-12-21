@@ -37,9 +37,11 @@
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
 
+
     #import <Parse.h>
     #import <TestFlight.h>
     #import <ReactiveCocoa.h>
+    #import <RACEXTScope.h>
 
     #import "GeneratedConstants.h"
 

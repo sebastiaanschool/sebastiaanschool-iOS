@@ -41,8 +41,10 @@
     [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 
     
+    @weakify(self);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
     self.navigationItem.rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
         SBSAgendaItem *agendaItem = self.agendaItem;
         if (self.agendaItem == nil) {
             agendaItem = [[SBSAgendaItem alloc]init];

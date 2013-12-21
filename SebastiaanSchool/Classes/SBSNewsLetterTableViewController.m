@@ -71,7 +71,9 @@
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (self.navigationItem.rightBarButtonItem == nil) {
             UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:nil action:nil];
+            @weakify(self);
             addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
                 [self refreshNewsletters];
                 return [RACSignal empty];
             }];
@@ -86,8 +88,9 @@
     [self trackEvent:@"Refreshing newsletters"];
 
     PFQuery * configQuery = [SBSConfig query];
-    
+    @weakify(self);
     [configQuery findObjectsInBackgroundWithBlock:^(NSArray *configObjects, NSError *error) {
+        @strongify(self);
         if (error) {
             // Log details of the failure
             ULog(@"Error: %@ %@", error, [error userInfo]);
@@ -152,6 +155,7 @@
 
         PFQuery * query = [self queryForTable];
         [query findObjectsInBackgroundWithBlock:^(NSArray *newsletterObjects, NSError *error) {
+            @strongify(self);
           if (error) {
               // Log details of the failure
               ULog(@"Error: %@ %@", error, [error userInfo]);

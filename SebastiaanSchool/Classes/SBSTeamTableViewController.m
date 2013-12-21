@@ -69,10 +69,14 @@
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (editing) {
             UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+            @weakify(self);
             doneButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
                 if (self.editedObjects != nil) {
                     [[self.navigationItem rightBarButtonItems] makeObjectsPerformSelector:@selector(setEnabled:) withObject:@(NO)];
+                    @weakify(self);
                     [PFObject saveAllInBackground:self.editedObjects block:^(BOOL succeeded, NSError *error) {
+                        @strongify(self);
                         [self updateBarButtonItemsAnimated:YES editing:NO];
                         [self loadObjects];
                         [self setEditing:NO animated:YES];
@@ -89,7 +93,9 @@
             
         } else {
             UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+            @weakify(self);
             addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
                 SBSEditTeamMemberViewController *addTeamMemberVC = [[SBSEditTeamMemberViewController alloc]init];
                 addTeamMemberVC.delegate = self;
                 [self.navigationController pushViewController:addTeamMemberVC animated:YES];
@@ -98,6 +104,7 @@
             }];
             UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:nil action:nil];
             editButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
                 NSAssert([[SBSSecurity instance] currentUserStaffUser], @"User has to be a staff user");
                 [self updateBarButtonItemsAnimated:YES editing:YES];
                 [self setEditing:YES animated:YES];
@@ -130,7 +137,9 @@
 #pragma mark - SBSAddTeamMemberDelegate implementation
 
 -(void)createTeamMember:(SBSContactItem *)newTeamMember {
+    @weakify(self);
     [newTeamMember saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -143,7 +152,9 @@
 }
 
 -(void)updateTeamMember:(SBSContactItem *)updatedTeamMember {
+    @weakify(self);
     [updatedTeamMember saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -156,7 +167,9 @@
 }
 
 -(void)deleteTeamMember:(SBSContactItem *)deletedTeamMember {
+    @weakify(self);
     [deletedTeamMember deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];

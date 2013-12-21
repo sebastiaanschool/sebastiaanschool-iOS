@@ -117,7 +117,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         _textViewAccessoryView.barStyle = UIBarStyleBlack;
         _textViewAccessoryView.translucent = YES;
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+        @weakify(self);
         doneButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            @strongify(self);
             [self.view endEditing:NO];
             return [RACSignal empty];
         }];

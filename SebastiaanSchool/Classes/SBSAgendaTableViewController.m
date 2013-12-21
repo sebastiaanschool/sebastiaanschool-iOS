@@ -70,7 +70,9 @@
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (self.navigationItem.rightBarButtonItem == nil) {
             UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+            @weakify(self);
             addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
                 SBSEditAgendaViewController *editAgendaVC = [[SBSEditAgendaViewController alloc]init];
                 editAgendaVC.delegate = self;
                 [self.navigationController pushViewController:editAgendaVC animated:YES];
@@ -105,7 +107,9 @@
 #pragma mark - SBSEditAgendaViewController delegates
 
 -(void)createAgendaItem:(SBSAgendaItem *)agendaItem {
+    @weakify(self);
     [agendaItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -118,7 +122,9 @@
 }
 
 -(void)updateAgendaItem:(SBSAgendaItem *)agendaItem {
+    @weakify(self);
     [agendaItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -131,7 +137,9 @@
 }
 
 -(void)deleteAgendaItem:(SBSAgendaItem *)agendaItem {
+    @weakify(self);
     [agendaItem deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
         if (succeeded) {
             //Do a big reload since the framework VC doesn't support nice view insertions and removal.
             [self loadObjects];
@@ -241,8 +249,6 @@
         // Delete the row from the data source
         [self deleteAgendaItem:agendaItem];
     } else {
-        __weak typeof(self) weakSelf = self;
-    
         NSString *agendaItemName = agendaItem.name;
         NSDate *agendaItemStartDate = agendaItem.start;
         NSDate *agendaItemEndDate = agendaItem.end;
@@ -256,10 +262,12 @@
 
         
         if([self.eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-            [weakSelf.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            @weakify(self);
+            [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                @strongify(self);
                 if (granted) {
                     NSError *error;
-                    [weakSelf.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
+                    [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
                 }
             }];
         } else {
