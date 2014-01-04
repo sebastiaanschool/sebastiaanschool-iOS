@@ -5,8 +5,11 @@
 //  Created by Jeroen Leenarts on 22-03-13.
 //
 //
-
 #import "SBSBulletinCell.h"
+
+@interface SBSBulletinCell () <TTTAttributedLabelDelegate>
+
+@end
 
 @implementation SBSBulletinCell
 
@@ -59,12 +62,14 @@
         }
         
         // Initialization code
-        _bodyLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+        _bodyLabel = [[TTTAttributedLabel alloc]initWithFrame:CGRectZero];
         [_bodyLabel setTextColor:[UIColor blackColor]];
         [_bodyLabel setHighlightedTextColor:[UIColor whiteColor]];
         _bodyLabel.font = [SBSStyle bodyFont];
         _bodyLabel.numberOfLines = 0;
         _bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _bodyLabel.enabledTextCheckingTypes = NSTextCheckingTypeLink;
+        _bodyLabel.delegate = self;
         [self addSubview:_bodyLabel];
     }
     return self;
@@ -94,6 +99,19 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
+    [self trackEvent:[NSString stringWithFormat:@"User selected a bulletin URL: %@", url]];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Open external link?", nil) message:[url description] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"Open", nil), nil];
+    [[alert rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+        if (buttonIndex.integerValue == 1) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }];
+
+    [alert show];
 }
 
 @end

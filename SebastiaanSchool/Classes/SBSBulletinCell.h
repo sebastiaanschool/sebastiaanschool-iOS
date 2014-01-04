@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import <TTTAttributedLabel.h>
+
 #import "SBSBulletin.h"
 
 @interface SBSBulletinCell : UITableViewCell
 
-@property (nonatomic, readonly) UILabel *bodyLabel;
+@property (nonatomic, readonly) TTTAttributedLabel *bodyLabel;
 
 /**
  Calculates the height for the a `SBSBulletinCell` for a given SBSBulletin object.
