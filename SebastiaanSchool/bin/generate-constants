@@ -31,7 +31,7 @@ fi
 # PROVISIONING_PROFILE: set if explicit, empty for auto-selection. 
 
 PROFILE_ID="$3"
-if [ -z "${TRAVIS}" ]
+if [ -n "${TRAVIS}" ]
 then
     # Travis build. Always developer build.
     PROFILE_TYPE='Sandbox:Developer'
