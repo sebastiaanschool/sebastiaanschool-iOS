@@ -8,6 +8,6 @@
 
 #import "SBSEditAgendaViewController.h"
 
-@interface SBSAgendaTableViewController : PFQueryTableViewController <UIActionSheetDelegate, SBSEditAgendaItemDelegate>
+@interface SBSAgendaTableViewController : PFQueryTableViewController <SBSEditAgendaItemDelegate>
 
 @end

@@ -114,8 +114,16 @@
     [super viewDidUnload];
 }
 - (IBAction)deleteButtonPressed:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"Delete Bulletin?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles: nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"Delete Bulletin?", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles: nil];
     
+    [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+        if (buttonIndex.integerValue != actionSheet.destructiveButtonIndex) {
+            return;
+        }
+        
+        [self.delegate deleteBulletin:self.bulletin];
+    }];
+
     [self displayActionSheet:actionSheet];
 }
 
@@ -140,12 +148,4 @@
     return YES;
 }
 
-#pragma mark - Action sheet delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex != actionSheet.destructiveButtonIndex) {
-        return;
-    }
-
-    [self.delegate deleteBulletin:self.bulletin];
-}
 @end

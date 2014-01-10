@@ -134,8 +134,16 @@
 }
 
 - (IBAction)deleteButtonPressed:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"Delete Agenda Item?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles: nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"Delete Agenda Item?", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles: nil];
     
+    [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+        if (buttonIndex.integerValue != actionSheet.destructiveButtonIndex) {
+            return;
+        }
+        
+        [self.delegate deleteAgendaItem:self.agendaItem];
+    }];
+
     [self displayActionSheet:actionSheet];
 }
 
@@ -161,12 +169,4 @@
     self.endDateTextView.text = [dateFormatter stringFromDate:[(UIDatePicker *)self.endDateTextView.inputView date]];
 }
 
-#pragma mark - Action sheet delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex != actionSheet.destructiveButtonIndex) {
-        return;
-    }
-    
-    [self.delegate deleteAgendaItem:self.agendaItem];
-}
 @end

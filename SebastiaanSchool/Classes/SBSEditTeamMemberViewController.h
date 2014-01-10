@@ -17,7 +17,7 @@
 
 @end
 
-@interface SBSEditTeamMemberViewController : SBSBaseEditViewController <UIActionSheetDelegate>
+@interface SBSEditTeamMemberViewController : SBSBaseEditViewController
 
 @property (nonatomic, unsafe_unretained) id<SBSAddTeamMemberDelegate> delegate;
 @property (nonatomic, strong)SBSContactItem * contact;

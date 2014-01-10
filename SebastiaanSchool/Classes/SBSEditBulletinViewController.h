@@ -19,7 +19,7 @@
 
 @end
 
-@interface SBSEditBulletinViewController : SBSBaseEditViewController <UIActionSheetDelegate>
+@interface SBSEditBulletinViewController : SBSBaseEditViewController
 
 @property (nonatomic, weak) id<SBSEditBulletinDelegate> delegate;
 @property (nonatomic, strong)SBSBulletin * bulletin;

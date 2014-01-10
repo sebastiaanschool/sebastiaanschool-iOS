@@ -10,6 +10,6 @@
 
 #import "SBSEditTeamMemberViewController.h"
 
-@interface SBSTeamTableViewController : PFQueryTableViewController <MFMailComposeViewControllerDelegate, UIActionSheetDelegate, SBSAddTeamMemberDelegate>
+@interface SBSTeamTableViewController : PFQueryTableViewController <MFMailComposeViewControllerDelegate, SBSAddTeamMemberDelegate>
 
 @end

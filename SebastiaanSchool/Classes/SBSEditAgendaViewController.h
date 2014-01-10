@@ -18,7 +18,7 @@
 
 @end
 
-@interface SBSEditAgendaViewController : SBSBaseEditViewController <UIActionSheetDelegate>
+@interface SBSEditAgendaViewController : SBSBaseEditViewController
 
 @property (nonatomic, weak) id<SBSEditAgendaItemDelegate> delegate;
 @property (nonatomic, strong)SBSAgendaItem * agendaItem;

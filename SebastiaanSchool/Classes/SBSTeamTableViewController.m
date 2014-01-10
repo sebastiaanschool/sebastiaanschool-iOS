@@ -246,23 +246,20 @@
         SBSContactItem *contactItem = (SBSContactItem *)[self objectAtIndexPath:indexPath];
         NSString *contactItemName = contactItem.displayName;
         
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), contactItemName] delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
+        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), contactItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
+        [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+            if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
+                return;
+            }
+            // Delete the row from the data source
+            SBSContactItem *deletedTeamMember = (SBSContactItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+            [self deleteTeamMember:deletedTeamMember];
+
+        }];
         
         [self displayActionSheet:actionSheet];
     }
 }
-
-#pragma mark - Action sheet delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == actionSheet.cancelButtonIndex) {
-        return;
-    }
-    
-    // Delete the row from the data source
-    SBSContactItem *deletedTeamMember = (SBSContactItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-    [self deleteTeamMember:deletedTeamMember];
-}
-
 
 #pragma mark - Table view delegate
 

@@ -211,7 +211,19 @@
         SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:indexPath];
         NSString *agendaItemName = agendaItem.name;
         
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), agendaItemName] delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
+        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), agendaItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
+        
+        [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+            if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
+                return;
+            }
+            SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+            if ([[SBSSecurity instance] currentUserStaffUser]) {
+                // Delete the row from the data source
+                [self deleteAgendaItem:agendaItem];
+            }
+        }];
         
         [self displayActionSheet:actionSheet];
     }
@@ -230,50 +242,43 @@
         SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:indexPath];
         NSString *agendaItemName = agendaItem.name;
         
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Add \"%@\" to your default calendar?", nil), agendaItemName] delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Add to calendar", nil), nil];
+        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Add \"%@\" to your default calendar?", nil), agendaItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Add to calendar", nil), nil];
         
+        [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+
+            if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
+                return;
+            }
+            SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+            NSString *agendaItemName = agendaItem.name;
+            NSDate *agendaItemStartDate = agendaItem.start;
+            NSDate *agendaItemEndDate = agendaItem.end;
+            
+            EKEvent *event=[EKEvent eventWithEventStore:self.eventStore];
+            event.allDay = YES;
+            event.title=agendaItemName;
+            event.startDate=agendaItemStartDate;
+            event.endDate=agendaItemEndDate;
+            [event setCalendar:[self.eventStore defaultCalendarForNewEvents]];
+            
+            
+            if([self.eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+                @weakify(self);
+                [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                    @strongify(self);
+                    if (granted) {
+                        NSError *error;
+                        [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
+                    }
+                }];
+            } else {
+                NSError *error;
+                [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
+            }
+        }];
+
         [self displayActionSheet:actionSheet];
-    }
-}
-
-#pragma mark - Action sheet delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    if (buttonIndex == actionSheet.cancelButtonIndex) {
-        return;
-    }
-
-    SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        // Delete the row from the data source
-        [self deleteAgendaItem:agendaItem];
-    } else {
-        NSString *agendaItemName = agendaItem.name;
-        NSDate *agendaItemStartDate = agendaItem.start;
-        NSDate *agendaItemEndDate = agendaItem.end;
-        
-        EKEvent *event=[EKEvent eventWithEventStore:self.eventStore];
-        event.allDay = YES;
-        event.title=agendaItemName;
-        event.startDate=agendaItemStartDate;
-        event.endDate=agendaItemEndDate;
-        [event setCalendar:[self.eventStore defaultCalendarForNewEvents]];
-
-        
-        if([self.eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-            @weakify(self);
-            [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-                @strongify(self);
-                if (granted) {
-                    NSError *error;
-                    [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
-                }
-            }];
-        } else {
-            NSError *error;
-            [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
-        }
     }
 }
 
