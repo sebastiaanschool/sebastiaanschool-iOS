@@ -30,6 +30,8 @@
 		4A3B996016A0830600241D4C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B995F16A0830600241D4C /* MainWindow.xib */; };
 		4A3F5B5916A87BB9005F742E /* NSUserDefaults+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F5B5816A87BB9005F742E /* NSUserDefaults+SBS.m */; };
 		4A3F6A3616C58FB700FC066D /* SBSInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F6A3516C58FB700FC066D /* SBSInfoViewController.xib */; };
+		4A46A781188087D600306E32 /* SBSEditNewsLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A46A780188087D600306E32 /* SBSEditNewsLetterViewController.m */; };
+		4A46A78318808B6000306E32 /* SBSEditNewsLetterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A46A78218808B6000306E32 /* SBSEditNewsLetterViewController.xib */; };
 		4A4997CF16FEF65400B8A729 /* SBSAgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997CE16FEF65400B8A729 /* SBSAgendaItem.m */; };
 		4A4997D216FEF68600B8A729 /* SBSBulletin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D116FEF68600B8A729 /* SBSBulletin.m */; };
 		4A4997D516FEF6AB00B8A729 /* SBSContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */; };
@@ -119,6 +121,9 @@
 		4A3F5B5716A87BB9005F742E /* NSUserDefaults+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SBS.h"; sourceTree = "<group>"; };
 		4A3F5B5816A87BB9005F742E /* NSUserDefaults+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SBS.m"; sourceTree = "<group>"; };
 		4A3F6A3516C58FB700FC066D /* SBSInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBSInfoViewController.xib; sourceTree = "<group>"; };
+		4A46A77F188087D600306E32 /* SBSEditNewsLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSEditNewsLetterViewController.h; sourceTree = "<group>"; };
+		4A46A780188087D600306E32 /* SBSEditNewsLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSEditNewsLetterViewController.m; sourceTree = "<group>"; };
+		4A46A78218808B6000306E32 /* SBSEditNewsLetterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBSEditNewsLetterViewController.xib; sourceTree = "<group>"; };
 		4A4997CD16FEF65400B8A729 /* SBSAgendaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSAgendaItem.h; sourceTree = "<group>"; };
 		4A4997CE16FEF65400B8A729 /* SBSAgendaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSAgendaItem.m; sourceTree = "<group>"; };
 		4A4997D016FEF68600B8A729 /* SBSBulletin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSBulletin.h; sourceTree = "<group>"; };
@@ -342,6 +347,8 @@
 				4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */,
 				4A1966A616A08DAE0011EFBF /* SBSNewsLetterViewController.h */,
 				4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */,
+				4A46A77F188087D600306E32 /* SBSEditNewsLetterViewController.h */,
+				4A46A780188087D600306E32 /* SBSEditNewsLetterViewController.m */,
 				4AD416371723DEB400DA4777 /* SBSBaseEditViewController.h */,
 				4AD416381723DEB400DA4777 /* SBSBaseEditViewController.m */,
 				4ADFE4E616A0A36100EDAD2A /* SBSStyle.h */,
@@ -390,6 +397,7 @@
 				4AD4163F1723E8A600DA4777 /* SBSEditAgendaViewController.xib */,
 				4AA09BB3172304E6004630B4 /* SBSEditTeamMemberViewController.xib */,
 				4A0124BB16FCFE0100F744D6 /* SBSEditBulletinViewController.xib */,
+				4A46A78218808B6000306E32 /* SBSEditNewsLetterViewController.xib */,
 				4AD1809A16A57FBE00B97F61 /* SBSStaffViewController.xib */,
 				4A3F6A3516C58FB700FC066D /* SBSInfoViewController.xib */,
 				4AC3F7F816A0AF2600452D33 /* Localizable.strings */,
@@ -504,6 +512,7 @@
 				4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */,
 				4AD1809B16A57FBE00B97F61 /* SBSStaffViewController.xib in Resources */,
 				4AF4A0B316A86DA600493C20 /* provisiontype in Resources */,
+				4A46A78318808B6000306E32 /* SBSEditNewsLetterViewController.xib in Resources */,
 				4A3F6A3616C58FB700FC066D /* SBSInfoViewController.xib in Resources */,
 				4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */,
 				4A0124BC16FCFE0100F744D6 /* SBSEditBulletinViewController.xib in Resources */,
@@ -629,6 +638,7 @@
 				4A4997D816FEF6CF00B8A729 /* SBSNewsLetter.m in Sources */,
 				4AD416391723DEB400DA4777 /* SBSBaseEditViewController.m in Sources */,
 				4AD4163D1723E87800DA4777 /* SBSEditAgendaViewController.m in Sources */,
+				4A46A781188087D600306E32 /* SBSEditNewsLetterViewController.m in Sources */,
 				4AA0A97F1730E834005D9BD0 /* NSDate+JLDateAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

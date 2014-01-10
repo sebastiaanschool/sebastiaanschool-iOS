@@ -57,7 +57,7 @@
 
 #pragma mark - UIWebView delegate implementation
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    ALog(@"Error web");
+    ALog(@"Error web, %@", error);
     [self.activityIndicator stopAnimating];
 }
 

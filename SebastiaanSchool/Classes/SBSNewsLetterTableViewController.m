@@ -70,11 +70,14 @@
 -(void)updateBarButtonItemAnimated:(BOOL)animated {
     if ([[SBSSecurity instance] currentUserStaffUser]) {
         if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:nil action:nil];
+            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
             @weakify(self);
             addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
                 @strongify(self);
-                [self refreshNewsletters];
+                SBSEditNewsLetterViewController *editNewsLetterVC = [[SBSEditNewsLetterViewController alloc]init];
+                editNewsLetterVC.delegate = self;
+                [self.navigationController pushViewController:editNewsLetterVC animated:YES];
+                
                 return [RACSignal empty];
             }];
             [self.navigationItem setRightBarButtonItem:addButton animated:animated];
@@ -84,126 +87,51 @@
     }
 }
 
-- (void)refreshNewsletters {
-    [self trackEvent:@"Refreshing newsletters"];
+#pragma mark - SBSEditNewsLetterViewController delegates
 
-    PFQuery * configQuery = [SBSConfig query];
+-(void)createNewsLetter:(SBSNewsLetter *)newNewsLetter {
     @weakify(self);
-    [configQuery findObjectsInBackgroundWithBlock:^(NSArray *configObjects, NSError *error) {
+    [newNewsLetter saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         @strongify(self);
-        if (error) {
-            // Log details of the failure
-            ULog(@"Error: %@ %@", error, [error userInfo]);
-            return;
+        if (succeeded) {
+            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
+            [self loadObjects];
+        } else {
+            ULog(@"Error while adding newsletter: %@", error);
         }
-        
-        NSString *newsletterDiscoveryBaseUrl; // Example: @"http://www.sebastiaanschool.nl"
-        NSString *newsletterDiscoveryPageUrl; // Example: @"http://www.sebastiaanschool.nl/sebastiaanschool.nl/nieuwsbrief.html"
-        NSString *newsletterDiscoveryTitleXpath; // Example: @"//li[@id='cat_1098']/ul/li/a/span"
-        NSString *newsletterDiscoveryUrlXpath; // Example: @"//li[@id='cat_1098']/ul/li/a/@href"
-        for (SBSConfig *obj in configObjects) {
-            NSString *key = obj.key;
-            if ([SBSNewsletterDiscoveryBaseUrl isEqual:key]) {
-                newsletterDiscoveryBaseUrl = obj.value;
-            } else if ([SBSNewsletterDiscoveryPageUrl isEqual:key]) {
-                newsletterDiscoveryPageUrl = obj.value;
-            } else if ([SBSNewsletterDiscoveryTitleXpath isEqual:key]) {
-                newsletterDiscoveryTitleXpath = obj.value;
-            } else if ([SBSNewsletterDiscoveryUrlXpath isEqual:key]) {
-                newsletterDiscoveryUrlXpath = obj.value;
-            }
-        }
-        
-        if (newsletterDiscoveryUrlXpath == nil || newsletterDiscoveryTitleXpath == nil || newsletterDiscoveryBaseUrl == nil || newsletterDiscoveryPageUrl == nil) {
-            NSLog(@"Error missing parameter for newsletter refresh. newsletterDiscoveryPageUrl: %@ newsletterDiscoveryBaseUrl: %@ newsletterDiscoveryTitleXpath:%@ newsletterDiscoveryUrlXpath: %@", newsletterDiscoveryPageUrl, newsletterDiscoveryBaseUrl, newsletterDiscoveryTitleXpath, newsletterDiscoveryUrlXpath);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Newsletter config is incomplete.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
-            [alert show];
-
-            return;
-        }
-        
-        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:newsletterDiscoveryPageUrl]];
-        TFHpple *doc = [[TFHpple alloc]initWithHTMLData:data];
-
-    
-        NSArray *hrefElements = [doc searchWithXPathQuery:newsletterDiscoveryUrlXpath];
-        NSArray *spanElements = [doc searchWithXPathQuery:newsletterDiscoveryTitleXpath];
-        NSString * baseUrlString = newsletterDiscoveryBaseUrl;
-
-        if (hrefElements.count == 0 || spanElements.count == 0) {
-            ULog(@"Refreshing newsletters failed: zero arrays returned: href elements: %@ span elements: %@", hrefElements, spanElements);
-            return;
-        }
-        if (hrefElements.count != spanElements.count) {
-            ULog(@"Refreshing newsletters failed: non matching href and span counts.");
-            return;
-        }
-        
-        NSMutableArray *newsLetterUrls = [NSMutableArray array];
-        [hrefElements enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            TFHppleElement * element = obj;
-            NSString * url = [baseUrlString stringByAppendingPathComponent:element.firstChild.content];
-            url = [url stringByReplacingOccurrencesOfString:@"http:/" withString:@"http://"];
-            [newsLetterUrls addObject:url];
-        }];
-        
-        NSMutableArray *newsLetterNames = [NSMutableArray array];
-        [spanElements enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            TFHppleElement * element = obj;
-            [newsLetterNames addObject:element.firstChild.content];
-        }];
-
-        PFQuery * query = [self queryForTable];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *newsletterObjects, NSError *error) {
-            @strongify(self);
-          if (error) {
-              // Log details of the failure
-              ULog(@"Error: %@ %@", error, [error userInfo]);
-              return;
-          }
-          // The find succeeded.
-          NSLog(@"Successfully retrieved %d newsletters.", newsletterObjects.count);
-          
-          for (SBSNewsLetter * obj in newsletterObjects) {
-              if([newsLetterNames containsObject:obj.name] && [newsLetterUrls containsObject:obj.url]) {
-                  //This one is not updated
-                  NSUInteger index = [newsLetterNames indexOfObject:obj.name];
-                  [newsLetterNames removeObjectAtIndex:index];
-                  [newsLetterUrls removeObjectAtIndex:index];
-              } else if ([newsLetterNames containsObject:obj.name]) {
-                  NSUInteger index = [newsLetterNames indexOfObject:obj.name];
-                  NSString *newUrl = [newsLetterUrls objectAtIndex:index];
-                  
-                  [newsLetterNames removeObjectAtIndex:index];
-                  [newsLetterUrls removeObjectAtIndex:index];
-                  
-                  obj.url = newUrl;
-                  [obj saveInBackground];
-              } else if([newsLetterUrls containsObject:obj.url]) {
-                  NSUInteger index = [newsLetterNames indexOfObject:obj.url];
-                  NSString *newName = [newsLetterNames objectAtIndex:index];
-
-                  [newsLetterNames removeObjectAtIndex:index];
-                  [newsLetterUrls removeObjectAtIndex:index];
-                  
-                  obj.name = newName;
-                  [obj saveInBackground];
-              } else {
-                  [obj deleteInBackground];
-              }
-          }
-          
-          for (NSUInteger index = 0; index < newsLetterNames.count; index++) {
-              SBSNewsLetter *obj = [[SBSNewsLetter alloc]init];
-              obj.name = [newsLetterNames objectAtIndex:index];
-              obj.url = [newsLetterUrls objectAtIndex:index];
-
-              [obj saveInBackground];
-          }
-          [self loadObjects];
-        }];
     }];
+    
+    [self.navigationController popToViewController:self animated:YES];
+}
 
+-(void)updateNewsLetter:(SBSNewsLetter *)updatedNewsLetter {
+    @weakify(self);
+    [updatedNewsLetter saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
+        if (succeeded) {
+            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
+            [self loadObjects];
+        } else {
+            ULog(@"Error while updating newsletter: %@", error);
+        }
+    }];
+    
+    [self.navigationController popToViewController:self animated:YES];
+}
+
+-(void)deleteNewsLetter:(SBSNewsLetter *)deletedNewsLetter {
+    @weakify(self);
+    [deletedNewsLetter deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        @strongify(self);
+        if (succeeded) {
+            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
+            [self loadObjects];
+        } else {
+            ULog(@"Error while deleting newsletter: %@", error);
+        }
+    }];
+    
+    [self.navigationController popToViewController:self animated:YES];
 }
 
 #pragma mark - Parse
@@ -242,6 +170,11 @@
     // Configure the cell
     cell.textLabel.text = [newsletter.name capitalizedString];
     cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Published: %@", nil), [[SBSStyle longStyleDateFormatter] stringFromDate:newsletter.publishedAt]];
+    if ([[SBSSecurity instance] currentUserStaffUser]) {
+        cell.accessoryType = UITableViewCellAccessoryDetailButton;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -256,10 +189,20 @@
     [self.navigationController pushViewController:newsletterViewController animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    SBSEditNewsLetterViewController *newsletterVC = [[SBSEditNewsLetterViewController alloc]init];
+    newsletterVC.delegate = self;
+    newsletterVC.newsletter = (SBSNewsLetter *)[self objectAtIndexPath:indexPath];
+    [self.navigationController pushViewController:newsletterVC animated:YES];
+}
+
+
 #pragma mark - Listen for security role changes
 
 -(void)userRoleChanged:(NSNotification *)notification {
     [self updateBarButtonItemAnimated:YES];
+    [self loadObjects];
 }
 
 
