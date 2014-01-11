@@ -66,6 +66,7 @@
 		4ADFE4E816A0A36100EDAD2A /* SBSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */; };
 		4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AEC503A1786DDE500EB1A05 /* Media.xcassets */; };
 		4AF4A0B316A86DA600493C20 /* provisiontype in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4A0B216A86DA600493C20 /* provisiontype */; };
+		4AFECD241881368A004E711D /* NSString+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFECD231881368A004E711D /* NSString+SBS.m */; };
 		4C51EF1CA27E4DCAB75F381F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEA4D0C50CC4385A21F5C1F /* libPods.a */; };
 		6332375415E438E900AE2736 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332375315E438E900AE2736 /* libsqlite3.dylib */; };
 		6372FF531613CC3C002132AF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF521613CC3C002132AF /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -184,6 +185,8 @@
 		4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSStyle.m; sourceTree = "<group>"; };
 		4AEC503A1786DDE500EB1A05 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = SebastiaanSchool/Media.xcassets; sourceTree = "<group>"; };
 		4AF4A0B216A86DA600493C20 /* provisiontype */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = provisiontype; sourceTree = "<group>"; };
+		4AFECD221881368A004E711D /* NSString+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBS.h"; sourceTree = "<group>"; };
+		4AFECD231881368A004E711D /* NSString+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBS.m"; sourceTree = "<group>"; };
 		6332375315E438E900AE2736 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6372FF521613CC3C002132AF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6372FF551613CC42002132AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -386,6 +389,8 @@
 				4AA0A97E1730E834005D9BD0 /* NSDate+JLDateAdditions.m */,
 				4A9C9B6118082479006442E0 /* UIResponder+SBS.h */,
 				4A9C9B6218082479006442E0 /* UIResponder+SBS.m */,
+				4AFECD221881368A004E711D /* NSString+SBS.h */,
+				4AFECD231881368A004E711D /* NSString+SBS.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				4A0124B916FCFDA700F744D6 /* SBSEditBulletinViewController.m in Sources */,
 				4A4997CF16FEF65400B8A729 /* SBSAgendaItem.m in Sources */,
 				4A4997D216FEF68600B8A729 /* SBSBulletin.m in Sources */,
+				4AFECD241881368A004E711D /* NSString+SBS.m in Sources */,
 				4A31C73517E870FA005FB021 /* SBSButton.m in Sources */,
 				4A4997D516FEF6AB00B8A729 /* SBSContactItem.m in Sources */,
 				4A4997D816FEF6CF00B8A729 /* SBSNewsLetter.m in Sources */,
@@ -715,7 +721,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};

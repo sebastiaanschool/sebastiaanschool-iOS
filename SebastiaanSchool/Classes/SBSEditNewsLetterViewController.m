@@ -64,9 +64,12 @@
     }];
     
     RACSignal *formValid = [RACSignal
-                            combineLatest:@[self.nameTextView.rac_textSignal]
-                            reduce:^(NSString * title) {
-                                return @(title.length > 0);
+                            combineLatest:@[
+                                self.nameTextView.rac_textSignal,
+                                self.urlTextView.rac_textSignal
+                            ]
+                            reduce:^(NSString * title, NSString * url) {
+                                return @(title.length > 0 && [url isValidURL]);
                             }];
     [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];
 
