@@ -100,6 +100,9 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+	[PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    [self trackEvent:@"Handling background fetch."];
+
     if (userInfo == nil) {
         completionHandler(UIBackgroundTaskInvalid);
         return;
@@ -132,8 +135,10 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     // to display the notification.
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
+            NSLog(@"Error handling background fetch for notification: %@", error);
             completionHandler(UIBackgroundFetchResultFailed);
         } else {
+            NSLog(@"Handling background fetch succeeded.");
             completionHandler(UIBackgroundFetchResultNewData);
         }
     }];
