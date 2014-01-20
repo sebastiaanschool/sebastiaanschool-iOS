@@ -476,6 +476,9 @@
 					09ABC06C13A1D52D009C3FCF = {
 						DevelopmentTeam = T4CMEHXPLL;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};

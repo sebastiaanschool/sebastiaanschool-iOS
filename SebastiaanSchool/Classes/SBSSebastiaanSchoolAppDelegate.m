@@ -99,6 +99,46 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     application.applicationIconBadgeNumber = 0;
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    if (userInfo == nil) {
+        completionHandler(UIBackgroundTaskInvalid);
+        return;
+    }
+    
+    PFQuery *query;
+    // Extract the notification data
+    NSNumber * notificationType = [userInfo objectForKey:@"t"];
+    switch ((SBSNotificationType)notificationType.intValue) {
+        case SBSNotificationTypeBulletin:
+            query = [PFQuery queryWithClassName:[SBSBulletin parseClassName]];
+            [query orderByDescending:@"createdAt"];
+            break;
+        case SBSNotificationTypeNewsletter:
+            query = [PFQuery queryWithClassName:[SBSNewsLetter parseClassName]];
+            [query orderByDescending:@"publishedAt"];
+            break;
+        case SBSNotificationTypeInfo:
+        case SBSNotificationTypeStaff:
+            NSLog(@"Unhandled notification: %i", notificationType.intValue);
+            completionHandler(UIBackgroundTaskInvalid);
+            return;
+            break;
+    }
+    
+    // Force the query to hit the network, but populate the cache on success.
+    query.cachePolicy = kPFCachePolicyNetworkOnly;
+    
+    // Execute the query in the background. When it's done, tell iOS that the content has been fetched & it's time
+    // to display the notification.
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            completionHandler(UIBackgroundFetchResultFailed);
+        } else {
+            completionHandler(UIBackgroundFetchResultNewData);
+        }
+    }];
+}
+
 - (void)handleRemoteNotification:(NSDictionary *) notificationPayload {
     if (notificationPayload == nil) {
         return;
