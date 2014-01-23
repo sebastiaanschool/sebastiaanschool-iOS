@@ -1,6 +1,5 @@
 PODS:
   - Facebook-iOS-SDK (3.11.0)
-  - hpple (0.2.0)
   - OCMock (2.2.2)
   - Parse-iOS-SDK (1.2.17):
     - Facebook-iOS-SDK (~> 3.7)
@@ -15,7 +14,6 @@ PODS:
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
-  - hpple
   - OCMock
   - Parse-iOS-SDK
   - ReactiveCocoa
@@ -24,7 +22,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
-  hpple: dde62f905f482bbec50186280d1a1be2c881241b
   OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
   Parse-iOS-SDK: f57fc3a7b80c7135d5acdc55a0fbc3ab2d1d5027
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae

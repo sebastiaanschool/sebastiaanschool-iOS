@@ -11,8 +11,6 @@
 
 #import "SBSNewsLetter.h"
 
-#import "TFHpple.h"
-
 @interface SBSNewsLetterTableViewController ()
 
 @end
