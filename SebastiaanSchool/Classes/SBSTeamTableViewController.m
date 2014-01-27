@@ -315,6 +315,10 @@
     mc.mailComposeDelegate = self;
     [mc setMessageBody:messageBody isHTML:NO];
     [mc setToRecipients:toRecipents];
+    if (IS_IOS_7) {
+        //The navigation tint color is not propagated by UIAppearance for some reason. So setting it manually.
+        mc.navigationBar.tintColor = [UIColor whiteColor];
+    }
     
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
