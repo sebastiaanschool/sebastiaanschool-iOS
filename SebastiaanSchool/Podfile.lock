@@ -1,16 +1,16 @@
 PODS:
-  - Facebook-iOS-SDK (3.11.0)
+  - Facebook-iOS-SDK (3.11.1)
   - OCMock (2.2.2)
-  - Parse-iOS-SDK (1.2.17):
+  - Parse-iOS-SDK (1.2.18):
     - Facebook-iOS-SDK (~> 3.7)
-  - ReactiveCocoa (2.1.8):
+  - ReactiveCocoa (2.2.3):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/Core (2.1.8):
+  - ReactiveCocoa/Core (2.2.3):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.1.8)
-  - TestFlightSDK (2.2.0-noadid-beta)
-  - TTTAttributedLabel (1.8.0)
+  - ReactiveCocoa/no-arc (2.2.3)
+  - TestFlightSDK (2.2.1-beta)
+  - TTTAttributedLabel (1.8.1)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
@@ -21,11 +21,11 @@ DEPENDENCIES:
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
-  Facebook-iOS-SDK: 2eb12f9ed04f3d3956f0a4fb0e4e60c824dcd101
+  Facebook-iOS-SDK: 42a1de39170b858d675c2453d8aace55c51be2bb
   OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
-  Parse-iOS-SDK: f57fc3a7b80c7135d5acdc55a0fbc3ab2d1d5027
-  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
-  TestFlightSDK: 64f333f91ab9d11985e6c4c188a71b22cc528097
-  TTTAttributedLabel: cc759a194a485c1fdf2446bf2ee7a55bada1f08d
+  Parse-iOS-SDK: 48bfd538a107b6e1f29eebe59fa80c0f0b844dd1
+  ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
+  TestFlightSDK: 4249c2f70e621bcfbdebf019073169c8fe36be13
+  TTTAttributedLabel: 3a571d73e055f4a79c304240598e4bfd199238e4
 
 COCOAPODS: 0.29.0
