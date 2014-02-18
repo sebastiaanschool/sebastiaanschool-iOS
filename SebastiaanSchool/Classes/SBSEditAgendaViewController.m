@@ -151,7 +151,7 @@
         [self.delegate deleteAgendaItem:self.agendaItem];
     }];
 
-    [self displayActionSheet:actionSheet];
+    [[UIApplication sharedApplication] sendAction:@selector(displayActionSheet:) to:nil from:actionSheet forEvent:nil];
 }
 
 - (void)startDatePickerChanged:(id)sender {

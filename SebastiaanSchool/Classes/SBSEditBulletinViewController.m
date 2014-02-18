@@ -131,7 +131,7 @@
         [self.delegate deleteBulletin:self.bulletin];
     }];
 
-    [self displayActionSheet:actionSheet];
+    [[UIApplication sharedApplication] sendAction:@selector(displayActionSheet:) to:nil from:actionSheet forEvent:nil];
 }
 
 #pragma mark - Text view delegate

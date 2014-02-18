@@ -202,7 +202,7 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     }
 }
 
-#pragma mark - UIResponder+SBS overrides
+#pragma mark - UIResponder+SBS
 
 - (void) displayActionSheet:(UIActionSheet *)actionSheet {
     [actionSheet showInView:self.rootViewController.view];
