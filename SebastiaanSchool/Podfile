@@ -1,5 +1,5 @@
 platform :ios, '5'
-pod 'TestFlightSDK'
+pod 'TestFlightSDK', '2.2.1'
 pod 'Facebook-iOS-SDK'
 pod 'Parse-iOS-SDK'
 pod 'ReactiveCocoa'
