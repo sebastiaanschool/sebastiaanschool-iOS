@@ -3,13 +3,13 @@ PODS:
   - OCMock (2.2.3)
   - Parse-iOS-SDK (1.2.18):
     - Facebook-iOS-SDK (~> 3.7)
-  - ReactiveCocoa (2.2.3):
+  - ReactiveCocoa (2.2.4):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/Core (2.2.3):
+  - ReactiveCocoa/Core (2.2.4):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.2.3)
-  - TestFlightSDK (2.2.1)
+  - ReactiveCocoa/no-arc (2.2.4)
+  - TestFlightSDK (3.0.0)
   - TTTAttributedLabel (1.8.1)
 
 DEPENDENCIES:
@@ -17,15 +17,15 @@ DEPENDENCIES:
   - OCMock
   - Parse-iOS-SDK
   - ReactiveCocoa
-  - TestFlightSDK (= 2.2.1)
+  - TestFlightSDK
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   Facebook-iOS-SDK: c09f7d80db5c48170ff834bc03ebe774c49d1f5b
   OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
   Parse-iOS-SDK: 48bfd538a107b6e1f29eebe59fa80c0f0b844dd1
-  ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
-  TestFlightSDK: 030fa8a1bc8aa9ba5c9ae1be05ceaba775368c0c
+  ReactiveCocoa: 953a45dda30674fe704d1d9c77cc874141742f47
+  TestFlightSDK: 71e3e78d3a46144dbad975a4bf80a14dae6a818a
   TTTAttributedLabel: 3a571d73e055f4a79c304240598e4bfd199238e4
 
 COCOAPODS: 0.29.0
