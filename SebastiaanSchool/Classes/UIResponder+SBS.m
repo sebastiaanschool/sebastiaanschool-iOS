@@ -17,6 +17,12 @@
 
 @implementation UIResponder (SBS)
 
+- (void) displayActionSheet:(UIActionSheet *)actionsheet {
+    if (DEBUG_LOGGING) {
+        NSLog(@"UIResponder forward %@ -> %@", self.class, [self nextResponder].class);
+    }
+    [[self nextResponder] displayActionSheet:actionsheet];
+}
 
 - (void)trackEvent:(NSString *)name {
     [PFAnalytics trackEvent:name];

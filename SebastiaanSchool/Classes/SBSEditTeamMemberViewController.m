@@ -136,7 +136,7 @@
     }];
 
     
-    [[UIApplication sharedApplication] sendAction:@selector(displayActionSheet:) to:nil from:actionSheet forEvent:nil];
+    [self displayActionSheet:actionSheet];
 }
 
 @end
