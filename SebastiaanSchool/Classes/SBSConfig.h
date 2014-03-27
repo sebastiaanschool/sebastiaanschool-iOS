@@ -13,7 +13,7 @@
 //
 //
 
-#import <Parse/Parse.h>
+#import <Parse.h>
 
 
 extern NSString * const SBSNewsletterDiscoveryBaseUrl;

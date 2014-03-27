@@ -5,7 +5,9 @@ pod 'Parse-iOS-SDK'
 pod 'ReactiveCocoa'
 pod 'TTTAttributedLabel'
 
-target :test do
+target :test, :exclusive => true do 
+	pod 'SHTestCaseAdditions' 
+	pod "KIF/XCTest", :git => "https://github.com/tonyd256/KIF", :branch => "xctest" 
     link_with 'SebastiaanSchool Tests'
 
     pod 'OCMock'
