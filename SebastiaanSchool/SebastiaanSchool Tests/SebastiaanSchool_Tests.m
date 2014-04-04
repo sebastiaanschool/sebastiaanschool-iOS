@@ -18,7 +18,10 @@
 
 #import <KIF.h>
 
+#import "KIFUITestActor+SBSTestActorAdditions.h"
+
 #import "SBSConfig.h"
+#import "SBSStyle.h"
 
 @interface SebastiaanSchool_Tests : KIFTestCase
 
@@ -40,38 +43,40 @@
 
 - (void)testExample
 {
-    id mock = [OCMockObject mockForClass:[SBSConfig class]];
-#warning XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-    [mock verify];
+    [tester tapViewWithAccessibilityLabel:@"Staff"];
     
-    [tester waitForViewWithAccessibilityLabel:@"Seb@stiaan"];
+    if ([tester existsViewWithAccessibilityLabel:@"Sign out"]) {
+        [tester tapViewWithAccessibilityLabel:@"Sign out"];
+    }
     
-    [tester tapViewWithAccessibilityLabel:@"Agenda"];
-    [tester waitForViewWithAccessibilityLabel:@"Agenda"];
-    [tester tapViewWithAccessibilityLabel:@"Back"];
-    [tester waitForViewWithAccessibilityLabel:@"Seb@stiaan"];
+    [tester tapViewWithAccessibilityLabel:@"Sign in..."];
     
-    [tester tapViewWithAccessibilityLabel:@"Team"];
-    [tester waitForViewWithAccessibilityLabel:@"Team"];
-    [tester tapViewWithAccessibilityLabel:@"Back"];
-    [tester waitForViewWithAccessibilityLabel:@"Seb@stiaan"];
+    [tester tapScreenAtPoint:CGPointMake(50, 220)];
+    [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
+    [tester tapScreenAtPoint:CGPointMake(50, 260)];
+    [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
+    [tester tapViewWithAccessibilityLabel:@"Log in"];
 
-    [tester tapViewWithAccessibilityLabel:@"Call"];
-    [tester waitForTappableViewWithAccessibilityLabel:@"OK"];
-    [tester tapViewWithAccessibilityLabel:@"OK"];
-    [tester waitForViewWithAccessibilityLabel:@"Seb@stiaan"];
-
-    [tester tapViewWithAccessibilityLabel:@"Newsletter"];
-    [tester waitForViewWithAccessibilityLabel:@"Newsletter"];
-    [tester tapViewWithAccessibilityLabel:@"Back"];
-    [tester waitForViewWithAccessibilityLabel:@"Seb@stiaan"];
-    
     [tester tapViewWithAccessibilityLabel:@"Bulletin"];
-    [tester waitForViewWithAccessibilityLabel:@"Bulletin"];
-    [tester tapViewWithAccessibilityLabel:@"Back"];
-    [tester waitForViewWithAccessibilityLabel:@"Seb@stiaan"];
-    
+    [tester tapViewWithAccessibilityLabel:@"Add"];
 
+    NSString *bulletinTitle = @"This is a demo";
+    NSString *bulletinBody = @"I will now show you how fast I can type with this KIF stuff. Isn't it awesome? ................. :)";
+    NSString *bulletinPublishedDate = [NSString stringWithFormat:@"Published: %@", [[SBSStyle longStyleDateFormatter] stringFromDate: [NSDate date]]];
+    [tester enterText:bulletinTitle intoViewWithAccessibilityLabel: @"Message title input textview"];
+    [tester enterText:bulletinBody intoViewWithAccessibilityLabel:@"Message body input textview"];
+
+    [tester tapViewWithAccessibilityLabel:@"Save"];
+    
+    [tester tapViewWithAccessibilityLabel:[NSString stringWithFormat:@"%@, %@, %@", bulletinTitle, bulletinPublishedDate, bulletinBody]];
+    [tester tapViewWithAccessibilityLabel:@"Delete"];
+    [tester tapViewWithAccessibilityLabel:@"Delete"];
+    [tester waitForAbsenceOfViewWithAccessibilityLabel:[NSString stringWithFormat:@"%@, %@, %@", bulletinTitle, bulletinPublishedDate, bulletinBody]];
+    
+//    [tester waitForViewWithAccessibilityLabel:@"Test push"];
+//    [tester waitForTimeInterval:1];
+    [tester tapViewWithAccessibilityLabel:@"Back"];
+    [tester waitForTimeInterval:1];
 }
 
 @end

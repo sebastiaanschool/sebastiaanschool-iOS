@@ -85,7 +85,9 @@
     
     [SBSStyle applyStyleToTextView:self.titleTextView];
     self.titleTextView.font = [SBSStyle titleFont];
+    self.titleTextView.accessibilityLabel = NSLocalizedString(@"Message title input textview", nil);
     [SBSStyle applyStyleToTextView:self.bodyTextView];
+    self.bodyTextView.accessibilityLabel = NSLocalizedString(@"Message body input textview", nil);
 
     [self updateLayout];
     

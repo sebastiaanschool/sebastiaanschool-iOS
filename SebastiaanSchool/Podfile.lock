@@ -1,8 +1,8 @@
 PODS:
   - Facebook-iOS-SDK (3.13.0)
-  - KIF/Core (2.0.0)
-  - KIF/XCTest (2.0.0):
-    - KIF/Core
+  - KIF (3.0.0):
+    - KIF/XCTest
+  - KIF/XCTest (3.0.0)
   - OCMock (2.2.3)
   - Parse-iOS-SDK (1.2.18):
     - Facebook-iOS-SDK (~> 3.7)
@@ -20,7 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
-  - KIF/XCTest (from `https://github.com/tonyd256/KIF`, branch `xctest`)
+  - KIF (~> 3.0)
   - OCMock
   - Parse-iOS-SDK
   - ReactiveCocoa
@@ -28,14 +28,9 @@ DEPENDENCIES:
   - TestFlightSDK
   - TTTAttributedLabel
 
-EXTERNAL SOURCES:
-  KIF:
-    :branch: xctest
-    :git: https://github.com/tonyd256/KIF
-
 SPEC CHECKSUMS:
   Facebook-iOS-SDK: 5788541337dc88265bc940cb5ffb05915f9b64e3
-  KIF: 09880fd0895146aa90b92f8d77bf5ec42f25622d
+  KIF: 33a866cef6b6d0a58aa1b0b3f08ca8bd53319314
   OCMock: 74e4ddbcef134170dcc844f91c691f13868075d7
   Parse-iOS-SDK: 48bfd538a107b6e1f29eebe59fa80c0f0b844dd1
   ReactiveCocoa: 1f6265f9d521923d3efcc37b00722cefc16df269
