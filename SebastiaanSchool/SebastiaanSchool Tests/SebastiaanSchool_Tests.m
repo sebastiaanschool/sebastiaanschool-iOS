@@ -41,8 +41,7 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
+- (void)beforeAll {
     [tester tapViewWithAccessibilityLabel:@"Staff"];
     
     if ([tester existsViewWithAccessibilityLabel:@"Sign out"]) {
@@ -56,7 +55,10 @@
     [tester tapScreenAtPoint:CGPointMake(50, 260)];
     [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
     [tester tapViewWithAccessibilityLabel:@"Log in"];
+}
 
+- (void)testAddingBulletin
+{
     [tester tapViewWithAccessibilityLabel:@"Bulletin"];
     [tester tapViewWithAccessibilityLabel:@"Add"];
 
@@ -73,8 +75,6 @@
     [tester tapViewWithAccessibilityLabel:@"Delete"];
     [tester waitForAbsenceOfViewWithAccessibilityLabel:[NSString stringWithFormat:@"%@, %@, %@", bulletinTitle, bulletinPublishedDate, bulletinBody]];
     
-//    [tester waitForViewWithAccessibilityLabel:@"Test push"];
-//    [tester waitForTimeInterval:1];
     [tester tapViewWithAccessibilityLabel:@"Back"];
     [tester waitForTimeInterval:1];
 }
