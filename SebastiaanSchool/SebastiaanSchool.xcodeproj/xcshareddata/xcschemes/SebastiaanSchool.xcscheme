@@ -53,6 +53,14 @@
             argument = "-enableStaffLogin YES"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-AppleLanguages (Dutch)"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-AppleLocale nl_NL"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
    </TestAction>
    <LaunchAction

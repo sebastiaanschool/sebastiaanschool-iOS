@@ -29,53 +29,41 @@
 
 @implementation SebastiaanSchool_Tests
 
-- (void)setUp
-{
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
 - (void)beforeAll {
-    [tester tapViewWithAccessibilityLabel:@"Staff"];
+    [tester tapViewWithAccessibilityLabel:@"Personeel"];
     
-    if ([tester existsViewWithAccessibilityLabel:@"Sign out"]) {
-        [tester tapViewWithAccessibilityLabel:@"Sign out"];
+    if ([tester existsViewWithAccessibilityLabel:@"Uitloggen"]) {
+        [tester tapViewWithAccessibilityLabel:@"Uitloggen"];
     }
     
-    [tester tapViewWithAccessibilityLabel:@"Sign in..."];
+    [tester tapViewWithAccessibilityLabel:@"Inloggen..."];
     
     [tester tapScreenAtPoint:CGPointMake(50, 220)];
     [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
     [tester tapScreenAtPoint:CGPointMake(50, 260)];
     [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
-    [tester tapViewWithAccessibilityLabel:@"Log in"];
+    [tester tapViewWithAccessibilityLabel:@"Inloggen"];
 }
 
 - (void)testAddingBulletin
 {
-    [tester tapViewWithAccessibilityLabel:@"Bulletin"];
-    [tester tapViewWithAccessibilityLabel:@"Add"];
+    [tester tapViewWithAccessibilityLabel:@"Mededeling"];
+    [tester tapViewWithAccessibilityLabel:@"Voeg toe"];
 
     NSString *bulletinTitle = @"This is a demo";
     NSString *bulletinBody = @"I will now show you how fast I can type with this KIF stuff. Isn't it awesome? ................. :)";
-    NSString *bulletinPublishedDate = [NSString stringWithFormat:@"Published: %@", [[SBSStyle longStyleDateFormatter] stringFromDate: [NSDate date]]];
+    NSString *bulletinPublishedDate = [NSString stringWithFormat:@"Gepubliceerd: %@", [[SBSStyle longStyleDateFormatter] stringFromDate: [NSDate date]]];
     [tester enterText:bulletinTitle intoViewWithAccessibilityLabel: @"Message title input textview"];
     [tester enterText:bulletinBody intoViewWithAccessibilityLabel:@"Message body input textview"];
 
-    [tester tapViewWithAccessibilityLabel:@"Save"];
+    [tester tapViewWithAccessibilityLabel:@"Bewaar"];
     
     [tester tapViewWithAccessibilityLabel:[NSString stringWithFormat:@"%@, %@, %@", bulletinTitle, bulletinPublishedDate, bulletinBody]];
-    [tester tapViewWithAccessibilityLabel:@"Delete"];
-    [tester tapViewWithAccessibilityLabel:@"Delete"];
+    [tester tapViewWithAccessibilityLabel:@"Verwijderen"];
+    [tester tapViewWithAccessibilityLabel:@"Verwijderen"];
     [tester waitForAbsenceOfViewWithAccessibilityLabel:[NSString stringWithFormat:@"%@, %@, %@", bulletinTitle, bulletinPublishedDate, bulletinBody]];
     
-    [tester tapViewWithAccessibilityLabel:@"Back"];
+    [tester tapViewWithAccessibilityLabel:@"Terug"];
     [tester waitForTimeInterval:1];
 }
 
