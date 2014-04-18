@@ -1,0 +1,16 @@
+language: objective-c
+xcode_workspace: SebastiaanSchool/SebastiaanSchool.xcworkspace # path to your xcworkspace folder
+xcode_scheme: SebastiaanSchool
+xcode_sdk: iphonesimulator
+
+before_script:
+    - export LANG=en_US.UTF-8
+
+before_install:
+#install:
+#    - "brew update"
+#    - "brew uninstall xctool && brew install xctool --HEAD"
+#    - "gem install cocoapods"
+    - "gem update cocoapods"
+#    - "cd $TRAVIS_BUILD_DIR/iOS/SebastiaanSchool/ && pod install"
+# script: "xctool -sdk iphonesimulator -arch i386 test -freshSimulator -freshInstall"
