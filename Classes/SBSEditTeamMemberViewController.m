@@ -47,9 +47,15 @@
     self.detailTextView.text = self.contact.detailText;
     self.emailTextView.text = self.contact.email;
     
-    @weakify(self);
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
-    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    RACSignal *formValid = [RACSignal
+                            combineLatest:@[self.displayNameTextView.rac_textSignal, self.detailTextView.rac_textSignal]
+                            reduce:^(NSString * displayName, NSString * detail) {
+                                return @(displayName.length > 0 && detail.length > 0);
+                            }];
+
+    @weakify(self);
+    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithEnabled:formValid signalBlock:^RACSignal *(id input) {
         @strongify(self);
         SBSContactItem *contact = self.contact;
         if (self.contact == nil) {
@@ -70,13 +76,6 @@
         return RACSignal.empty;
     }];
 
-    RACSignal *formValid = [RACSignal
-        combineLatest:@[self.displayNameTextView.rac_textSignal, self.detailTextView.rac_textSignal]
-        reduce:^(NSString * displayName, NSString * detail) {
-            return @(displayName.length > 0 && detail.length > 0);
-        }];
-    [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];
-    
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
     

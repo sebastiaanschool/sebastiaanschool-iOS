@@ -44,9 +44,18 @@
     self.nameTextView.text = self.newsletter.name;
     self.urlTextView.text = self.newsletter.url;
 
+    RACSignal *formValid = [RACSignal
+                            combineLatest:@[
+                                            self.nameTextView.rac_textSignal,
+                                            self.urlTextView.rac_textSignal
+                                            ]
+                            reduce:^(NSString * title, NSString * url) {
+                                return @(title.length > 0 && [url isValidURL]);
+                            }];
+
     @weakify(self);
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
-    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithEnabled:formValid signalBlock:^RACSignal *(id input) {
         @strongify(self);
         SBSNewsLetter *newsletter = self.newsletter;
         if (self.newsletter == nil) {
@@ -70,16 +79,6 @@
         return [RACSignal empty];
     }];
     
-    RACSignal *formValid = [RACSignal
-                            combineLatest:@[
-                                self.nameTextView.rac_textSignal,
-                                self.urlTextView.rac_textSignal
-                            ]
-                            reduce:^(NSString * title, NSString * url) {
-                                return @(title.length > 0 && [url isValidURL]);
-                            }];
-    [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];
-
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
     

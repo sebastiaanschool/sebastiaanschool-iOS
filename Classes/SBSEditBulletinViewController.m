@@ -44,9 +44,15 @@
     self.titleTextView.text = self.bulletin.title;
     self.bodyTextView.text = self.bulletin.body;
 
+    RACSignal *formValid = [RACSignal
+                            combineLatest:@[self.titleTextView.rac_textSignal]
+                            reduce:^(NSString * title) {
+                                return @(title.length > 0);
+                            }];
+
     @weakify(self);
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
-    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    rightBarButtonItem.rac_command = [[RACCommand alloc] initWithEnabled:formValid signalBlock:^RACSignal *(id input) {
         @strongify(self);
         SBSBulletin *bulletin = self.bulletin;
         if (self.bulletin == nil) {
@@ -69,13 +75,6 @@
 
         return [RACSignal empty];
     }];
-    
-    RACSignal *formValid = [RACSignal
-                            combineLatest:@[self.titleTextView.rac_textSignal]
-                            reduce:^(NSString * title) {
-                                return @(title.length > 0);
-                            }];
-    [rightBarButtonItem rac_liftSelector:@selector(setEnabled:) withSignals:formValid, nil];
 
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
