@@ -20,7 +20,7 @@
 {
     UIView *view = nil;
     UIAccessibilityElement *element = nil;
-    return [self existsAccessibilityElement:&element view:&view withLabel:label value:nil traits:UIAccessibilityTraitNone tappable:YES];
+    return [self existsAccessibilityElement:&element view:&view withLabel:label value:nil traits:UIAccessibilityTraitNone tappable:NO];
 }
 
 - (BOOL)existsAccessibilityElement:(UIAccessibilityElement **)element view:(out UIView **)view withLabel:(NSString *)label value:(NSString *)value traits:(UIAccessibilityTraits)traits tappable:(BOOL)mustBeTappable

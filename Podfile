@@ -1,4 +1,4 @@
-platform :ios, '5'
+platform :ios, '6'
 pod 'TestFlightSDK'
 pod 'Facebook-iOS-SDK'
 pod 'Parse-iOS-SDK'

@@ -21,7 +21,7 @@
     NSUInteger flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     NSDateComponents *components = [[NSCalendar currentCalendar] components:flags
                                                                    fromDate:[NSDate date]];
-    NSString *stringDate = [NSString stringWithFormat:@"%d/%d/%d", components.day, components.month, components.year];
+    NSString *stringDate = [NSString stringWithFormat:@"%ld/%ld/%ld", (long)components.day, (long)components.month, (long)components.year];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
