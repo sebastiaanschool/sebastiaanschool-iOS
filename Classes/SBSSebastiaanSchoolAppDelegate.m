@@ -15,6 +15,8 @@
 #import "SBSNewsLetter.h"
 #import "SBSConfig.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 typedef NS_ENUM (NSInteger, SBSNotificationType) {
     SBSNotificationTypeInfo = 0,
     SBSNotificationTypeNewsletter = 1,
@@ -54,7 +56,8 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
+    [Crashlytics startWithAPIKey:@"cae4ee7fc418351282195f94a9b4931ac0b04ae7"];
 
     // Apply UIAppearance
     if (IS_IOS_7) {
