@@ -78,7 +78,7 @@
     [self.activityIndicator stopAnimating];
     @weakify(self);
     if (IS_IOS_7) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             @strongify(self);
             [self.webView.scrollView setContentOffset:CGPointMake(0.0f,-self.topLayoutGuide.length) animated:YES];
         });
