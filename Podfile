@@ -1,7 +1,7 @@
 platform :ios, '6'
 pod 'TestFlightSDK'
 pod 'Facebook-iOS-SDK'
-pod 'Parse-iOS-SDK'
+pod 'Parse'
 pod 'ReactiveCocoa'
 pod 'TTTAttributedLabel'
 
