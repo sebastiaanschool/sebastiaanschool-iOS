@@ -18,8 +18,6 @@
 
 #import <KIF.h>
 
-#import "KIFUITestActor+SBSTestActorAdditions.h"
-
 #import "SBSConfig.h"
 #import "SBSStyle.h"
 
@@ -32,7 +30,7 @@
 - (void)beforeAll {
     [tester tapViewWithAccessibilityLabel:@"Personeel"];
     
-    if ([tester existsViewWithAccessibilityLabel:@"Uitloggen"]) {
+    if ([tester tryFindingViewWithAccessibilityLabel:@"Uitloggen" error:nil]) {
         [tester tapViewWithAccessibilityLabel:@"Uitloggen"];
     }
     
@@ -51,7 +49,7 @@
     [tester tapViewWithAccessibilityLabel:@"Voeg toe"];
 
     NSString *bulletinTitle = @"This is a demo";
-    NSString *bulletinBody = @"I will now show you how fast I can type with this KIF stuff. Isn't it awesome? ................. :)";
+    NSString *bulletinBody = @"I will now show you how fast I can type with this KIF stuff. Isn't it awesome?";
     NSString *bulletinPublishedDate = [NSString stringWithFormat:@"Gepubliceerd: %@", [[SBSStyle longStyleDateFormatter] stringFromDate: [NSDate date]]];
     [tester enterText:bulletinTitle intoViewWithAccessibilityLabel: @"Message title input textview"];
     [tester enterText:bulletinBody intoViewWithAccessibilityLabel:@"Message body input textview"];

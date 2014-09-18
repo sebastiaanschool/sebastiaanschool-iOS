@@ -67,7 +67,6 @@
 		4ADFE4E816A0A36100EDAD2A /* SBSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */; };
 		4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AEC503A1786DDE500EB1A05 /* Media.xcassets */; };
 		4AF4A0B316A86DA600493C20 /* provisiontype in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4A0B216A86DA600493C20 /* provisiontype */; };
-		4AFE727818E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE727718E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.m */; };
 		4AFECD241881368A004E711D /* NSString+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFECD231881368A004E711D /* NSString+SBS.m */; };
 		4C51EF1CA27E4DCAB75F381F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEA4D0C50CC4385A21F5C1F /* libPods.a */; };
 		6332375415E438E900AE2736 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332375315E438E900AE2736 /* libsqlite3.dylib */; };
@@ -188,8 +187,6 @@
 		4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSStyle.m; sourceTree = "<group>"; };
 		4AEC503A1786DDE500EB1A05 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = SebastiaanSchool/Media.xcassets; sourceTree = "<group>"; };
 		4AF4A0B216A86DA600493C20 /* provisiontype */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = provisiontype; sourceTree = "<group>"; };
-		4AFE727618E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+SBSTestActorAdditions.h"; sourceTree = "<group>"; };
-		4AFE727718E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+SBSTestActorAdditions.m"; sourceTree = "<group>"; };
 		4AFECD221881368A004E711D /* NSString+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBS.h"; sourceTree = "<group>"; };
 		4AFECD231881368A004E711D /* NSString+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBS.m"; sourceTree = "<group>"; };
 		6332375315E438E900AE2736 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -328,8 +325,6 @@
 			children = (
 				4A6A4F0A18148CAD0080D686 /* SebastiaanSchool_Tests.m */,
 				4A6A4F0518148CAD0080D686 /* Supporting Files */,
-				4AFE727618E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.h */,
-				4AFE727718E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.m */,
 			);
 			path = "SebastiaanSchool Tests";
 			sourceTree = "<group>";
@@ -680,7 +675,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A6A4F0B18148CAD0080D686 /* SebastiaanSchool_Tests.m in Sources */,
-				4AFE727818E6CB6000804D7E /* KIFUITestActor+SBSTestActorAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
