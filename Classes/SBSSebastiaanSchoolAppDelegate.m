@@ -64,6 +64,7 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
         self.window.tintColor = [SBSStyle sebastiaanBlueColor];
         [[UINavigationBar appearance] setBarTintColor:[SBSStyle sebastiaanBlueColor]];
         [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor whiteColor] }];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     } else {
         [[UIButton appearance] setTintColor:[SBSStyle sebastiaanBlueColor]];
         [[UINavigationBar appearance] setTintColor:[SBSStyle sebastiaanBlueColor]];
