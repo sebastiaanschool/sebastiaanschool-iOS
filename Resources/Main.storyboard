@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="274" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zd-Tm-qPb" userLabel="yurlButton" customClass="SBSButton">
-                                <rect key="frame" x="316" y="234" width="268" height="51"/>
+                                <rect key="frame" x="308" y="234" width="276" height="51"/>
                                 <state key="normal" title="yurls">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="286" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m37-qk-KtV" userLabel="twitterButton" customClass="SBSButton">
-                                <rect key="frame" x="16" y="234" width="268" height="51"/>
+                                <rect key="frame" x="16" y="234" width="276" height="51"/>
                                 <state key="normal" title="twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -155,9 +155,9 @@
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="m37-qk-KtV" secondAttribute="height" id="dGa-Ss-xGF"/>
                             <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="leading" constant="16" id="fPW-NZ-PVI"/>
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="GMG-em-NRs" secondAttribute="width" id="h0E-Uv-JZP"/>
-                            <constraint firstItem="9Zd-Tm-qPb" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="centerXWithinMargins" constant="16" id="iue-kt-NVU"/>
+                            <constraint firstItem="9Zd-Tm-qPb" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="centerXWithinMargins" constant="8" id="iue-kt-NVU"/>
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="top" secondItem="m37-qk-KtV" secondAttribute="bottom" constant="8" id="jY5-xx-zpD"/>
-                            <constraint firstAttribute="centerXWithinMargins" secondItem="m37-qk-KtV" secondAttribute="trailing" constant="16" id="lI8-nJ-R0Y"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="m37-qk-KtV" secondAttribute="trailing" constant="8" id="lI8-nJ-R0Y"/>
                             <constraint firstItem="9Zd-Tm-qPb" firstAttribute="trailing" secondItem="oed-eV-eme" secondAttribute="trailingMargin" id="nvi-Rf-bm0"/>
                             <constraint firstItem="m37-qk-KtV" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="leadingMargin" id="uFi-xW-hO7"/>
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="2Gp-oP-saN" secondAttribute="height" id="vsk-iY-8iu"/>
