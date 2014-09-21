@@ -39,7 +39,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
     
     self.nameTextView.text = self.newsletter.name;
     self.urlTextView.text = self.newsletter.url;

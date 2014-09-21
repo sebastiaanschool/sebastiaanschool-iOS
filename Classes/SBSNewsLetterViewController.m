@@ -54,9 +54,6 @@
 {
     [super viewDidLoad];
     
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
-
-	// Do any additional setup after loading the view.
     NSURL *url = [NSURL URLWithString:self.newsLetter.url];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];

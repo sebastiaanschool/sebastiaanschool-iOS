@@ -53,8 +53,6 @@
     if (IS_IOS_7) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     }
-    
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

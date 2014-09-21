@@ -64,8 +64,6 @@
     }
 
     self.eventStore = [[EKEventStore alloc]init];
-	// Do any additional setup after loading the view.
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -41,7 +41,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
 
     self.displayNameTextView.text = self.contact.displayName;
     self.detailTextView.text = self.contact.detailText;

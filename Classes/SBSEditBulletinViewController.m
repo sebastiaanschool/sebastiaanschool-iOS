@@ -39,7 +39,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
     
     self.titleTextView.text = self.bulletin.title;
     self.bodyTextView.text = self.bulletin.body;

@@ -45,8 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self trackEvent:[NSString stringWithFormat:@"Loaded VC %@", self.title]];
-
     
     @weakify(self);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
