@@ -137,18 +137,6 @@ fi
 
 if [ "${DEBUG_LOGGING}" = 'YES' ];
 then
-
-echo "NSString * const DEVICE_IDENTIFIER_SELECTOR = @\"uniqueIdentifier\";"
-
-else
-
-echo "NSString * const DEVICE_IDENTIFIER_SELECTOR = @"";"
-
-fi
-
-
-if [ "${DEBUG_LOGGING}" = 'YES' ];
-then
 cat << EOF
 
 void bootstrapTestFlight(void) {
@@ -167,8 +155,6 @@ void bootstrapTestFlight(void) {
     }
 }
 EOF
-
-echo "NSString * const DEVICE_IDENTIFIER_SELECTOR = @"";"
 
 fi
 
