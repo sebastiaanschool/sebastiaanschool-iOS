@@ -158,28 +158,24 @@
         [self trackEvent:@"Yurls button tapped"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://sebastiaan.yurls.net"]];
     } else {
-        UIViewController *vc;
         if(sender == self.agendaButton) {
-            vc = [[SBSAgendaTableViewController alloc] init];
-            vc.title = NSLocalizedString(@"Agenda", nil);
+            [self performSegueWithIdentifier:@"agendaSegue" sender:self];
         } else if(sender == self.teamButton) {
-            vc = [[SBSTeamTableViewController alloc] init];
-            vc.title = NSLocalizedString(@"Team", nil);
+            [self performSegueWithIdentifier:@"teamSegue" sender:self];
         } else if(sender == self.newsButton) {
-            vc = [[SBSNewsLetterTableViewController alloc] init];
-            vc.title = NSLocalizedString(@"Newsletter", nil);
+            [self performSegueWithIdentifier:@"newsletterSegue" sender:self];
         } else if(sender == self.bulletinButton) {
-            vc = [[SBSBulletinViewController alloc] init];
-            vc.title = NSLocalizedString(@"Bulletin", nil);
+            [self performSegueWithIdentifier:@"bulletinSegue" sender:self];
         } else if(sender == self.staffBarButton) {
-            vc = [[SBSStaffViewController alloc] init];
-            vc.title = NSLocalizedString(@"Staff", nil);
+            [self performSegueWithIdentifier:@"staffSegue" sender:self];
         } else {
             NSAssert(NO, @"Unknown button tapped.");
         }
-        [self trackEvent:[NSString stringWithFormat:@"%@ button tapped on phone.", vc.title]];
-        [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [self trackEvent:[NSString stringWithFormat:@"%@ button tapped on phone.", segue.identifier]];
 }
 
 @end

@@ -69,7 +69,7 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
         [[UINavigationBar appearance] setTintColor:[SBSStyle sebastiaanBlueColor]];
     }
 
-    self.window.rootViewController = self.rootViewController;
+    self.rootViewController = (UINavigationController *)self.window.rootViewController;
     [self.window makeKeyAndVisible];
     
     

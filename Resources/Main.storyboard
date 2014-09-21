@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tm9-iQ-D8D">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Seb@stiaan-->
+        <scene sceneID="MWm-q5-sTS">
+            <objects>
+                <viewController id="SzA-Ag-xqx" customClass="SBSInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nrs-sw-ujo"/>
+                        <viewControllerLayoutGuide type="bottom" id="V7k-ug-LK7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oed-eV-eme">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="148" affinity="minY"/>
+                        </userGuides>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gp-oP-saN" userLabel="bulletinButton" customClass="SBSButton">
+                                <rect key="frame" x="16" y="529" width="568" height="51"/>
+                                <state key="normal" title="bulletin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="fnu-Cf-iSW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="274" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zd-Tm-qPb" userLabel="yurlButton" customClass="SBSButton">
+                                <rect key="frame" x="316" y="234" width="268" height="51"/>
+                                <state key="normal" title="yurls">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="ytE-lX-weo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-em-NRs" userLabel="teamButton" customClass="SBSButton">
+                                <rect key="frame" x="16" y="352" width="568" height="51"/>
+                                <state key="normal" title="team"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="q5q-p3-DV1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-oU-NaT" userLabel="agendaButton" customClass="SBSButton">
+                                <rect key="frame" x="16" y="293" width="568" height="51"/>
+                                <state key="normal" title="agenda">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="98Y-Q9-gyK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="286" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m37-qk-KtV" userLabel="twitterButton" customClass="SBSButton">
+                                <rect key="frame" x="16" y="234" width="268" height="51"/>
+                                <state key="normal" title="twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="lWt-Bp-Ao9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skK-2d-REq" userLabel="newsButton" customClass="SBSButton">
+                                <rect key="frame" x="16" y="470" width="568" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="b5W-WI-WGb"/>
+                                </constraints>
+                                <state key="normal" title="news">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="t32-dr-MNX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCC-Sy-s2C" userLabel="callButton" customClass="SBSButton">
+                                <rect key="frame" x="16" y="411" width="568" height="51"/>
+                                <state key="normal" title="call">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="zM7-3f-6i7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="L8c-gJ-6D7">
+                                <rect key="frame" x="16" y="64" width="568" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="hU2-rJ-1g2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="GMG-em-NRs" secondAttribute="leading" id="1oR-xr-pq3"/>
+                            <constraint firstItem="skK-2d-REq" firstAttribute="top" secondItem="QCC-Sy-s2C" secondAttribute="bottom" constant="8" id="3LY-t1-Glb"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="skK-2d-REq" secondAttribute="height" id="458-yJ-LrD"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="GMG-em-NRs" secondAttribute="height" id="4O9-dB-oHl"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="skK-2d-REq" secondAttribute="width" id="4j4-I6-ZcS"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="9Zd-Tm-qPb" secondAttribute="height" id="D4T-CO-WUH"/>
+                            <constraint firstItem="L8c-gJ-6D7" firstAttribute="trailing" secondItem="oed-eV-eme" secondAttribute="trailingMargin" id="HHL-qg-vjZ"/>
+                            <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="skK-2d-REq" secondAttribute="leading" id="Moe-hh-Ya3"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="2Gp-oP-saN" secondAttribute="width" id="NNz-7M-Nvd"/>
+                            <constraint firstItem="L8c-gJ-6D7" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="leadingMargin" id="Ocj-ch-ija"/>
+                            <constraint firstItem="2Gp-oP-saN" firstAttribute="top" secondItem="skK-2d-REq" secondAttribute="bottom" constant="8" id="Snh-s9-gSz"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="QCC-Sy-s2C" secondAttribute="width" id="Up5-1U-1MQ"/>
+                            <constraint firstItem="QCC-Sy-s2C" firstAttribute="top" secondItem="GMG-em-NRs" secondAttribute="bottom" constant="8" id="YE6-67-H9x"/>
+                            <constraint firstAttribute="trailing" secondItem="2Gp-oP-saN" secondAttribute="trailing" constant="16" id="Yw8-Bq-Kpm"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="QCC-Sy-s2C" secondAttribute="height" id="aSA-0O-MKJ"/>
+                            <constraint firstItem="L8c-gJ-6D7" firstAttribute="top" secondItem="nrs-sw-ujo" secondAttribute="bottom" id="bUF-1l-9KY"/>
+                            <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="DMU-oU-NaT" secondAttribute="leading" id="dAQ-DP-SUH"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="m37-qk-KtV" secondAttribute="height" id="dGa-Ss-xGF"/>
+                            <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="leading" constant="16" id="fPW-NZ-PVI"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="GMG-em-NRs" secondAttribute="width" id="h0E-Uv-JZP"/>
+                            <constraint firstItem="9Zd-Tm-qPb" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="centerXWithinMargins" constant="16" id="iue-kt-NVU"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="top" secondItem="m37-qk-KtV" secondAttribute="bottom" constant="8" id="jY5-xx-zpD"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="m37-qk-KtV" secondAttribute="trailing" constant="16" id="lI8-nJ-R0Y"/>
+                            <constraint firstItem="9Zd-Tm-qPb" firstAttribute="trailing" secondItem="oed-eV-eme" secondAttribute="trailingMargin" id="nvi-Rf-bm0"/>
+                            <constraint firstItem="m37-qk-KtV" firstAttribute="leading" secondItem="oed-eV-eme" secondAttribute="leadingMargin" id="uFi-xW-hO7"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="2Gp-oP-saN" secondAttribute="height" id="vsk-iY-8iu"/>
+                            <constraint firstItem="V7k-ug-LK7" firstAttribute="top" secondItem="2Gp-oP-saN" secondAttribute="bottom" constant="20" id="xeF-Xt-l6H"/>
+                            <constraint firstItem="DMU-oU-NaT" firstAttribute="top" secondItem="9Zd-Tm-qPb" secondAttribute="bottom" constant="8" id="yR9-RF-OLp"/>
+                            <constraint firstItem="QCC-Sy-s2C" firstAttribute="leading" secondItem="2Gp-oP-saN" secondAttribute="leading" id="yZG-nX-Bqv"/>
+                            <constraint firstItem="GMG-em-NRs" firstAttribute="top" secondItem="DMU-oU-NaT" secondAttribute="bottom" constant="8" id="z5H-DT-lmb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Seb@stiaan" id="igm-dC-Edu"/>
+                    <connections>
+                        <outlet property="agendaButton" destination="DMU-oU-NaT" id="vxI-fH-sUb"/>
+                        <outlet property="bulletinButton" destination="2Gp-oP-saN" id="rM7-7L-REa"/>
+                        <outlet property="callButton" destination="QCC-Sy-s2C" id="Rg8-Qn-69U"/>
+                        <outlet property="iconImageView" destination="L8c-gJ-6D7" id="IjL-Mz-BOq"/>
+                        <outlet property="newsButton" destination="skK-2d-REq" id="BP4-WF-oeI"/>
+                        <outlet property="teamButton" destination="GMG-em-NRs" id="btf-aC-9DW"/>
+                        <outlet property="twitterButton" destination="m37-qk-KtV" id="82s-B2-mvA"/>
+                        <outlet property="yurlButton" destination="9Zd-Tm-qPb" id="VBb-4U-wgp"/>
+                        <segue destination="gPA-9x-7ww" kind="show" identifier="newsletterSegue" id="JBF-YI-mPV"/>
+                        <segue destination="AG2-Cv-f5a" kind="show" identifier="teamSegue" id="gkg-GE-64j"/>
+                        <segue destination="w7l-Kc-MI1" kind="show" identifier="bulletinSegue" id="WZs-Ae-t8G"/>
+                        <segue destination="t0H-O7-3eK" kind="show" identifier="agendaSegue" id="rHR-cK-NGy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ec-Xp-OWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9" y="-348"/>
+        </scene>
+        <!--Team-->
+        <scene sceneID="cmn-k4-Skr">
+            <objects>
+                <tableViewController id="AG2-Cv-f5a" customClass="SBSTeamTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xH5-kf-VQg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" id="J6p-7b-DEd">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J6p-7b-DEd" id="E2I-gd-fBO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AG2-Cv-f5a" id="On2-9m-YYg"/>
+                            <outlet property="delegate" destination="AG2-Cv-f5a" id="gwo-cn-mTz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Team" id="SvB-Tz-jwW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaP-2D-Ai7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="554"/>
+        </scene>
+        <!--Bulletin-->
+        <scene sceneID="Lgq-im-K6F">
+            <objects>
+                <tableViewController id="w7l-Kc-MI1" customClass="SBSBulletinViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="puh-Lt-fdL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bulletinCell" textLabel="BXc-tD-NrD" detailTextLabel="v7M-x4-9e4" style="IBUITableViewCellStyleSubtitle" id="QTp-g1-C5i" customClass="SBSBulletinCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QTp-g1-C5i" id="pnC-zr-IcZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BXc-tD-NrD">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v7M-x4-9e4">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="w7l-Kc-MI1" id="Dbp-rc-n0O"/>
+                            <outlet property="delegate" destination="w7l-Kc-MI1" id="232-G1-aTl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bulletin" id="O04-Sl-J3p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3HC-DR-4At" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="1242"/>
+        </scene>
+        <!--Newsletter-->
+        <scene sceneID="Ete-mr-5kV">
+            <objects>
+                <tableViewController id="gPA-9x-7ww" customClass="SBSNewsLetterTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="in6-XZ-Kb7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsletterCell" id="Yeh-hP-4HU">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yeh-hP-4HU" id="iox-YN-bNS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gPA-9x-7ww" id="0qL-im-1GZ"/>
+                            <outlet property="delegate" destination="gPA-9x-7ww" id="2Ym-dy-hdC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Newsletter" id="BGD-aw-TW1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Woj-s0-ilH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-835" y="584"/>
+        </scene>
+        <!--Agenda-->
+        <scene sceneID="cQ5-SU-BIS">
+            <objects>
+                <tableViewController title="Agenda" id="t0H-O7-3eK" customClass="SBSAgendaTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SWr-5a-yog">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="agendaCell" id="tqq-4m-ebb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tqq-4m-ebb" id="OU8-PO-Sfv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="t0H-O7-3eK" id="EDG-80-HRs"/>
+                            <outlet property="delegate" destination="t0H-O7-3eK" id="MuB-m2-GOd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Agenda" id="AGg-qL-XVk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8aL-DY-by4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-443" y="1228"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="giz-mg-mwM">
+            <objects>
+                <navigationController id="Tm9-iQ-D8D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Czz-t9-TCn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SzA-Ag-xqx" kind="relationship" relationship="rootViewController" id="uKv-kA-evz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3V-yI-Hjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-843" y="-348"/>
+        </scene>
+    </scenes>
+</document>
