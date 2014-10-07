@@ -127,8 +127,6 @@ echo "NSString * const PARSE_CLIENT_KEY = @\"${PARSE_CLIENT_KEY}\";"
 
 fi
 
-echo "NSString * const TEST_FLIGHT_APP_TOKEN = @\"${TEST_FLIGHT_APP_TOKEN}\";"
-
 if [ "${BUILD_LABEL}" = 'DEVELOPER' ];
 then
 cat << EOF
@@ -139,38 +137,14 @@ if [ "${DEBUG_LOGGING}" = 'YES' ];
 then
 cat << EOF
 
-void bootstrapTestFlight(void) {
-    @autoreleasepool {
-        [TestFlight takeOff:TEST_FLIGHT_APP_TOKEN];
-    }
-}
-EOF
-
-else
-cat << EOF
-
-void bootstrapTestFlight(void) {
-    @autoreleasepool {
-        [TestFlight takeOff:TEST_FLIGHT_APP_TOKEN];
-    }
-}
-EOF
-
-fi
-
-
-if [ "${DEBUG_LOGGING}" = 'YES' ];
-then
-cat << EOF
-
 static NSString * const BUILD_LABEL = @"${BUILD_LABEL}";
 
 // This code is only present when logging is enabled.
 static void onStartup(void) __attribute__((constructor));
 static void onStartup(void) {
-    TFLog(@"**** This is a %@ build. ****", BUILD_LABEL);
+    NSLog(@"**** This is a %@ build. ****", BUILD_LABEL);
     @autoreleasepool {
-        TFLog(@"Parse configuration. App ID: %@, Client key: %@", PARSE_APPLICATION_ID, PARSE_CLIENT_KEY);
+        NSLog(@"Parse configuration. App ID: %@, Client key: %@", PARSE_APPLICATION_ID, PARSE_CLIENT_KEY);
     }
 }
 EOF

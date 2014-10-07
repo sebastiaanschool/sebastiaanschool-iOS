@@ -8,8 +8,6 @@
 #  Created by Jeroen Leenarts on 11-01-13.
 #
 
-export TEST_FLIGHT_APP_TOKEN="dummy"
-
 #Developement keys
 
 export DEV_PARSE_APPLICATION_ID="dummy"

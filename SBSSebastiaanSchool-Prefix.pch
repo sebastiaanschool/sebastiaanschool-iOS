@@ -17,9 +17,6 @@
 
 #ifdef __OBJC__
 
-    // Forward NSLog to TestFlight
-    #define NSLog TFLog
-
     // DLog will output like NSLog only when the DEBUG variable is set
 
     #ifdef DEBUG
@@ -46,7 +43,6 @@
 
 
     #import <Parse.h>
-    #import <TestFlight.h>
     #import <ReactiveCocoa.h>
     #import <RACEXTScope.h>
 

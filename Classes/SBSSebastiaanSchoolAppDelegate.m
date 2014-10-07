@@ -33,8 +33,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    bootstrapTestFlight();
-    
     [SBSAgendaItem  registerSubclass];
     [SBSBulletin    registerSubclass];
     [SBSContactItem registerSubclass];

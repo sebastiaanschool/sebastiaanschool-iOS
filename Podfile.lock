@@ -1,12 +1,12 @@
 PODS:
   - Bolts (1.1.2)
-  - Facebook-iOS-SDK (3.18.0):
-    - Bolts
+  - Facebook-iOS-SDK (3.19.0):
+    - Bolts (~> 1.0)
   - KIF (3.0.8):
     - KIF/XCTest
   - KIF/XCTest (3.0.8)
   - OCMock (3.1.1)
-  - Parse (1.4.0):
+  - Parse (1.4.1):
     - Bolts (~> 1.1.2)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI
@@ -15,7 +15,6 @@ PODS:
   - ReactiveCocoa/no-arc (2.3.1)
   - ReactiveCocoa/UI (2.3.1):
     - ReactiveCocoa/Core
-  - TestFlightSDK (3.0.2)
   - TTTAttributedLabel (1.10.1)
 
 DEPENDENCIES:
@@ -24,17 +23,15 @@ DEPENDENCIES:
   - OCMock
   - Parse
   - ReactiveCocoa
-  - TestFlightSDK
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   Bolts: 2635e8698a630774689441047f3465d78c48d485
-  Facebook-iOS-SDK: fa12c51cc57bfb6f92e47793c9d4d2c65bc92741
+  Facebook-iOS-SDK: cb7d74759d0b1ba546e6e6f1dde407b0d4e448d6
   KIF: 2db5e8cf59136dd1267d49cca0d55883389b09d3
   OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
-  Parse: 217a57ed13e870a744fe746fcc01a3fef6a9b750
+  Parse: db1a09c832b7509edcc88a65dc07229f5e578c73
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
-  TestFlightSDK: 0c24c533748d0d84bfe7a3cb6036fa79124d84ee
   TTTAttributedLabel: 94bb04f1e005616002dd2cee0262a0082e533627
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.1
