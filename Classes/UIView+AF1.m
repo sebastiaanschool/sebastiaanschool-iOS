@@ -22,9 +22,6 @@ static const NSString * kAF1ParallaxMotionEffectGroupKey = @"kAF1ParallaxMotionE
 
 -(void)setParallaxIntensity:(CGFloat)parallaxDepth
 {
-    if (!IS_IOS_7) {
-        return;
-    }
     if (self.parallaxIntensity == parallaxDepth)
         return;
     

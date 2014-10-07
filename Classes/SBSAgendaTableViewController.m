@@ -59,9 +59,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (IS_IOS_7) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    }
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
     self.eventStore = [[EKEventStore alloc]init];
 }
@@ -166,11 +164,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        
-        if (!IS_IOS_7) {
-            cell.selectedBackgroundView = [SBSStyle selectedBackgroundView];
-            cell.selectedBackgroundView.frame = cell.bounds;
-        }
     }
     
     // Configure the cell

@@ -17,19 +17,6 @@
 
 @implementation SBSButton
 
--(void)setHighlighted:(BOOL)highlighted {
-    [super setHighlighted:highlighted];
-    if (!IS_IOS_7) {
-        if (highlighted) {
-            [self setBackgroundColor:[UIColor lightTextColor]];
-        } else {
-            [self setBackgroundColor:[UIColor whiteColor]];
-        }
-        
-    }
-
-}
-
 - (void)layoutSubviews
 {
     // Allow default layout, then adjust image and label positions

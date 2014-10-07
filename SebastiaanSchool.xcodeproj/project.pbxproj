@@ -21,6 +21,8 @@
 		4A0124B116FCA71D00F744D6 /* UIView+JLFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B016FCA71D00F744D6 /* UIView+JLFrameAdditions.m */; };
 		4A0124B916FCFDA700F744D6 /* SBSEditBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B716FCFDA600F744D6 /* SBSEditBulletinViewController.m */; };
 		4A0124BC16FCFE0100F744D6 /* SBSEditBulletinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0124BB16FCFE0100F744D6 /* SBSEditBulletinViewController.xib */; };
+		4A0617A719E46E1D00B8560E /* SebastiaanStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0617A619E46E1D00B8560E /* SebastiaanStyleKit.m */; };
+		4A0AF52B19E4555600CCDE3D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AF52A19E4555600CCDE3D /* Launch Screen.xib */; };
 		4A12099116A9D69000A7259B /* SBSAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */; };
 		4A1966A116A086910011EFBF /* SBSNewsLetterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */; };
 		4A1966A816A08DAE0011EFBF /* SBSNewsLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */; };
@@ -106,6 +108,9 @@
 		4A0124B616FCFDA600F744D6 /* SBSEditBulletinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSEditBulletinViewController.h; sourceTree = "<group>"; };
 		4A0124B716FCFDA600F744D6 /* SBSEditBulletinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSEditBulletinViewController.m; sourceTree = "<group>"; };
 		4A0124BB16FCFE0100F744D6 /* SBSEditBulletinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBSEditBulletinViewController.xib; sourceTree = "<group>"; };
+		4A0617A519E46E1D00B8560E /* SebastiaanStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SebastiaanStyleKit.h; path = Classes/SebastiaanStyleKit.h; sourceTree = "<group>"; };
+		4A0617A619E46E1D00B8560E /* SebastiaanStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SebastiaanStyleKit.m; path = Classes/SebastiaanStyleKit.m; sourceTree = "<group>"; };
+		4A0AF52A19E4555600CCDE3D /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		4A12098F16A9D69000A7259B /* SBSAgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSAgendaTableViewController.h; sourceTree = "<group>"; };
 		4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSAgendaTableViewController.m; sourceTree = "<group>"; };
 		4A15DA9616A0AE4200D8EB86 /* SebastiaanSchool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SebastiaanSchool-Info.plist"; sourceTree = "<group>"; };
@@ -245,6 +250,8 @@
 				4AEC503A1786DDE500EB1A05 /* Media.xcassets */,
 				4A3B995B16A0781900241D4C /* SebastiaanSchool.entitlements */,
 				4A15DA9616A0AE4200D8EB86 /* SebastiaanSchool-Info.plist */,
+				4A0617A519E46E1D00B8560E /* SebastiaanStyleKit.h */,
+				4A0617A619E46E1D00B8560E /* SebastiaanStyleKit.m */,
 				4AC3F7FE16A0AFBB00452D33 /* InfoPlist.strings */,
 				4ADC934816A00B4300DAA972 /* bin */,
 				4ADC933A16A0063700DAA972 /* main.m */,
@@ -408,6 +415,7 @@
 				4AC3F7F816A0AF2600452D33 /* Localizable.strings */,
 				4A4EA04A16A34CA400F12406 /* Settings.bundle */,
 				4A8B19E419CB7DBB0067B492 /* Main.storyboard */,
+				4A0AF52A19E4555600CCDE3D /* Launch Screen.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -521,6 +529,7 @@
 				4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */,
 				4AD1809B16A57FBE00B97F61 /* SBSStaffViewController.xib in Resources */,
 				4AF4A0B316A86DA600493C20 /* provisiontype in Resources */,
+				4A0AF52B19E4555600CCDE3D /* Launch Screen.xib in Resources */,
 				4A46A78318808B6000306E32 /* SBSEditNewsLetterViewController.xib in Resources */,
 				4A8B19E519CB7DBB0067B492 /* Main.storyboard in Resources */,
 				4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */,
@@ -660,6 +669,7 @@
 				4A4997D516FEF6AB00B8A729 /* SBSContactItem.m in Sources */,
 				4A4997D816FEF6CF00B8A729 /* SBSNewsLetter.m in Sources */,
 				4AD416391723DEB400DA4777 /* SBSBaseEditViewController.m in Sources */,
+				4A0617A719E46E1D00B8560E /* SebastiaanStyleKit.m in Sources */,
 				4AD4163D1723E87800DA4777 /* SBSEditAgendaViewController.m in Sources */,
 				4A46A781188087D600306E32 /* SBSEditNewsLetterViewController.m in Sources */,
 				4AA0A97F1730E834005D9BD0 /* NSDate+JLDateAdditions.m in Sources */,
@@ -781,7 +791,6 @@
 			baseConfigurationReference = B88B362035EF491582668975 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -795,7 +804,7 @@
 				GCC_PREFIX_HEADER = "SBSSebastiaanSchool-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -807,7 +816,6 @@
 			baseConfigurationReference = B88B362035EF491582668975 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -818,7 +826,7 @@
 				GCC_PREFIX_HEADER = "SBSSebastiaanSchool-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

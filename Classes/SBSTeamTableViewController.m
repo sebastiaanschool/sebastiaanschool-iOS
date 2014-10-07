@@ -58,9 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (IS_IOS_7) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    }
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -197,10 +195,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        if (!IS_IOS_7) {
-            cell.selectedBackgroundView = [SBSStyle selectedBackgroundView];
-            cell.selectedBackgroundView.frame = cell.bounds;
-        }
     }
     
     // Configure the cell
@@ -320,10 +314,8 @@
     mc.mailComposeDelegate = self;
     [mc setMessageBody:messageBody isHTML:NO];
     [mc setToRecipients:toRecipents];
-    if (IS_IOS_7) {
-        //The navigation tint color is not propagated by UIAppearance for some reason. So setting it manually.
-        mc.navigationBar.tintColor = [UIColor whiteColor];
-    }
+    //The navigation tint color is not propagated by UIAppearance for some reason. So setting it manually.
+    mc.navigationBar.tintColor = [UIColor whiteColor];
     
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];

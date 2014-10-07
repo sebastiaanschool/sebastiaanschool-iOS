@@ -20,6 +20,7 @@
 #import "SBSNewsLetterTableViewController.h"
 #import "SBSBulletinViewController.h"
 #import "SBSStaffViewController.h"
+#import "SebastiaanStyleKit.h"
 
 @interface SBSInfoViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *staffBarButton;
@@ -39,23 +40,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (IS_IOS_7) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    }
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
-    if (IS_IOS_7) {
-        self.iconImageView.image = [UIImage imageNamed:@"big-logo"];
-    } else {
-        self.view.backgroundColor = [SBSStyle sebastiaanBlueColor];
-        self.iconImageView.image = [UIImage imageNamed:@"big-logo-white"];
-    }
-    [self applyTitle:NSLocalizedString(@"Call", nil) andWithImageNamed:@"75-phone" toButton:self.callButton];
-    [self applyTitle:NSLocalizedString(@"@KBSebastiaan", nil) andWithImageNamed:@"twitter-bird" toButton:self.twitterButton];
-    [self applyTitle:NSLocalizedString(@"Yurl site", nil) andWithImageNamed:@"yurl-logo" toButton:self.yurlButton];
-    [self applyTitle:NSLocalizedString(@"Agenda", nil) andWithImageNamed:@"259-list" toButton:self.agendaButton];
-    [self applyTitle:NSLocalizedString(@"Team", nil) andWithImageNamed:@"112-group" toButton:self.teamButton];
-    [self applyTitle:NSLocalizedString(@"Newsletter", nil) andWithImageNamed:@"162-receipt" toButton:self.newsButton];
-    [self applyTitle:NSLocalizedString(@"Bulletin", nil) andWithImageNamed:@"275-broadcast" toButton:self.bulletinButton];
+    [self applyTitle:NSLocalizedString(@"Call", nil) toButton:self.callButton];
+    [self.callButton setImage:[SebastiaanStyleKit imageOfPhoneIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+    
+    [self applyTitle:NSLocalizedString(@"@KBSebastiaan", nil) toButton:self.twitterButton];
+    [self.twitterButton setImage:[SebastiaanStyleKit imageOfTwitterIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+
+    [self applyTitle:NSLocalizedString(@"Yurl site", nil) toButton:self.yurlButton];
+    [self.yurlButton setImage:[SebastiaanStyleKit imageOfBinocularsIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+    
+    [self applyTitle:NSLocalizedString(@"Agenda", nil) toButton:self.agendaButton];
+    [self.agendaButton setImage:[SebastiaanStyleKit imageOfListIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+    
+    [self applyTitle:NSLocalizedString(@"Team", nil) toButton:self.teamButton];
+    [self.teamButton setImage:[SebastiaanStyleKit imageOfGroupIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+    
+    [self applyTitle:NSLocalizedString(@"Newsletter", nil) toButton:self.newsButton];
+    [self.newsButton setImage:[SebastiaanStyleKit imageOfReceiptIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+    
+    [self applyTitle:NSLocalizedString(@"Bulletin", nil) toButton:self.bulletinButton];
+    [self.bulletinButton setImage:[SebastiaanStyleKit imageOfBroadcastIconWithFrame:CGRectMake(0, 0, 30, 30)] forState:UIControlStateNormal];
+    
     
     UILongPressGestureRecognizer * bonusLongPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(doTapOnIcon:)];
     [self.iconImageView addGestureRecognizer:bonusLongPressRecognizer];
@@ -116,22 +123,9 @@
     [self.iconImageView.layer addAnimation:animation forKey:@"360"];
 }
 
-- (void)applyTitle:(NSString *)title andWithImageNamed:(NSString *)imageName toButton:(UIButton*)button {
-    UIImage *image = [UIImage imageNamed:imageName];
-    [button setImage:image forState:UIControlStateNormal];
-
+- (void)applyTitle:(NSString *)title toButton:(UIButton*)button {
     [button setTitle:title forState:UIControlStateNormal];
-    
-    if (!IS_IOS_7) {
-        button.backgroundColor = [UIColor whiteColor];
-        button.layer.cornerRadius = 5.0f;
-        UIImage *whiteImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@-white", imageName]];
-        [button setImage:whiteImage forState:UIControlStateHighlighted];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        button.tintColor = [SBSStyle sebastiaanBlueColor];
-    } else {
-        [button setTitleColor:[SBSStyle sebastiaanBlueColor] forState:UIControlStateNormal];
-    }
+    [button setTitleColor:[SBSStyle sebastiaanBlueColor] forState:UIControlStateNormal];
 }
 
 - (IBAction)buttonTapped:(id)sender {

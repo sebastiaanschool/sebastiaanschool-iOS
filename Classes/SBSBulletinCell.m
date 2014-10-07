@@ -32,19 +32,10 @@
     NSString *body = object.body;
     
     CGFloat height = [SBSStyle standardMargin];
-    if (IS_IOS_7) {
-        
-        height += ceilf([title boundingRectWithSize:CGSizeMake(availableWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [SBSStyle titleFont]} context:nil].size.height);
-        height += ceilf([createdAt boundingRectWithSize:CGSizeMake(availableWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [SBSStyle subtitleFont]} context:nil].size.height);
-        if (body != nil) {
-            height += ceilf([body boundingRectWithSize:CGSizeMake(availableWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [SBSStyle bodyFont]} context:nil].size.height);
-        }
-    } else {
-        height += [title sizeWithFont:[SBSStyle titleFont] constrainedToSize:CGSizeMake(availableWidth, CGFLOAT_MAX)].height;
-        height += [createdAt sizeWithFont:[SBSStyle subtitleFont] constrainedToSize:CGSizeMake(availableWidth, CGFLOAT_MAX)].height;
-        if (body != nil) {
-            height += [body sizeWithFont:[SBSStyle bodyFont] constrainedToSize:CGSizeMake(availableWidth, CGFLOAT_MAX)].height;
-        }
+    height += ceilf([title boundingRectWithSize:CGSizeMake(availableWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [SBSStyle titleFont]} context:nil].size.height);
+    height += ceilf([createdAt boundingRectWithSize:CGSizeMake(availableWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [SBSStyle subtitleFont]} context:nil].size.height);
+    if (body != nil) {
+        height += ceilf([body boundingRectWithSize:CGSizeMake(availableWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [SBSStyle bodyFont]} context:nil].size.height);
     }
     
     height += [SBSStyle standardMargin];
@@ -56,16 +47,12 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.textLabel.font = [SBSStyle titleFont];
-        if (IS_IOS_7) {
-            [self.textLabel setTextColor:[UIColor blackColor]];
-            [self.textLabel setHighlightedTextColor:[UIColor whiteColor]];
-        }
+        [self.textLabel setTextColor:[UIColor blackColor]];
+        [self.textLabel setHighlightedTextColor:[UIColor whiteColor]];
         
         self.detailTextLabel.font = [SBSStyle subtitleFont];
-        if (IS_IOS_7) {
-            [self.detailTextLabel setTextColor:[UIColor blackColor]];
-            [self.detailTextLabel setHighlightedTextColor:[UIColor whiteColor]];
-        }
+        [self.detailTextLabel setTextColor:[UIColor blackColor]];
+        [self.detailTextLabel setHighlightedTextColor:[UIColor whiteColor]];
         
         // Initialization code
         _bodyLabel = [[TTTAttributedLabel alloc]initWithFrame:CGRectZero];

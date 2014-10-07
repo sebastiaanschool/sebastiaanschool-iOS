@@ -60,15 +60,10 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [Crashlytics startWithAPIKey:@"cae4ee7fc418351282195f94a9b4931ac0b04ae7"];
 
     // Apply UIAppearance
-    if (IS_IOS_7) {
-        self.window.tintColor = [SBSStyle sebastiaanBlueColor];
-        [[UINavigationBar appearance] setBarTintColor:[SBSStyle sebastiaanBlueColor]];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor whiteColor] }];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    } else {
-        [[UIButton appearance] setTintColor:[SBSStyle sebastiaanBlueColor]];
-        [[UINavigationBar appearance] setTintColor:[SBSStyle sebastiaanBlueColor]];
-    }
+    self.window.tintColor = [SBSStyle sebastiaanBlueColor];
+    [[UINavigationBar appearance] setBarTintColor:[SBSStyle sebastiaanBlueColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor] }];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
     self.rootViewController = (UINavigationController *)self.window.rootViewController;
     [self.window makeKeyAndVisible];
