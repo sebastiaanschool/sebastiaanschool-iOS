@@ -161,7 +161,10 @@
         } else if(sender == self.bulletinButton) {
             [self performSegueWithIdentifier:@"bulletinSegue" sender:self];
         } else if(sender == self.staffBarButton) {
-            [self performSegueWithIdentifier:@"staffSegue" sender:self];
+            UIViewController *vc = [[SBSStaffViewController alloc] init];
+            vc.title = NSLocalizedString(@"Staff", nil);
+            [self trackEvent:[NSString stringWithFormat:@"%@ button tapped on phone.", vc.title]];
+            [self.navigationController pushViewController:vc animated:YES];
         } else {
             NSAssert(NO, @"Unknown button tapped.");
         }
