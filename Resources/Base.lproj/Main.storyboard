@@ -259,7 +259,7 @@
         <!--Newsletter-->
         <scene sceneID="Ete-mr-5kV">
             <objects>
-                <tableViewController id="gPA-9x-7ww" customClass="SBSNewsLetterTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Newsletter" id="gPA-9x-7ww" customClass="SBSNewsLetterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="in6-XZ-Kb7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +277,6 @@
                             <outlet property="delegate" destination="gPA-9x-7ww" id="2Ym-dy-hdC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Newsletter" id="BGD-aw-TW1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Woj-s0-ilH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
