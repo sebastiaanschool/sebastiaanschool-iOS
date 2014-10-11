@@ -1,45 +1,48 @@
 
 /* Class = "IBUIButton"; normalTitle = "bulletin"; ObjectID = "2Gp-oP-saN"; */
-"2Gp-oP-saN.normalTitle" = "bulletin";
+"2Gp-oP-saN.normalTitle" = "Mededeling";
 
 /* Class = "IBUIButton"; normalTitle = "yurls"; ObjectID = "9Zd-Tm-qPb"; */
-"9Zd-Tm-qPb.normalTitle" = "yurls";
+"9Zd-Tm-qPb.normalTitle" = "Yurls";
 
 /* Class = "IBUINavigationItem"; title = "Agenda"; ObjectID = "AGg-qL-XVk"; */
 "AGg-qL-XVk.title" = "Agenda";
-
-/* Class = "IBUINavigationItem"; title = "Newsletter"; ObjectID = "BGD-aw-TW1"; */
-"BGD-aw-TW1.title" = "Nieuwsbrief";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "BXc-tD-NrD"; */
 "BXc-tD-NrD.text" = "Title";
 
 /* Class = "IBUIButton"; normalTitle = "agenda"; ObjectID = "DMU-oU-NaT"; */
-"DMU-oU-NaT.normalTitle" = "agenda";
+"DMU-oU-NaT.normalTitle" = "Agenda";
 
 /* Class = "IBUIButton"; normalTitle = "team"; ObjectID = "GMG-em-NRs"; */
-"GMG-em-NRs.normalTitle" = "team";
+"GMG-em-NRs.normalTitle" = "Team";
 
 /* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "MJj-d9-nK6"; */
 "MJj-d9-nK6.text" = "Subtitle";
 
 /* Class = "IBUINavigationItem"; title = "Bulletin"; ObjectID = "O04-Sl-J3p"; */
-"O04-Sl-J3p.title" = "Bulletin";
+"O04-Sl-J3p.title" = "Mededeling";
 
 /* Class = "IBUIButton"; normalTitle = "call"; ObjectID = "QCC-Sy-s2C"; */
-"QCC-Sy-s2C.normalTitle" = "call";
+"QCC-Sy-s2C.normalTitle" = "Bel";
 
 /* Class = "IBUINavigationItem"; title = "Team"; ObjectID = "SvB-Tz-jwW"; */
 "SvB-Tz-jwW.title" = "Team";
+
+/* Class = "IBUITableViewController"; title = "Nieuwsbrief"; ObjectID = "gPA-9x-7ww"; */
+"gPA-9x-7ww.title" = "Nieuwsbrief";
 
 /* Class = "IBUINavigationItem"; title = "Seb@stiaan"; ObjectID = "igm-dC-Edu"; */
 "igm-dC-Edu.title" = "Seb@stiaan";
 
 /* Class = "IBUIButton"; normalTitle = "twitter"; ObjectID = "m37-qk-KtV"; */
-"m37-qk-KtV.normalTitle" = "twitter";
+"m37-qk-KtV.normalTitle" = "Twitter";
+
+/* Class = "IBUINavigationItem"; title = "Nieuwsbrief"; ObjectID = "pRn-UC-fiu"; */
+"pRn-UC-fiu.title" = "Nieuwsbrief";
 
 /* Class = "IBUIButton"; normalTitle = "news"; ObjectID = "skK-2d-REq"; */
-"skK-2d-REq.normalTitle" = "news";
+"skK-2d-REq.normalTitle" = "Nieuws";
 
 /* Class = "IBUITableViewController"; title = "Agenda"; ObjectID = "t0H-O7-3eK"; */
 "t0H-O7-3eK.title" = "Agenda";
