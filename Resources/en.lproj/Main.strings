@@ -26,7 +26,7 @@
 /* Class = "IBUIButton"; normalTitle = "call"; ObjectID = "QCC-Sy-s2C"; */
 "QCC-Sy-s2C.normalTitle" = "Call";
 
-/* Class = "IBUINavigationItem"; title = "Team6"; ObjectID = "SvB-Tz-jwW"; */
+/* Class = "IBUINavigationItem"; title = "Team"; ObjectID = "SvB-Tz-jwW"; */
 "SvB-Tz-jwW.title" = "Team";
 
 /* Class = "IBUITableViewController"; title = "Newsletter"; ObjectID = "gPA-9x-7ww"; */

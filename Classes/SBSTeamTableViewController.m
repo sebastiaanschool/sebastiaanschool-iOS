@@ -59,6 +59,8 @@
 {
     [super viewDidLoad];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    self.title = NSLocalizedString(@"Team", nil);
 }
 
 -(void)viewWillAppear:(BOOL)animated {

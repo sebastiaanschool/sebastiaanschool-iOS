@@ -62,6 +62,8 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
     self.eventStore = [[EKEventStore alloc]init];
+    
+    self.title = NSLocalizedString(@"Agenda", nil);
 }
 
 -(void)viewWillAppear:(BOOL)animated {
