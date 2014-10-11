@@ -127,11 +127,7 @@ echo "NSString * const PARSE_CLIENT_KEY = @\"${PARSE_CLIENT_KEY}\";"
 
 fi
 
-if [ "${BUILD_LABEL}" = 'DEVELOPER' ];
-then
-cat << EOF
-EOF
-fi
+
 
 if [ "${DEBUG_LOGGING}" = 'YES' ];
 then
