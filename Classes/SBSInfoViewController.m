@@ -71,6 +71,10 @@
     [self.iconImageView addGestureRecognizer:tapRecognizer];
 
     self.iconImageView.userInteractionEnabled = YES;
+    
+    if (!IS_WIDESCREEN && IS_PHONE) {
+        self.iconImageView.hidden = YES;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

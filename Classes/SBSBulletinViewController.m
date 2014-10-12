@@ -19,9 +19,8 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
         
@@ -40,10 +39,38 @@
         self.paginationEnabled = NO;
         
         // The number of objects to show per page
-        self.objectsPerPage = 5;
+        self.objectsPerPage = 10;
     }
     return self;
 }
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
+        
+        // Custom the table
+        
+        // The className to query on
+        self.parseClassName = [SBSBulletin parseClassName];
+        
+        // The key of the PFObject to display in the label of the default cell style
+        self.textKey = @"title";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = NO;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = YES;
+        
+        // The number of objects to show per page
+        self.objectsPerPage = 10;
+    }
+    return self;
+}
+
+
 
 #pragma mark - View lifecycle
 

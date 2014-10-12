@@ -30,6 +30,32 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
+        
+        // Custom the table
+        
+        // The className to query on
+        self.parseClassName = [SBSAgendaItem parseClassName];
+        
+        // The key of the PFObject to display in the label of the default cell style
+        self.textKey = @"name";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = NO;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = NO;
+        
+        // The number of objects to show per page
+        self.objectsPerPage = 5;
+    }
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

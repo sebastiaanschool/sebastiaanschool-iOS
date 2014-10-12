@@ -123,9 +123,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="big-logo" translatesAutoresizingMaskIntoConstraints="NO" id="L8c-gJ-6D7">
                                 <rect key="frame" x="0.0" y="64" width="600" height="162"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="QZm-IJ-wer">
-                                        <variation key="heightClass=compact-widthClass=compact" constant="20"/>
-                                    </constraint>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="162" id="IEQ-kj-bmI"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
@@ -142,6 +140,7 @@
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="GMG-em-NRs" secondAttribute="height" id="4O9-dB-oHl"/>
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="skK-2d-REq" secondAttribute="width" id="4j4-I6-ZcS"/>
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="height" secondItem="9Zd-Tm-qPb" secondAttribute="height" id="D4T-CO-WUH"/>
+                            <constraint firstItem="m37-qk-KtV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="L8c-gJ-6D7" secondAttribute="bottom" constant="8" id="ENg-7d-AUH"/>
                             <constraint firstItem="L8c-gJ-6D7" firstAttribute="trailing" secondItem="oed-eV-eme" secondAttribute="trailing" id="HHL-qg-vjZ"/>
                             <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="skK-2d-REq" secondAttribute="leading" id="Moe-hh-Ya3"/>
                             <constraint firstItem="DMU-oU-NaT" firstAttribute="width" secondItem="2Gp-oP-saN" secondAttribute="width" id="NNz-7M-Nvd"/>
