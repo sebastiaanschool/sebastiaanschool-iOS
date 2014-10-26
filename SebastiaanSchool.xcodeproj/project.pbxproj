@@ -48,7 +48,6 @@
 		4A71D3AD16A152A800A11C80 /* SBSTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71D3AC16A152A800A11C80 /* SBSTeamTableViewController.m */; };
 		4A71D3B616A155D100A11C80 /* SBSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71D3B516A155D100A11C80 /* SBSInfoViewController.m */; };
 		4A71D3DA16A3123F00A11C80 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A71D3D916A3123F00A11C80 /* MessageUI.framework */; };
-		4A7317DB17F889E30018BE7C /* SBSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7317DA17F889E30018BE7C /* SBSConfig.m */; };
 		4A9C9B6318082479006442E0 /* UIResponder+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C9B6218082479006442E0 /* UIResponder+SBS.m */; };
 		4AA09BB4172304E6004630B4 /* SBSEditTeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AA09BB3172304E6004630B4 /* SBSEditTeamMemberViewController.xib */; };
 		4AA0A97F1730E834005D9BD0 /* NSDate+JLDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0A97E1730E834005D9BD0 /* NSDate+JLDateAdditions.m */; };
@@ -154,8 +153,6 @@
 		4A71D3B416A155D100A11C80 /* SBSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSInfoViewController.h; sourceTree = "<group>"; };
 		4A71D3B516A155D100A11C80 /* SBSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSInfoViewController.m; sourceTree = "<group>"; };
 		4A71D3D916A3123F00A11C80 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		4A7317D917F889E30018BE7C /* SBSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSConfig.h; sourceTree = "<group>"; };
-		4A7317DA17F889E30018BE7C /* SBSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSConfig.m; sourceTree = "<group>"; };
 		4A9C9B6118082479006442E0 /* UIResponder+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+SBS.h"; sourceTree = "<group>"; };
 		4A9C9B6218082479006442E0 /* UIResponder+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+SBS.m"; sourceTree = "<group>"; };
 		4AA09BB3172304E6004630B4 /* SBSEditTeamMemberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBSEditTeamMemberViewController.xib; sourceTree = "<group>"; };
@@ -321,8 +318,6 @@
 				4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */,
 				4A4997D616FEF6CF00B8A729 /* SBSNewsLetter.h */,
 				4A4997D716FEF6CF00B8A729 /* SBSNewsLetter.m */,
-				4A7317D917F889E30018BE7C /* SBSConfig.h */,
-				4A7317DA17F889E30018BE7C /* SBSConfig.m */,
 				4AB3D52916AC88A5008086B5 /* SBSSecurity.h */,
 				4AB3D52A16AC88A5008086B5 /* SBSSecurity.m */,
 			);
@@ -665,7 +660,6 @@
 				4A1966A116A086910011EFBF /* SBSNewsLetterTableViewController.m in Sources */,
 				4A1966A816A08DAE0011EFBF /* SBSNewsLetterViewController.m in Sources */,
 				4ADFE4E816A0A36100EDAD2A /* SBSStyle.m in Sources */,
-				4A7317DB17F889E30018BE7C /* SBSConfig.m in Sources */,
 				4A71D3AD16A152A800A11C80 /* SBSTeamTableViewController.m in Sources */,
 				4A71D3B616A155D100A11C80 /* SBSInfoViewController.m in Sources */,
 				4A4EA05916A35B1F00F12406 /* SBSStaffViewController.m in Sources */,

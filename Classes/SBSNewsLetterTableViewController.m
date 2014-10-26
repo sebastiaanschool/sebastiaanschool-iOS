@@ -14,7 +14,6 @@
 
 #import "SBSNewsLetterTableViewController.h"
 #import "SBSNewsLetterViewController.h"
-#import "SBSConfig.h"
 
 #import "SBSNewsLetter.h"
 

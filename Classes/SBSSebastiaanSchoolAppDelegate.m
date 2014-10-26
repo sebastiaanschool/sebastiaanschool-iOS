@@ -13,7 +13,6 @@
 #import "SBSBulletin.h"
 #import "SBSContactItem.h"
 #import "SBSNewsLetter.h"
-#import "SBSConfig.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -37,7 +36,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [SBSBulletin    registerSubclass];
     [SBSContactItem registerSubclass];
     [SBSNewsLetter  registerSubclass];
-    [SBSConfig      registerSubclass];
     
     [Parse setApplicationId:PARSE_APPLICATION_ID
                   clientKey:PARSE_CLIENT_KEY];
