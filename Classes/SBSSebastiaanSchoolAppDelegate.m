@@ -41,6 +41,7 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
                   clientKey:PARSE_CLIENT_KEY];
     
     [PFUser enableAutomaticUser];
+    [[PFUser currentUser] saveInBackground];
         
     PFACL *defaultACL = [PFACL ACL];
 
