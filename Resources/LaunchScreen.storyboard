@@ -44,6 +44,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FMh-8J-lx4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19215686269999999" green="0.70980392160000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="eYK-KP-Hk1" kind="relationship" relationship="rootViewController" id="c4k-dr-Ppa"/>
@@ -57,4 +61,5 @@
     <resources>
         <image name="big-logo" width="320" height="320"/>
     </resources>
+    <color key="tintColor" red="0.19215686269999999" green="0.70980392160000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>
