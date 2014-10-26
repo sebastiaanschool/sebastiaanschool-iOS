@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Seb@stiaan-->
         <scene sceneID="tAY-IL-mYv">
             <objects>
                 <viewController id="eYK-KP-Hk1" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                             <constraint firstItem="XXB-Nx-2Zy" firstAttribute="top" secondItem="yvN-sq-B6M" secondAttribute="bottom" id="moi-uf-Fsc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RRw-BQ-78f"/>
+                    <navigationItem key="navigationItem" title="Seb@stiaan" id="RRw-BQ-78f"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdf-1Z-Mha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
