@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yLj-JB-KPO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tAY-IL-mYv">
+            <objects>
+                <viewController id="eYK-KP-Hk1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yvN-sq-B6M"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zsh-He-Dp2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eQv-dI-cDb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-logo" translatesAutoresizingMaskIntoConstraints="NO" id="XXB-Nx-2Zy">
+                                <rect key="frame" x="0.0" y="64" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="9X9-E6-q52"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XXB-Nx-2Zy" secondAttribute="trailing" id="0Ef-vx-kLY"/>
+                            <constraint firstItem="XXB-Nx-2Zy" firstAttribute="leading" secondItem="eQv-dI-cDb" secondAttribute="leading" id="fUb-fy-PhR"/>
+                            <constraint firstItem="XXB-Nx-2Zy" firstAttribute="top" secondItem="yvN-sq-B6M" secondAttribute="bottom" id="moi-uf-Fsc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RRw-BQ-78f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdf-1Z-Mha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I59-pa-IWr">
+            <objects>
+                <navigationController id="yLj-JB-KPO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FMh-8J-lx4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eYK-KP-Hk1" kind="relationship" relationship="rootViewController" id="c4k-dr-Ppa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7z-Qy-IQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="301"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="big-logo" width="320" height="320"/>
+    </resources>
+</document>

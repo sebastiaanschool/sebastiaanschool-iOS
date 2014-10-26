@@ -22,10 +22,10 @@
 		4A0124B916FCFDA700F744D6 /* SBSEditBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B716FCFDA600F744D6 /* SBSEditBulletinViewController.m */; };
 		4A0124BC16FCFE0100F744D6 /* SBSEditBulletinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0124BB16FCFE0100F744D6 /* SBSEditBulletinViewController.xib */; };
 		4A0617A719E46E1D00B8560E /* SebastiaanStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0617A619E46E1D00B8560E /* SebastiaanStyleKit.m */; };
-		4A0AF52B19E4555600CCDE3D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AF52A19E4555600CCDE3D /* Launch Screen.xib */; };
 		4A12099116A9D69000A7259B /* SBSAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */; };
 		4A1966A116A086910011EFBF /* SBSNewsLetterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */; };
 		4A1966A816A08DAE0011EFBF /* SBSNewsLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */; };
+		4A23877919FD2B8E00BF27DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A23877819FD2B8E00BF27DF /* LaunchScreen.storyboard */; };
 		4A2B5BD416C639F000A21460 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2B5BD216C639F000A21460 /* EventKit.framework */; };
 		4A2B5BD516C639F000A21460 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2B5BD316C639F000A21460 /* EventKitUI.framework */; };
 		4A31C73517E870FA005FB021 /* SBSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A31C73417E870FA005FB021 /* SBSButton.m */; };
@@ -109,7 +109,6 @@
 		4A0124BB16FCFE0100F744D6 /* SBSEditBulletinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBSEditBulletinViewController.xib; sourceTree = "<group>"; };
 		4A0617A519E46E1D00B8560E /* SebastiaanStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SebastiaanStyleKit.h; path = Classes/SebastiaanStyleKit.h; sourceTree = "<group>"; };
 		4A0617A619E46E1D00B8560E /* SebastiaanStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SebastiaanStyleKit.m; path = Classes/SebastiaanStyleKit.m; sourceTree = "<group>"; };
-		4A0AF52A19E4555600CCDE3D /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		4A12098F16A9D69000A7259B /* SBSAgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSAgendaTableViewController.h; sourceTree = "<group>"; };
 		4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSAgendaTableViewController.m; sourceTree = "<group>"; };
 		4A15DA9616A0AE4200D8EB86 /* SebastiaanSchool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SebastiaanSchool-Info.plist"; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SBSNewsLetterTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4A1966A616A08DAE0011EFBF /* SBSNewsLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSNewsLetterViewController.h; sourceTree = "<group>"; };
 		4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSNewsLetterViewController.m; sourceTree = "<group>"; };
+		4A23877819FD2B8E00BF27DF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A2B5BD216C639F000A21460 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		4A2B5BD316C639F000A21460 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		4A31C73317E870FA005FB021 /* SBSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSButton.h; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 				4AC3F7F816A0AF2600452D33 /* Localizable.strings */,
 				4A4EA04A16A34CA400F12406 /* Settings.bundle */,
 				4AF1F1CD19E56C4D00C6BCF1 /* Main.storyboard */,
-				4A0AF52A19E4555600CCDE3D /* Launch Screen.xib */,
+				4A23877819FD2B8E00BF27DF /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -539,8 +539,8 @@
 				4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */,
 				4AD1809B16A57FBE00B97F61 /* SBSStaffViewController.xib in Resources */,
 				4AF4A0B316A86DA600493C20 /* provisiontype in Resources */,
-				4A0AF52B19E4555600CCDE3D /* Launch Screen.xib in Resources */,
 				4A46A78318808B6000306E32 /* SBSEditNewsLetterViewController.xib in Resources */,
+				4A23877919FD2B8E00BF27DF /* LaunchScreen.storyboard in Resources */,
 				4AF1F1CB19E56C4D00C6BCF1 /* Main.storyboard in Resources */,
 				4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */,
 				4A0124BC16FCFE0100F744D6 /* SBSEditBulletinViewController.xib in Resources */,
