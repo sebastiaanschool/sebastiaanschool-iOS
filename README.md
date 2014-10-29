@@ -11,8 +11,6 @@ When looking into running this code yourself, you will need a Parse.com account.
 
 After setting your credentials in the said setEnv.sh file, run all curl scripts in the cloudcode project.
 
-Continous integration is available on Travis-CI: https://travis-ci.org/jeroenleenarts/sebastiaanschool/
-
 ## Terms of use
 
 "sebastiaanschool" is copyright Jeroen Leenarts, except for the Android app which is copyright Barend Garvelink. Both parts can be used in accordance with the Creative Commons Attribution-NonCommercial 3.0 Unported License.
