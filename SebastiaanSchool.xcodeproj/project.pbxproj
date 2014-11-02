@@ -53,6 +53,7 @@
 		4AA0A97F1730E834005D9BD0 /* NSDate+JLDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0A97E1730E834005D9BD0 /* NSDate+JLDateAdditions.m */; };
 		4AABCAEB1996454F00CA3F3F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AABCAEA1996454F00CA3F3F /* Crashlytics.framework */; };
 		4AB3D52B16AC88A5008086B5 /* SBSSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3D52A16AC88A5008086B5 /* SBSSecurity.m */; };
+		4AC0D8B41A06C01100ADB820 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC0D8B31A06C01100ADB820 /* Fabric.framework */; };
 		4AC3F7F616A0AF2600452D33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AC3F7F816A0AF2600452D33 /* Localizable.strings */; };
 		4AC3F7FC16A0AFBB00452D33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AC3F7FE16A0AFBB00452D33 /* InfoPlist.strings */; };
 		4AD1809B16A57FBE00B97F61 /* SBSStaffViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD1809A16A57FBE00B97F61 /* SBSStaffViewController.xib */; };
@@ -161,6 +162,7 @@
 		4AABCAEA1996454F00CA3F3F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4AB3D52916AC88A5008086B5 /* SBSSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSSecurity.h; sourceTree = "<group>"; };
 		4AB3D52A16AC88A5008086B5 /* SBSSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSSecurity.m; sourceTree = "<group>"; };
+		4AC0D8B31A06C01100ADB820 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4AC3F7F916A0AF3800452D33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AC3F7FD16A0AFBB00452D33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AD1809A16A57FBE00B97F61 /* SBSStaffViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBSStaffViewController.xib; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				099CCEAD13F9E3760039A464 /* libz.1.1.3.dylib in Frameworks */,
 				09BEF34C13D51C3F001BBCDB /* Security.framework in Frameworks */,
 				095ACE8613C68EA300566243 /* AudioToolbox.framework in Frameworks */,
+				4AC0D8B41A06C01100ADB820 /* Fabric.framework in Frameworks */,
 				092354B713A1D83C00DA740F /* MobileCoreServices.framework in Frameworks */,
 				092354B513A1D7F000DA740F /* SystemConfiguration.framework in Frameworks */,
 				092354B313A1D7EB00DA740F /* CFNetwork.framework in Frameworks */,
@@ -281,6 +284,7 @@
 		09ABC07013A1D52D009C3FCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AC0D8B31A06C01100ADB820 /* Fabric.framework */,
 				4AABCAEA1996454F00CA3F3F /* Crashlytics.framework */,
 				4A2B5BD216C639F000A21460 /* EventKit.framework */,
 				4A2B5BD316C639F000A21460 /* EventKitUI.framework */,
@@ -600,7 +604,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run cae4ee7fc418351282195f94a9b4931ac0b04ae7 f729e214576c37ef9a368006ba92e9c0edd824de139aa5aefc1c13b5c5a88b20";
+			shellScript = "./Fabric.framework/run cae4ee7fc418351282195f94a9b4931ac0b04ae7 f729e214576c37ef9a368006ba92e9c0edd824de139aa5aefc1c13b5c5a88b20";
 		};
 		4ADC934716A00A5300DAA972 /* Generate configuration */ = {
 			isa = PBXShellScriptBuildPhase;
