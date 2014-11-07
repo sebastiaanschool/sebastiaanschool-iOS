@@ -43,6 +43,7 @@
 
 
     #import <Parse.h>
+    #import <ParseUI.h>
     #import <ReactiveCocoa.h>
     #import <RACEXTScope.h>
 
