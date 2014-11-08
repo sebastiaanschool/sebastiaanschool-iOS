@@ -42,8 +42,9 @@
     #import <QuartzCore/QuartzCore.h>
 
 
-    #import <Parse.h>
-    #import <ParseUI.h>
+    #import <Parse/Parse.h>
+    #import <ParseUI/ParseUI.h>
+
     #import <ReactiveCocoa.h>
     #import <RACEXTScope.h>
 
