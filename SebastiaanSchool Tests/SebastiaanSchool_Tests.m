@@ -18,7 +18,6 @@
 
 #import <KIF.h>
 
-#import "SBSConfig.h"
 #import "SBSStyle.h"
 
 @interface SebastiaanSchool_Tests : KIFTestCase
@@ -36,11 +35,11 @@
     
     [tester tapViewWithAccessibilityLabel:@"Inloggen..."];
     
-    [tester tapScreenAtPoint:CGPointMake(50, 220)];
+    [tester tapScreenAtPoint:CGPointMake(50, 374)];
     [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
-    [tester tapScreenAtPoint:CGPointMake(50, 260)];
+    [tester tapScreenAtPoint:CGPointMake(50, 353)];
     [tester enterTextIntoCurrentFirstResponder:@"jeroen"];
-    [tester tapViewWithAccessibilityLabel:@"Inloggen"];
+    [tester tapViewWithAccessibilityLabel:@"Log In"];
 }
 
 - (void)testAddingBulletin
