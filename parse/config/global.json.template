@@ -1,0 +1,15 @@
+{
+    "applications": {
+        "Dev_Sebastiaanschool": {
+            "applicationId": "dummy", 
+            "masterKey": "dummy"
+        }, 
+        "Prod_Sebastiaanschool": {
+            "applicationId": "dummy", 
+            "masterKey": "dummy"
+        }, 
+        "_default": {
+            "link": "Dev_Sebastiaanschool"
+        }
+    }
+}

@@ -6,6 +6,8 @@
 // You should have received a copy of the license along with this
 // work.  If not, see <http://creativecommons.org/licenses/by-nc/3.0/>.
 
+#import <ParseCrashReporting/ParseCrashReporting.h>
+
 #import "SBSSebastiaanSchoolAppDelegate.h"
 #import "SBSInfoViewController.h"
 
@@ -13,9 +15,6 @@
 #import "SBSBulletin.h"
 #import "SBSContactItem.h"
 #import "SBSNewsLetter.h"
-
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 typedef NS_ENUM (NSInteger, SBSNotificationType) {
     SBSNotificationTypeInfo = 0,
@@ -38,6 +37,7 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [SBSContactItem registerSubclass];
     [SBSNewsLetter  registerSubclass];
     
+    [ParseCrashReporting enable];
     [Parse setApplicationId:PARSE_APPLICATION_ID
                   clientKey:PARSE_CLIENT_KEY];
     
@@ -55,8 +55,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    [Fabric with:@[CrashlyticsKit]];
-
     // Apply UIAppearance
     self.window.tintColor = [SBSStyle sebastiaanBlueColor];
     [[UINavigationBar appearance] setBarTintColor:[SBSStyle sebastiaanBlueColor]];

@@ -7,6 +7,7 @@ xcodeproj 'SebastiaanSchool.xcodeproj'
 target 'SebastiaanSchool' do
     pod 'Facebook-iOS-SDK'
     pod 'ParseUI'
+    pod 'ParseCrashReporting'
     pod 'ReactiveCocoa'
     pod 'TTTAttributedLabel'
 end
