@@ -1,0 +1,7 @@
+app_identifier "nl.sebastiaanschool.contact.app" # The bundle identifier of your app
+apple_id "jeroen@leenarts.net" # Your Apple email address
+
+# You can uncomment any of the lines below and add your own
+# team selection in case you're in multiple teams
+# team_name "Felix Krause"
+team_id "T4CMEHXPLL"
