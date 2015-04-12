@@ -17,7 +17,6 @@
 		09BEF34C13D51C3F001BBCDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEF34B13D51C3F001BBCDB /* Security.framework */; };
 		2075C02EC21543699A3107CA /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DDE31AFB4347F594B7F2CA /* libPods-test.a */; };
 		2FCDD6B014A573F500295AAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCDD6AF14A573F500295AAC /* QuartzCore.framework */; };
-		3E04949A7E782E014E30A9AB /* libPods-SebastiaanSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E52AAF81BBF0F3CCE931C3 /* libPods-SebastiaanSchool.a */; };
 		4A0124AE16FC9F2500F744D6 /* SBSBulletinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124AD16FC9F2500F744D6 /* SBSBulletinCell.m */; };
 		4A0124B116FCA71D00F744D6 /* UIView+JLFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B016FCA71D00F744D6 /* UIView+JLFrameAdditions.m */; };
 		4A0124B916FCFDA700F744D6 /* SBSEditBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B716FCFDA600F744D6 /* SBSEditBulletinViewController.m */; };
@@ -40,6 +39,7 @@
 		4A4BF3B716C6BA4100497DC0 /* SBSEditTeamMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF3B616C6BA4100497DC0 /* SBSEditTeamMemberViewController.m */; };
 		4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA04A16A34CA400F12406 /* Settings.bundle */; };
 		4A4EA05916A35B1F00F12406 /* SBSStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4EA05716A35B1F00F12406 /* SBSStaffViewController.m */; };
+		4A53EDDF1ADA7C2100C60034 /* libPods-SebastiaanSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A53EDDE1ADA7C2100C60034 /* libPods-SebastiaanSchool.a */; };
 		4A69268D17C360E100C1C9A8 /* UIView+AF1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A69268C17C360E100C1C9A8 /* UIView+AF1.m */; };
 		4A6A4F0118148CAD0080D686 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6A4F0018148CAD0080D686 /* XCTest.framework */; };
 		4A6A4F0218148CAD0080D686 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ABC07313A1D52D009C3FCF /* Foundation.framework */; };
@@ -68,7 +68,6 @@
 		4AF1F1CB19E56C4D00C6BCF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1F1CD19E56C4D00C6BCF1 /* Main.storyboard */; };
 		4AF4A0B316A86DA600493C20 /* provisiontype in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4A0B216A86DA600493C20 /* provisiontype */; };
 		4AFECD241881368A004E711D /* NSString+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFECD231881368A004E711D /* NSString+SBS.m */; };
-		4C51EF1CA27E4DCAB75F381F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEA4D0C50CC4385A21F5C1F /* libPods.a */; };
 		6332375415E438E900AE2736 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332375315E438E900AE2736 /* libsqlite3.dylib */; };
 		6372FF531613CC3C002132AF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF521613CC3C002132AF /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6372FF561613CC42002132AF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF551613CC42002132AF /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -141,6 +140,7 @@
 		4A4EA04A16A34CA400F12406 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4A4EA05616A35B1F00F12406 /* SBSStaffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSStaffViewController.h; sourceTree = "<group>"; };
 		4A4EA05716A35B1F00F12406 /* SBSStaffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSStaffViewController.m; sourceTree = "<group>"; };
+		4A53EDDE1ADA7C2100C60034 /* libPods-SebastiaanSchool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SebastiaanSchool.a"; path = "Pods/../build/Release-iphoneos/libPods-SebastiaanSchool.a"; sourceTree = "<group>"; };
 		4A69268B17C360E100C1C9A8 /* UIView+AF1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AF1.h"; sourceTree = "<group>"; };
 		4A69268C17C360E100C1C9A8 /* UIView+AF1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AF1.m"; sourceTree = "<group>"; };
 		4A6A4EFF18148CAD0080D686 /* SebastiaanSchool Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SebastiaanSchool Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,8 +229,7 @@
 				092354B313A1D7EB00DA740F /* CFNetwork.framework in Frameworks */,
 				09ABC07213A1D52D009C3FCF /* UIKit.framework in Frameworks */,
 				09ABC07413A1D52D009C3FCF /* Foundation.framework in Frameworks */,
-				4C51EF1CA27E4DCAB75F381F /* libPods.a in Frameworks */,
-				3E04949A7E782E014E30A9AB /* libPods-SebastiaanSchool.a in Frameworks */,
+				4A53EDDF1ADA7C2100C60034 /* libPods-SebastiaanSchool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +282,7 @@
 		09ABC07013A1D52D009C3FCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A53EDDE1ADA7C2100C60034 /* libPods-SebastiaanSchool.a */,
 				4A2B5BD216C639F000A21460 /* EventKit.framework */,
 				4A2B5BD316C639F000A21460 /* EventKitUI.framework */,
 				4A71D3D916A3123F00A11C80 /* MessageUI.framework */,
@@ -496,7 +496,7 @@
 		09ABC06413A1D52D009C3FCF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0630;
 				TargetAttributes = {
 					09ABC06C13A1D52D009C3FCF = {
 						DevelopmentTeam = T4CMEHXPLL;
@@ -607,7 +607,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=/usr/local/bin:$PATH\ncd parse\n\nparse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"";
+			shellScript = "export PATH=/usr/local/bin:$PATH\ncd parse\n\nparse symbols -p \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"";
 		};
 		4A35F07F16AB525500D0E7B3 /* Check and Prep release */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -782,6 +782,7 @@
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -814,6 +815,7 @@
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -848,7 +850,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -861,6 +868,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -871,8 +880,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E6774DD7-05CC-40E9-80B4-CD3ECAA6DB35";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
