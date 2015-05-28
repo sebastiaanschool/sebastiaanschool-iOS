@@ -41,9 +41,11 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [Parse setApplicationId:PARSE_APPLICATION_ID
                   clientKey:PARSE_CLIENT_KEY];
     
-    [PFUser enableAutomaticUser];
-    [[PFUser currentUser] saveInBackground];
-        
+    [PFUser enableRevocableSessionInBackground];
+    if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
+        [PFUser logOut];
+    }
+
     PFACL *defaultACL = [PFACL ACL];
 
     // If you would like all objects to be private by default, remove this line.
