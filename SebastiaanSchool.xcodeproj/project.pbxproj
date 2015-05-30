@@ -496,7 +496,7 @@
 		09ABC06413A1D52D009C3FCF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					09ABC06C13A1D52D009C3FCF = {
 						DevelopmentTeam = T4CMEHXPLL;
@@ -621,7 +621,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Detected a ${CONFIGURATION} build\"\nif [  $CONFIGURATION != Release ]; then\n    echo \"Skipping release prep\"\n    exit 0;\nfi\n\nif [ -z \"$(git status --porcelain)\" ]; then\n    echo \"Working directory clean, proceeding with RELEASE build\"\nelse\n    echo \"error: Working directory dirty, stopping build\"\n    exit 1\nfi\n\nbuildVersion=`/usr/libexec/PlistBuddy  -c \"Print CFBundleShortVersionString\" SebastiaanSchool-Info.plist`\n\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\n\necho \"Bumping build number...\"\n\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n\n#cd \"${PROJECT_DIR}\"\ngit add SebastiaanSchool-Info.plist\ngit commit -m \"Bumped build number to $buildnum\"\n\necho \"Tagging build\"\ngit tag -a ios-v${buildVersion}-${buildnum} -m \"Created archive.\"\n";
+			shellScript = "echo \"disable build step\"\nexit 0;\n\necho \"Detected a ${CONFIGURATION} build\"\nif [  $CONFIGURATION != Release ]; then\n    echo \"Skipping release prep\"\n    exit 0;\nfi\n\nif [ -z \"$(git status --porcelain)\" ]; then\n    echo \"Working directory clean, proceeding with RELEASE build\"\nelse\n    echo \"error: Working directory dirty, stopping build\"\n    exit 1\nfi\n\nbuildVersion=`/usr/libexec/PlistBuddy  -c \"Print CFBundleShortVersionString\" SebastiaanSchool-Info.plist`\n\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\n\necho \"Bumping build number...\"\n\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n\n#cd \"${PROJECT_DIR}\"\ngit add SebastiaanSchool-Info.plist\ngit commit -m \"Bumped build number to $buildnum\"\n\necho \"Tagging build\"\ngit tag -a ios-v${buildVersion}-${buildnum} -m \"Created archive.\"\n";
 		};
 		4ADC934716A00A5300DAA972 /* Generate configuration */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -781,6 +781,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jeroen Leenarts (6RTNT4ZKCC)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -854,6 +855,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.sebastiaanschool.contact.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -884,6 +886,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.sebastiaanschool.contact.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -921,6 +924,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "SebastiaanSchool Tests/SebastiaanSchool Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.sebastiaanschool.contact.app.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -952,6 +956,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "SebastiaanSchool Tests/SebastiaanSchool Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.sebastiaanschool.contact.app.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;

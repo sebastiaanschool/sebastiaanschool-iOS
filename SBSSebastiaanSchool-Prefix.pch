@@ -59,7 +59,7 @@
     #import "UIResponder+SBS.h"
     #import "NSString+SBS.h"
 
-    #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height >= ( double )568 ))
+    #define IS_WIDESCREEN ( ( double )[ [ UIScreen mainScreen ] bounds ].size.height >= ( CGFloat )568 )
     #define IS_PHONE ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     #define IS_PAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 
