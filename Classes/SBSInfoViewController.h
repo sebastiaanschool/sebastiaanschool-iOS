@@ -25,5 +25,4 @@
 @property (weak, nonatomic) IBOutlet SBSButton *bulletinButton;
 
 - (IBAction)buttonTapped:(id)sender;
--(void)updateBarButtonItemAnimated:(BOOL)animated;
 @end

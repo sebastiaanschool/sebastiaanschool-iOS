@@ -7,7 +7,6 @@
 // work.  If not, see <http://creativecommons.org/licenses/by-nc/3.0/>.
 
 #import "SBSBulletinViewController.h"
-#import "SBSEditBulletinViewController.h"
 #import "SBSBulletinCell.h"
 
 #import "SBSBulletin.h"
@@ -22,8 +21,6 @@
 -(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-        
         // Custom the table
         
         // The className to query on
@@ -48,8 +45,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-        
         // Custom the table
         
         // The className to query on
@@ -82,31 +77,6 @@
     self.title = NSLocalizedString(@"Bulletin", nil);
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateBarButtonItemAnimated:animated];
-}
-
--(void)updateBarButtonItemAnimated:(BOOL)animated {
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-            [self.navigationItem setRightBarButtonItem:addButton animated:animated];
-            @weakify(self);
-            addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-                @strongify(self);
-                SBSEditBulletinViewController *editBuletinVC = [[SBSEditBulletinViewController alloc]init];
-                editBuletinVC.delegate = self;
-                [self.navigationController pushViewController:editBuletinVC animated:YES];
-
-                return [RACSignal empty];
-            }];
-        }
-    } else {
-        [self.navigationItem setRightBarButtonItem:nil animated:animated];
-    }
-}
-
 #pragma mark - Parse
 
 // Override to customize what kind of query to perform on the class. The default is to query for
@@ -124,54 +94,6 @@
     
     return query;
 }
-
-#pragma mark - SBSAddBulletinViewController delegates
-
--(void)createBulletin:(PFObject *)newBulletin {
-    @weakify(self);
-    [newBulletin saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while adding bulletin: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
--(void)updateBulletin:(PFObject *)updatedBulletin {
-    @weakify(self);
-    [updatedBulletin saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while updating bulletin: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
--(void)deleteBulletin:(PFObject *)deletedBulletin {
-    @weakify(self);
-    [deletedBulletin deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while deleting bulletin: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
 
 // Override to customize the look of a cell representing an object. The default is to display
 // a UITableViewCellStyleDefault style cell with the label being the first key in the object.
@@ -199,19 +121,7 @@
 #pragma mark - Table view delegate
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([SBSSecurity instance].currentUserStaffUser) {
-        return indexPath;
-    } else {
-        return nil;
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SBSEditBulletinViewController *bulletinVC = [[SBSEditBulletinViewController alloc]init];
-    bulletinVC.delegate = self;
-    bulletinVC.bulletin = (SBSBulletin *)[self objectAtIndexPath:indexPath];
-    [self.navigationController pushViewController:bulletinVC animated:YES];
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -219,12 +129,5 @@
     SBSBulletin * object = (SBSBulletin *)[self objectAtIndexPath:indexPath];
     return [SBSBulletinCell heightForWidth:self.view._width withItem:object];
 }
-
-#pragma mark - Listen for security role changes
-
--(void)userRoleChanged:(NSNotification *)notification {
-    [self updateBarButtonItemAnimated:YES];
-}
-
 
 @end

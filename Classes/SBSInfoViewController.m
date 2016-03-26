@@ -19,11 +19,9 @@
 #import "SBSTeamTableViewController.h"
 #import "SBSNewsLetterTableViewController.h"
 #import "SBSBulletinViewController.h"
-#import "SBSStaffViewController.h"
 #import "SebastiaanStyleKit.h"
 
 @interface SBSInfoViewController ()
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *staffBarButton;
 
 @end
 
@@ -80,18 +78,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self updateLayout];
-}
-
--(void)updateBarButtonItemAnimated:(BOOL)animated {
-    if ([NSUserDefaults enableStaffLogin]) {
-        if (self.staffBarButton == nil) {
-            self.staffBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Staff", nil) style:UIBarButtonItemStylePlain target:self action:@selector(buttonTapped:)];
-            [self.navigationItem setRightBarButtonItem:self.staffBarButton animated:animated];
-        }
-    } else {
-        self.staffBarButton = nil;
-        [self.navigationItem setRightBarButtonItem:nil animated:animated];
-    }
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
@@ -164,11 +150,6 @@
             [self performSegueWithIdentifier:@"newsletterSegue" sender:self];
         } else if(sender == self.bulletinButton) {
             [self performSegueWithIdentifier:@"bulletinSegue" sender:self];
-        } else if(sender == self.staffBarButton) {
-            UIViewController *vc = [[SBSStaffViewController alloc] init];
-            vc.title = NSLocalizedString(@"Staff", nil);
-            [self trackEvent:[NSString stringWithFormat:@"%@ button tapped on phone.", vc.title]];
-            [self.navigationController pushViewController:vc animated:YES];
         } else {
             NSAssert(NO, @"Unknown button tapped.");
         }

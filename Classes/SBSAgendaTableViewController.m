@@ -34,8 +34,6 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-        
         // Custom the table
         
         // The className to query on
@@ -60,8 +58,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-
         // Custom the table
         
         // The className to query on
@@ -92,31 +88,6 @@
     self.title = NSLocalizedString(@"Agenda", nil);
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateBarButtonItemAnimated:animated];
-}
-
--(void)updateBarButtonItemAnimated:(BOOL)animated {
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-            @weakify(self);
-            addButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-                @strongify(self);
-                SBSEditAgendaViewController *editAgendaVC = [[SBSEditAgendaViewController alloc]init];
-                editAgendaVC.delegate = self;
-                [self.navigationController pushViewController:editAgendaVC animated:YES];
-
-                return [RACSignal empty];
-            }];
-            [self.navigationItem setRightBarButtonItem:addButton animated:animated];
-        }
-    } else {
-        [self.navigationItem setRightBarButtonItem:nil animated:animated];
-    }
-}
-
 #pragma mark - Parse
 
 // Override to customize what kind of query to perform on the class. The default is to query for
@@ -133,53 +104,6 @@
     [query orderByAscending:@"start"];
     
     return query;
-}
-
-#pragma mark - SBSEditAgendaViewController delegates
-
--(void)createAgendaItem:(SBSAgendaItem *)agendaItem {
-    @weakify(self);
-    [agendaItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while adding bulletin: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
--(void)updateAgendaItem:(SBSAgendaItem *)agendaItem {
-    @weakify(self);
-    [agendaItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while updating bulletin: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
--(void)deleteAgendaItem:(SBSAgendaItem *)agendaItem {
-    @weakify(self);
-    [agendaItem deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while deleting bulletin: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
 }
 
 // Override to customize the look of a cell representing an object. The default is to display
@@ -213,105 +137,51 @@
 
 
 #pragma mark - Table view data source
-#pragma mark - Table view data source
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return [SBSSecurity instance].currentUserStaffUser;
-}
-
-//-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return YES;
-//}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
-}
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:indexPath];
-        NSString *agendaItemName = agendaItem.name;
-        
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), agendaItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
-        
-        [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
-            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-            if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
-                return;
-            }
-            SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-            if ([[SBSSecurity instance] currentUserStaffUser]) {
-                // Delete the row from the data source
-                [self deleteAgendaItem:agendaItem];
-            }
-        }];
-        
-        [self displayActionSheet:actionSheet];
-    }
-}
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([SBSSecurity instance].currentUserStaffUser) {
-        SBSEditAgendaViewController *agendaItemVC = [[SBSEditAgendaViewController alloc]init];
-        agendaItemVC.delegate = self;
-        agendaItemVC.agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:indexPath];
-        [self.navigationController pushViewController:agendaItemVC animated:YES];
-    } else {
-        SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:indexPath];
+    SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:indexPath];
+    NSString *agendaItemName = agendaItem.name;
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Add \"%@\" to your default calendar?", nil), agendaItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Add to calendar", nil), nil];
+    
+    [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+        
+        if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
+            return;
+        }
+        SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
         NSString *agendaItemName = agendaItem.name;
+        NSDate *agendaItemStartDate = agendaItem.start;
+        NSDate *agendaItemEndDate = agendaItem.end;
         
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Add \"%@\" to your default calendar?", nil), agendaItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Add to calendar", nil), nil];
+        EKEvent *event=[EKEvent eventWithEventStore:self.eventStore];
+        event.allDay = YES;
+        event.title=agendaItemName;
+        event.startDate=agendaItemStartDate;
+        event.endDate=agendaItemEndDate;
+        [event setCalendar:[self.eventStore defaultCalendarForNewEvents]];
         
-        [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
-            [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-
-            if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
-                return;
-            }
-            SBSAgendaItem *agendaItem = (SBSAgendaItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-            NSString *agendaItemName = agendaItem.name;
-            NSDate *agendaItemStartDate = agendaItem.start;
-            NSDate *agendaItemEndDate = agendaItem.end;
-            
-            EKEvent *event=[EKEvent eventWithEventStore:self.eventStore];
-            event.allDay = YES;
-            event.title=agendaItemName;
-            event.startDate=agendaItemStartDate;
-            event.endDate=agendaItemEndDate;
-            [event setCalendar:[self.eventStore defaultCalendarForNewEvents]];
-            
-            
-            if([self.eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-                @weakify(self);
-                [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-                    @strongify(self);
-                    if (granted) {
-                        NSError *error;
-                        [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
-                    }
-                }];
-            } else {
-                NSError *error;
-                [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
-            }
-        }];
-
-        [self displayActionSheet:actionSheet];
-    }
-}
-
-#pragma mark - Listen for security role changes
-
--(void)userRoleChanged:(NSNotification *)notification {
-    [self updateBarButtonItemAnimated:YES];
+        
+        if([self.eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+            @weakify(self);
+            [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                @strongify(self);
+                if (granted) {
+                    NSError *error;
+                    [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
+                }
+            }];
+        } else {
+            NSError *error;
+            [self.eventStore saveEvent:event span:EKSpanThisEvent error:&error];
+        }
+    }];
+    
+    [self displayActionSheet:actionSheet];
 }
 
 @end

@@ -15,10 +15,4 @@
 
 @implementation NSUserDefaults (SBS)
 
-+(BOOL) enableStaffLogin {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults synchronize];
-    return [defaults boolForKey:@"enableStaffLogin"];    
-}
-
 @end

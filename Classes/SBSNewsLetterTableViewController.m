@@ -32,8 +32,6 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-        
         // Custom the table
         
         // The className to query on
@@ -57,8 +55,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-        
         // Custom the table
         
         // The className to query on
@@ -88,78 +84,6 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     self.title = NSLocalizedString(@"Newsletter", nil);
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateBarButtonItemAnimated:animated];
-}
-
--(void)updateBarButtonItemAnimated:(BOOL)animated {
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        if (self.navigationItem.rightBarButtonItem == nil) {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-            @weakify(self);
-            addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
-                @strongify(self);
-                SBSEditNewsLetterViewController *editNewsLetterVC = [[SBSEditNewsLetterViewController alloc]init];
-                editNewsLetterVC.delegate = self;
-                [self.navigationController pushViewController:editNewsLetterVC animated:YES];
-                
-                return [RACSignal empty];
-            }];
-            [self.navigationItem setRightBarButtonItem:addButton animated:animated];
-        }
-    } else {
-        [self.navigationItem setRightBarButtonItem:nil animated:animated];
-    }
-}
-
-#pragma mark - SBSEditNewsLetterViewController delegates
-
--(void)createNewsLetter:(SBSNewsLetter *)newNewsLetter {
-    @weakify(self);
-    [newNewsLetter saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while adding newsletter: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
--(void)updateNewsLetter:(SBSNewsLetter *)updatedNewsLetter {
-    @weakify(self);
-    [updatedNewsLetter saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while updating newsletter: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
-}
-
--(void)deleteNewsLetter:(SBSNewsLetter *)deletedNewsLetter {
-    @weakify(self);
-    [deletedNewsLetter deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        @strongify(self);
-        if (succeeded) {
-            //Do a big reload since the framework VC doesn't support nice view insertions and removal.
-            [self loadObjects];
-        } else {
-            ULog(@"Error while deleting newsletter: %@", error);
-        }
-    }];
-    
-    [self.navigationController popToViewController:self animated:YES];
 }
 
 #pragma mark - Parse
@@ -194,11 +118,6 @@
     // Configure the cell
     cell.textLabel.text = [newsletter.name capitalizedString];
     cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Published: %@", nil), [[SBSStyle longStyleDateFormatter] stringFromDate:newsletter.publishedAt]];
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        cell.accessoryType = UITableViewCellAccessoryDetailButton;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
     
     return cell;
 }
@@ -212,22 +131,4 @@
     newsletterViewController.title = [newsLetter.name capitalizedString];
     [self.navigationController pushViewController:newsletterViewController animated:YES];
 }
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    SBSEditNewsLetterViewController *newsletterVC = [[SBSEditNewsLetterViewController alloc]init];
-    newsletterVC.delegate = self;
-    newsletterVC.newsletter = (SBSNewsLetter *)[self objectAtIndexPath:indexPath];
-    [self.navigationController pushViewController:newsletterVC animated:YES];
-}
-
-
-#pragma mark - Listen for security role changes
-
--(void)userRoleChanged:(NSNotification *)notification {
-    [self updateBarButtonItemAnimated:YES];
-    [self loadObjects];
-}
-
-
 @end

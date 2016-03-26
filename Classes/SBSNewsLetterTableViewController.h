@@ -13,8 +13,6 @@
 //
 //
 
-#import "SBSEditNewsLetterViewController.h"
-
-@interface SBSNewsLetterTableViewController : PFQueryTableViewController <SBSEditNewsLetterDelegate>
+@interface SBSNewsLetterTableViewController : PFQueryTableViewController
 
 @end

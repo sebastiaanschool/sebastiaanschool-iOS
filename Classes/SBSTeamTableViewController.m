@@ -14,12 +14,10 @@
 //
 
 #import "SBSTeamTableViewController.h"
-#import "SBSEditTeamMemberViewController.h"
 
 #import "SBSContactItem.h"
 
 @interface SBSTeamTableViewController ()
-@property (nonatomic, strong) NSMutableArray *editedObjects;
 @end
 
 @implementation SBSTeamTableViewController
@@ -33,8 +31,6 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-        
         // Custom the table
         
         // The className to query on
@@ -59,8 +55,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userRoleChanged:) name:SBSUserRoleDidChangeNotification object:nil];
-
         // Custom the table
         
         // The className to query on
@@ -88,66 +82,6 @@
     
     self.title = NSLocalizedString(@"Team", nil);
 }
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateBarButtonItemsAnimated:animated editing:NO];
-}
-
--(void)updateBarButtonItemsAnimated:(BOOL)animated editing:(BOOL)editing {
-    NSArray *buttons = nil;
-
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        if (editing) {
-            UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
-            @weakify(self);
-            doneButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
-                @strongify(self);
-                if (self.editedObjects != nil) {
-                    [[self.navigationItem rightBarButtonItems] makeObjectsPerformSelector:@selector(setEnabled:) withObject:@(NO)];
-                    @weakify(self);
-                    [PFObject saveAllInBackground:self.editedObjects block:^(BOOL succeeded, NSError *error) {
-                        @strongify(self);
-                        [self updateBarButtonItemsAnimated:YES editing:NO];
-                        [self loadObjects];
-                        [self setEditing:NO animated:YES];
-                    }];
-                    self.editedObjects = nil;
-                } else {
-                    [self updateBarButtonItemsAnimated:YES editing:NO];
-                    [self setEditing:NO animated:YES];
-                }
-
-                return [RACSignal empty];
-            }];
-            buttons = @[doneButton];
-            
-        } else {
-            UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-            @weakify(self);
-            addButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
-                @strongify(self);
-                SBSEditTeamMemberViewController *addTeamMemberVC = [[SBSEditTeamMemberViewController alloc]init];
-                addTeamMemberVC.delegate = self;
-                [self.navigationController pushViewController:addTeamMemberVC animated:YES];
-
-                return [RACSignal empty];
-            }];
-            UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:nil action:nil];
-            editButton.rac_command = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
-                @strongify(self);
-                NSAssert([[SBSSecurity instance] currentUserStaffUser], @"User has to be a staff user");
-                [self updateBarButtonItemsAnimated:YES editing:YES];
-                [self setEditing:YES animated:YES];
-
-                return [RACSignal empty];
-            }];
-            buttons = @[editButton, addButton];
-        }
-    }
-    [self.navigationItem setRightBarButtonItems:buttons animated:animated];
-}
-
 
 #pragma mark - Parse
 
@@ -233,77 +167,12 @@
 }
 
 
-#pragma mark - Table view data source
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return [SBSSecurity instance].currentUserStaffUser;
-}
-
--(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
-}
-
--(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath
-     toIndexPath:(NSIndexPath *)toIndexPath {
-    if (self.editedObjects == nil) {
-        self.editedObjects = [self.objects mutableCopy];
-    }
-    
-    id item = [self.editedObjects objectAtIndex:fromIndexPath.row];
-    [self.editedObjects removeObjectAtIndex:fromIndexPath.row];
-    [self.editedObjects insertObject:item atIndex:toIndexPath.row];
-    
-    [self.editedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        SBSContactItem *contact = obj;
-        contact.order = @(idx);
-    }];
-}
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        SBSContactItem *contactItem = (SBSContactItem *)[self objectAtIndexPath:indexPath];
-        NSString *contactItemName = contactItem.displayName;
-        
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:[NSString stringWithFormat: NSLocalizedString(@"Are you sure you want to delete \"%@\"?", nil), contactItemName] delegate:nil cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Delete", nil) otherButtonTitles:nil];
-        [[actionSheet rac_buttonClickedSignal] subscribeNext:^(NSNumber *buttonIndex) {
-            if (buttonIndex.integerValue == actionSheet.cancelButtonIndex) {
-                return;
-            }
-            // Delete the row from the data source
-            SBSContactItem *deletedTeamMember = (SBSContactItem *)[self objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-            [self deleteTeamMember:deletedTeamMember];
-
-        }];
-        
-        [self displayActionSheet:actionSheet];
-    }
-}
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if ([[SBSSecurity instance] currentUserStaffUser]) {
-        SBSEditTeamMemberViewController *teamMemberVC = [[SBSEditTeamMemberViewController alloc]init];
-        teamMemberVC.delegate = self;
-        teamMemberVC.contact = (SBSContactItem *)[self objectAtIndexPath:indexPath];
-        [self.navigationController pushViewController:teamMemberVC animated:YES];
-        
-        return;
-    }
-
-
     SBSContactItem *selectedContactItem = (SBSContactItem *)[self objectAtIndexPath:indexPath];
     
     NSString *displayName = selectedContactItem.displayName;
@@ -372,12 +241,6 @@
     
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-#pragma mark - Listen for security role changes
-
--(void)userRoleChanged:(NSNotification *)notification {
-    [self updateBarButtonItemsAnimated:YES editing:NO];
 }
 
 @end

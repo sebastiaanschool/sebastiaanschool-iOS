@@ -53,8 +53,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 
     // If you would like all objects to be private by default, remove this line.
     [defaultACL setPublicReadAccess:YES];
-    [defaultACL setWriteAccess:YES forRoleWithName:@"staff"];
-    [defaultACL setReadAccess:YES forRoleWithName:@"staff"];
     
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 	
@@ -156,7 +154,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self.infoViewController updateBarButtonItemAnimated:YES];
     //When we activate the app, no matter why, we always reset the notification center.
     application.applicationIconBadgeNumber = 0;
 }

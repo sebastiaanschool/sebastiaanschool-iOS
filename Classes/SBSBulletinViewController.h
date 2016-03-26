@@ -13,8 +13,6 @@
 //
 //
 
-#import "SBSEditBulletinViewController.h"
-
-@interface SBSBulletinViewController : PFQueryTableViewController <SBSEditBulletinDelegate>
+@interface SBSBulletinViewController : PFQueryTableViewController
 
 @end

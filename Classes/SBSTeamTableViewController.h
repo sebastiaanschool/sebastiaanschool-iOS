@@ -15,8 +15,6 @@
 
 #import <MessageUI/MessageUI.h>
 
-#import "SBSEditTeamMemberViewController.h"
-
-@interface SBSTeamTableViewController : PFQueryTableViewController <MFMailComposeViewControllerDelegate, SBSAddTeamMemberDelegate>
+@interface SBSTeamTableViewController : PFQueryTableViewController <MFMailComposeViewControllerDelegate>
 
 @end
