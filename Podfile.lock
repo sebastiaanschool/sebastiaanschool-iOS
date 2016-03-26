@@ -7,9 +7,6 @@ PODS:
   - OneSignal (1.11.3)
   - Parse (1.8.0):
     - Bolts/Tasks (>= 1.2.0)
-  - ParseCrashReporting (1.8.0.1):
-    - Bolts/Tasks (>= 1.2.0)
-    - Parse (~> 1.8.0)
   - ParseUI (1.1.5):
     - Bolts/Tasks (~> 1.2)
     - Parse (~> 1.8)
@@ -26,7 +23,6 @@ DEPENDENCIES:
   - KIF (~> 3.0)
   - OCMock
   - OneSignal
-  - ParseCrashReporting
   - ParseUI
   - ReactiveCocoa
   - TTTAttributedLabel
@@ -37,7 +33,6 @@ SPEC CHECKSUMS:
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   OneSignal: 309b636ba56955a427fd1d2544ba4dd52e19fce0
   Parse: 6ea05adb378fbfd6f8726ab67ef74330d96fc903
-  ParseCrashReporting: 4b84975724aea49bf64533a8fff1df577438a612
   ParseUI: 2c53621ed028ee793f5ab92a551b099689265525
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f

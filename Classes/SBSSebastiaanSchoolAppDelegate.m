@@ -8,8 +8,6 @@
 
 #import <OneSignal/OneSignal.h>
 
-#import <ParseCrashReporting/ParseCrashReporting.h>
-
 #import "SBSSebastiaanSchoolAppDelegate.h"
 #import "SBSInfoViewController.h"
 
@@ -40,7 +38,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [SBSContactItem registerSubclass];
     [SBSNewsLetter  registerSubclass];
     
-    [ParseCrashReporting enable];
     [Parse setApplicationId:PARSE_APPLICATION_ID
                   clientKey:PARSE_CLIENT_KEY];
     

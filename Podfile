@@ -6,7 +6,6 @@ xcodeproj 'SebastiaanSchool.xcodeproj'
 
 target 'SebastiaanSchool' do
     pod 'ParseUI'
-    pod 'ParseCrashReporting'
     pod 'ReactiveCocoa'
     pod 'TTTAttributedLabel'
     pod 'OneSignal'
