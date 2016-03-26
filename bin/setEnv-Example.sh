@@ -26,3 +26,7 @@ export PARSE_MASTER_KEY="dummy"
 
 export ONESIGNAL_APP_ID="dummy"
 
+#Fabric info
+export FABRIC_API_KEY="dummy"
+export FABRIC_BUILD_SECRET="dummy"
+

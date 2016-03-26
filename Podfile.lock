@@ -1,5 +1,8 @@
 PODS:
   - Bolts/Tasks (1.2.0)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
   - KIF/XCTest (3.2.3)
@@ -20,6 +23,8 @@ PODS:
   - TTTAttributedLabel (1.13.4)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - KIF (~> 3.0)
   - OCMock
   - OneSignal
@@ -29,6 +34,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   OneSignal: 309b636ba56955a427fd1d2544ba4dd52e19fce0

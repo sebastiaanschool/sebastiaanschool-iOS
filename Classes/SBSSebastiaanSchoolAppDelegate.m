@@ -16,6 +16,9 @@
 #import "SBSContactItem.h"
 #import "SBSNewsLetter.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 typedef NS_ENUM (NSInteger, SBSNotificationType) {
     SBSNotificationTypeInfo = 0,
     SBSNotificationTypeNewsletter = 1,
@@ -57,6 +60,8 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [Fabric with:@[CrashlyticsKit]];
+
     // Apply UIAppearance
     self.window.tintColor = [SBSStyle sebastiaanBlueColor];
     [[UINavigationBar appearance] setBarTintColor:[SBSStyle sebastiaanBlueColor]];
