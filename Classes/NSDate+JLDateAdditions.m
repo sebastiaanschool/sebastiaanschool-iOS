@@ -18,7 +18,7 @@
 @implementation NSDate (JLDateAdditions)
 
 + (NSDate *)midnightDate{
-    NSUInteger flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSUInteger flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     NSDateComponents *components = [[NSCalendar currentCalendar] components:flags
                                                                    fromDate:[NSDate date]];
     NSString *stringDate = [NSString stringWithFormat:@"%ld/%ld/%ld", (long)components.day, (long)components.month, (long)components.year];
