@@ -96,6 +96,14 @@ then
     exit 6
 fi
 
+if [ -z "${ONESIGNAL_APP_ID}" ]
+then
+echo "${PROGNAME}: Parse ONESIGNAL_APP_ID not set in environment" 1>&2
+exit 6
+fi
+
+
+
 
 cat << EOF
 /**********
@@ -127,6 +135,7 @@ echo "NSString * const PARSE_CLIENT_KEY = @\"${PARSE_CLIENT_KEY}\";"
 
 fi
 
+echo "NSString * const ONESIGNAL_APP_ID = @\"${ONESIGNAL_APP_ID}\";"
 
 
 if [ "${DEBUG_LOGGING}" = 'YES' ];

@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7'
+platform :ios, '8'
 
 workspace 'SebastiaanSchool'
 xcodeproj 'SebastiaanSchool.xcodeproj'
@@ -9,6 +9,7 @@ target 'SebastiaanSchool' do
     pod 'ParseCrashReporting'
     pod 'ReactiveCocoa'
     pod 'TTTAttributedLabel'
+    pod 'OneSignal'
 end
 
 target :test, :exclusive => true do 

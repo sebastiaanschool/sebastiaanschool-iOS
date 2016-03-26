@@ -24,3 +24,5 @@ export PARSE_REST_API_KEY="dummy"
 
 export PARSE_MASTER_KEY="dummy"
 
+export ONESIGNAL_APP_ID="dummy"
+

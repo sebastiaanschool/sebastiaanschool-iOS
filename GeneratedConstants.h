@@ -18,4 +18,5 @@ extern const BOOL DEBUG_PAYLOAD_ALLOWED;
 extern NSString * const SERVER_URL;
 extern NSString * const PARSE_APPLICATION_ID;
 extern NSString * const PARSE_CLIENT_KEY;
+extern NSString * const ONESIGNAL_APP_ID;
 

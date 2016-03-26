@@ -460,6 +460,7 @@
 				09ABC06B13A1D52D009C3FCF /* Resources */,
 				5ABC975BEE204B45B88A5D02 /* Copy Pods Resources */,
 				4A22EF211A3A3C880047CBD3 /* Upload DSYM files to Parse.com */,
+				7A208479FED7A565F3C8DA00 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,6 +480,7 @@
 				4A6A4EFC18148CAD0080D686 /* Frameworks */,
 				4A6A4EFD18148CAD0080D686 /* Resources */,
 				488EFC67C80B46AC995909BA /* Copy Pods Resources */,
+				08F87B849BD86312802AB3ED /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -580,6 +582,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		08F87B849BD86312802AB3ED /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		488EFC67C80B46AC995909BA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,6 +667,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A208479FED7A565F3C8DA00 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88CF2DF0A23546FF9ACCBF6F /* Check Pods Manifest.lock */ = {
@@ -850,7 +882,7 @@
 				GCC_PREFIX_HEADER = "SBSSebastiaanSchool-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
@@ -881,7 +913,7 @@
 				GCC_PREFIX_HEADER = "SBSSebastiaanSchool-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",

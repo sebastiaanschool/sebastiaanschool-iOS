@@ -6,6 +6,8 @@
 // You should have received a copy of the license along with this
 // work.  If not, see <http://creativecommons.org/licenses/by-nc/3.0/>.
 
+#import <OneSignal/OneSignal.h>
+
 #import <ParseCrashReporting/ParseCrashReporting.h>
 
 #import "SBSSebastiaanSchoolAppDelegate.h"
@@ -25,6 +27,7 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 
 @interface SBSSebastiaanSchoolAppDelegate ()
 @property (strong, readonly) SBSInfoViewController* infoViewController;
+@property (strong, nonatomic) OneSignal *oneSignal;
 @end
 
 @implementation SBSSebastiaanSchoolAppDelegate
@@ -67,53 +70,42 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [self.window makeKeyAndVisible];
     
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    else
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
-    }
+    self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
+                                                        appId:ONESIGNAL_APP_ID
+                                           handleNotification:^(NSString* message, NSDictionary* additionalData, BOOL isActive) {
+                                               NSLog(@"OneSignal Notification opened:\nMessage: %@", message);
+                                               
+                                               if (additionalData) {
+                                                   NSLog(@"additionalData: %@", additionalData);
+                                                   
+                                                   // Extract the notification data
+                                                   NSString* notificationType = additionalData[@"t"];
+                                                   
+                                                   if (notificationType == nil) {
+                                                       return;
+                                                   }
 
-    
-    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    [self handleRemoteNotification:notificationPayload];
+                                                   switch ((SBSNotificationType)notificationType.intValue) {
+                                                       case SBSNotificationTypeBulletin:
+                                                           [self.rootViewController popToRootViewControllerAnimated:NO];
+                                                           [self.infoViewController buttonTapped:self.infoViewController.bulletinButton];
+                                                           break;
+                                                       case SBSNotificationTypeNewsletter:
+                                                           [self.rootViewController popToRootViewControllerAnimated:NO];
+                                                           [self.infoViewController buttonTapped:self.infoViewController.newsButton];
+                                                           break;
+                                                       case SBSNotificationTypeInfo:
+                                                       case SBSNotificationTypeStaff:
+                                                           NSLog(@"Unhandled notification: %i", notificationType.intValue);
+                                                           break;
+                                                   }
+                                               }
+                                           }];
     
     return YES;
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
-    [PFPush storeDeviceToken:newDeviceToken];
-    [[PFInstallation currentInstallation] addUniqueObject:@"" forKey:@"channels"];
-#ifdef DEBUG
-    [[PFInstallation currentInstallation] addUniqueObject:@"debug" forKey:@"channels"];
-#endif
-    [[PFInstallation currentInstallation] saveEventually];
-}
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    if (error.code == 3010) {
-        NSLog(@"Push notifications are not supported in the iOS Simulator.");
-    } else {
-        // show some alert or otherwise handle the failure to register.
-        NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
-	}
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
-	[PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
-    [self handleRemoteNotification:userInfo];
-
-    //When we are in app and receive a push, we reset the badge to kick the notification out of notification center.
-    application.applicationIconBadgeNumber = 0;
-}
-
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-	[PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
     [self trackEvent:@"Handling background fetch."];
 
     if (userInfo == nil) {
@@ -157,28 +149,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     }];
 }
 
-- (void)handleRemoteNotification:(NSDictionary *) notificationPayload {
-    if (notificationPayload == nil) {
-        return;
-    }
-    // Extract the notification data
-    NSNumber * notificationType = [notificationPayload objectForKey:@"t"];
-    switch ((SBSNotificationType)notificationType.intValue) {
-        case SBSNotificationTypeBulletin:
-            [self.rootViewController popToRootViewControllerAnimated:NO];
-            [self.infoViewController buttonTapped:self.infoViewController.bulletinButton];
-            break;
-        case SBSNotificationTypeNewsletter:
-            [self.rootViewController popToRootViewControllerAnimated:NO];
-            [self.infoViewController buttonTapped:self.infoViewController.newsButton];
-            break;
-        case SBSNotificationTypeInfo:
-        case SBSNotificationTypeStaff:
-            NSLog(@"Unhandled notification: %i", notificationType.intValue);
-            break;
-    }
-}
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -194,17 +164,6 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     
     NSAssert([topViewController isKindOfClass:[SBSInfoViewController class]], @"Top view controller in the navigation hierarchy should always be a SBSInfoViewController.");
     return (SBSInfoViewController *)topViewController;
-}
-
-
-#pragma mark - ()
-
-- (void)subscribeFinished:(NSNumber *)result error:(NSError *)error {
-    if ([result boolValue]) {
-        NSLog(@"Sebastiaan app successfully subscribed to push notifications on the broadcast channel.");
-    } else {
-        NSLog(@"Sebastiaan app failed to subscribe to push notifications on the broadcast channel.");
-    }
 }
 
 #pragma mark - UIResponder+SBS overrides
