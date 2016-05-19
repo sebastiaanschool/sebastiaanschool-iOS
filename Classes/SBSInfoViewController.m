@@ -19,7 +19,8 @@
 #import "SBSTeamTableViewController.h"
 #import "SBSNewsLetterTableViewController.h"
 #import "SBSBulletinViewController.h"
-#import "SebastiaanStyleKit.h"
+
+#import "SebastiaanSchool-Swift.h"
 
 @interface SBSInfoViewController ()
 

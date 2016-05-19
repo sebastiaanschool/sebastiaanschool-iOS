@@ -15,7 +15,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <TTTAttributedLabel.h>
+#import "TTTAttributedLabel.h"
 
 #import "SBSBulletin.h"
 

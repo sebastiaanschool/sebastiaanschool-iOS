@@ -13,6 +13,8 @@
 //
 //
 
+#import <ParseUI/ParseUI.h>
+
 @interface SBSAgendaTableViewController : PFQueryTableViewController
 
 @end

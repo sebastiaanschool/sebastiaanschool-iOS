@@ -1,47 +1,62 @@
 PODS:
-  - Bolts/Tasks (1.2.0)
+  - Bolts/Tasks (1.7.0)
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
-  - KIF (3.2.3):
-    - KIF/XCTest (= 3.2.3)
-  - KIF/XCTest (3.2.3)
-  - OCMock (3.1.2)
-  - OneSignal (1.11.3)
-  - Parse (1.8.0):
-    - Bolts/Tasks (>= 1.2.0)
-  - ParseUI (1.1.5):
-    - Bolts/Tasks (~> 1.2)
-    - Parse (~> 1.8)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
+  - JsonApiClient (0.3.4):
+    - SwiftyJSON (~> 2.3)
+  - OneSignal (1.13.2)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - ReactiveCocoa (4.1.0):
+    - ReactiveCocoa/UI (= 4.1.0)
+    - Result (~> 2.0)
+  - ReactiveCocoa/Core (4.1.0):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
+    - Result (~> 2.0)
+  - ReactiveCocoa/no-arc (4.1.0):
+    - Result (~> 2.0)
+  - ReactiveCocoa/UI (4.1.0):
     - ReactiveCocoa/Core
-  - TTTAttributedLabel (1.13.4)
+    - Result (~> 2.0)
+  - Result (2.0.0)
+  - SwiftyJSON (2.3.2)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - KIF (~> 3.0)
-  - OCMock
+  - JsonApiClient (from `https://github.com/jeroenleenarts/JsonApiClient.git`)
   - OneSignal
   - ParseUI
   - ReactiveCocoa
   - TTTAttributedLabel
 
+EXTERNAL SOURCES:
+  JsonApiClient:
+    :git: https://github.com/jeroenleenarts/JsonApiClient.git
+
+CHECKOUT OPTIONS:
+  JsonApiClient:
+    :commit: 54c6f4ee781fde4f7f26de673dd0e897ab726122
+    :git: https://github.com/jeroenleenarts/JsonApiClient.git
+
 SPEC CHECKSUMS:
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
-  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
-  OneSignal: 309b636ba56955a427fd1d2544ba4dd52e19fce0
-  Parse: 6ea05adb378fbfd6f8726ab67ef74330d96fc903
-  ParseUI: 2c53621ed028ee793f5ab92a551b099689265525
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+  JsonApiClient: ce546c3ced47381da1a8b52d4041a72cdecf3c18
+  OneSignal: 15b94fa760a6754908f11ef92da6ec945923fa2c
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: fef520627bf8cebb3839b52c37fa89d5cd6a2857
+
+COCOAPODS: 1.0.0
