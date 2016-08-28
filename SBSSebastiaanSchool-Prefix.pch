@@ -50,7 +50,6 @@
 
     #import "SBSStyle.h"
 
-    #import "NSUserDefaults+SBS.h"
     #import "UIView+AF1.h"
     #import "UIView+JLFrameAdditions.h"
     #import "UIResponder+SBS.h"
