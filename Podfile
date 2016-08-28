@@ -13,10 +13,12 @@ target 'SebastiaanSchool' do
     pod 'Crashlytics'
     pod 'ReactiveCocoa'
     pod 'TTTAttributedLabel'
+    pod 'RealmSwift'
     pod 'OneSignal'
 end
 
 target 'SebastiaanSchoolTests' do
+    pod 'RealmSwift'
 end
 
 post_install do | installer |
