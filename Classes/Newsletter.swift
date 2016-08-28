@@ -1,8 +1,8 @@
 //
-//  Bulletin.swift
+//  ContactItem.swift
 //  SebastiaanSchool
 //
-//  Created by Jeroen Leenarts on 19-05-16.
+//  Created by Jeroen Leenarts on 28-08-16.
 //
 //
 
@@ -11,12 +11,12 @@ import Foundation
 import JsonApiClient
 import RealmSwift
 
-public class Bulletin: Object, ReflectedStringConvertible {
+public class Newsletter: Object, ReflectedStringConvertible {
     dynamic var title: String = ""
+    dynamic var documentUrlString: String = ""
     dynamic var publishedAt: NSDate = NSDate()
-    dynamic var body: String = ""
     dynamic var urlString: String = ""
-    
+
     public override static func primaryKey() -> String? {
         return "urlString"
     }

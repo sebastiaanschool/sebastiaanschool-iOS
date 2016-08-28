@@ -35,6 +35,10 @@
 		4A4997D216FEF68600B8A729 /* SBSBulletin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D116FEF68600B8A729 /* SBSBulletin.m */; };
 		4A4997D516FEF6AB00B8A729 /* SBSContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */; };
 		4A4997D816FEF6CF00B8A729 /* SBSNewsLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D716FEF6CF00B8A729 /* SBSNewsLetter.m */; };
+		4A4C1E071D73780D0070F469 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E061D73780D0070F469 /* ContactItem.swift */; };
+		4A4C1E091D7378800070F469 /* ContactItem+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E081D7378800070F469 /* ContactItem+Decodable.swift */; };
+		4A4C1E0B1D7378C00070F469 /* Newsletter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E0A1D7378C00070F469 /* Newsletter.swift */; };
+		4A4C1E0D1D7378D40070F469 /* Newsletter+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E0C1D7378D40070F469 /* Newsletter+Decodable.swift */; };
 		4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA04A16A34CA400F12406 /* Settings.bundle */; };
 		4A69268D17C360E100C1C9A8 /* UIView+AF1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A69268C17C360E100C1C9A8 /* UIView+AF1.m */; };
 		4A71D3AD16A152A800A11C80 /* SBSTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71D3AC16A152A800A11C80 /* SBSTeamTableViewController.m */; };
@@ -122,6 +126,10 @@
 		4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSContactItem.m; sourceTree = "<group>"; };
 		4A4997D616FEF6CF00B8A729 /* SBSNewsLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSNewsLetter.h; sourceTree = "<group>"; };
 		4A4997D716FEF6CF00B8A729 /* SBSNewsLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSNewsLetter.m; sourceTree = "<group>"; };
+		4A4C1E061D73780D0070F469 /* ContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
+		4A4C1E081D7378800070F469 /* ContactItem+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactItem+Decodable.swift"; sourceTree = "<group>"; };
+		4A4C1E0A1D7378C00070F469 /* Newsletter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Newsletter.swift; sourceTree = "<group>"; };
+		4A4C1E0C1D7378D40070F469 /* Newsletter+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Newsletter+Decodable.swift"; sourceTree = "<group>"; };
 		4A4EA04A16A34CA400F12406 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4A53EDDE1ADA7C2100C60034 /* libPods-SebastiaanSchool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SebastiaanSchool.a"; path = "Pods/../build/Release-iphoneos/libPods-SebastiaanSchool.a"; sourceTree = "<group>"; };
 		4A69268B17C360E100C1C9A8 /* UIView+AF1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AF1.h"; sourceTree = "<group>"; };
@@ -314,6 +322,10 @@
 				4A2DBD511CEBB0F300E0A675 /* AgendaItem+Decodable.swift */,
 				4A7BE3FE1CEDE0E40010F7E7 /* Bulletin.swift */,
 				4A7BE4001CEDE0F20010F7E7 /* Bulletin+Decodable.swift */,
+				4A4C1E061D73780D0070F469 /* ContactItem.swift */,
+				4A4C1E081D7378800070F469 /* ContactItem+Decodable.swift */,
+				4A4C1E0A1D7378C00070F469 /* Newsletter.swift */,
+				4A4C1E0C1D7378D40070F469 /* Newsletter+Decodable.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -663,6 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4C1E0D1D7378D40070F469 /* Newsletter+Decodable.swift in Sources */,
 				4ADC932E16A0050600DAA972 /* SBSSebastiaanSchoolAppDelegate.m in Sources */,
 				4ADC932F16A0050600DAA972 /* SBSBulletinViewController.m in Sources */,
 				4ADC933B16A0063700DAA972 /* main.m in Sources */,
@@ -675,13 +688,16 @@
 				4ADFE4E816A0A36100EDAD2A /* SBSStyle.m in Sources */,
 				4A71D3AD16A152A800A11C80 /* SBSTeamTableViewController.m in Sources */,
 				4A71D3B616A155D100A11C80 /* SBSInfoViewController.m in Sources */,
+				4A4C1E071D73780D0070F469 /* ContactItem.swift in Sources */,
 				4A2DBD501CEBB0AD00E0A675 /* AgendaItem.swift in Sources */,
 				4A69268D17C360E100C1C9A8 /* UIView+AF1.m in Sources */,
 				4A3F5B5916A87BB9005F742E /* NSUserDefaults+SBS.m in Sources */,
 				4A12099116A9D69000A7259B /* SBSAgendaTableViewController.m in Sources */,
 				4A7BE4011CEDE0F20010F7E7 /* Bulletin+Decodable.swift in Sources */,
 				4A0124AE16FC9F2500F744D6 /* SBSBulletinCell.m in Sources */,
+				4A4C1E091D7378800070F469 /* ContactItem+Decodable.swift in Sources */,
 				4A0124B116FCA71D00F744D6 /* UIView+JLFrameAdditions.m in Sources */,
+				4A4C1E0B1D7378C00070F469 /* Newsletter.swift in Sources */,
 				4A2DBD521CEBB0F300E0A675 /* AgendaItem+Decodable.swift in Sources */,
 				4A4997CF16FEF65400B8A729 /* SBSAgendaItem.m in Sources */,
 				4A2DBD4E1CEBADF900E0A675 /* SebastiaanApiClient.swift in Sources */,

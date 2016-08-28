@@ -14,6 +14,20 @@ extension Bulletin : Decodable {
     public typealias DecodedType = Bulletin
     
     public static func decode(json: JSON) -> Decoded<Bulletin> {
-        return .Success(Bulletin())
+        let bulletin = Bulletin()
+        bulletin.title = json["title"].stringValue
+        
+        guard let publishedAtString = json["end"].string else {
+            return Decoded.Failure(DecodeError.MissingKey("publishedAt"))
+        }
+        guard let publishedAt = jsonDateFormatter.dateFromString(publishedAtString) else {
+            return Decoded.Failure(DecodeError.TypeMismatch(expected: "Well formatted date string", actual: publishedAtString))
+        }
+
+        bulletin.publishedAt = publishedAt
+        bulletin.body = json["body"].stringValue
+        bulletin.urlString = json["url"].stringValue
+        
+        return .Success(bulletin)
     }
 }
