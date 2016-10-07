@@ -11,14 +11,14 @@ import Foundation
 import JsonApiClient
 import RealmSwift
 
-public class ContactItem: Object, ReflectedStringConvertible {
+open class ContactItem: Object, ReflectedStringConvertible {
     dynamic var displayName: String = ""
     dynamic var email: String = ""
     dynamic var order: Int = 0
     dynamic var detailText: String = ""
     dynamic var urlString: String = ""
     
-    public override static func primaryKey() -> String? {
+    open override static func primaryKey() -> String? {
         return "urlString"
     }
 }

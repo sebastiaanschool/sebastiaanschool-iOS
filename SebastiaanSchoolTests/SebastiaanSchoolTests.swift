@@ -24,48 +24,68 @@ class SebastiaanSchoolTests: XCTestCase {
     }
     
     func testFetchBulletins() {
-        let testExpectation = expectationWithDescription("test")
+        let testExpectation = expectation(description: "test")
         
         SebastiaanApiClient.sharedApiClient.fetchBulletins { (bulletinsResult) in
             testExpectation.fulfill()
             
             switch bulletinsResult {
-            case .Success(let bulletins):
-                XCTAssertEqual(bulletins.count, 2)
+            case .success(let bulletins):
+                XCTAssertEqual(bulletins.count, 3)
                 print(bulletins)
             default:
                 XCTFail("Something was wrong: \(bulletinsResult)")
             }
         }
         
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Error")
         }
     }
     
     func testFetchAgendaItems() {
-        let testExpectation = expectationWithDescription("test")
+        let testExpectation = expectation(description: "test")
         
         SebastiaanApiClient.sharedApiClient.fetchAgendaItems { (agendaItemsResult) in
             testExpectation.fulfill()
             
             switch agendaItemsResult {
-            case .Success(let agendaItems):
-                XCTAssertEqual(agendaItems.count, 2)
+            case .success(let agendaItems):
+                XCTAssertEqual(agendaItems.count, 41)
                 print(agendaItems)
             default:
                 XCTFail("Something was wrong: \(agendaItemsResult)")
             }
         }
         
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(timeout: 5) { error in
+            XCTAssertNil(error, "Error")
+        }
+    }
+    
+    func testFetchContactItems() {
+        let testExpectation = expectation(description: "test")
+        
+        SebastiaanApiClient.sharedApiClient.fetchContactItems { (contactItemsResult) in
+            testExpectation.fulfill()
+            
+            switch contactItemsResult {
+            case .success(let contactItems):
+                XCTAssertEqual(contactItems.count, 13)
+                print(contactItems)
+            default:
+                XCTFail("Something was wrong: \(contactItemsResult)")
+            }
+        }
+        
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Error")
         }
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

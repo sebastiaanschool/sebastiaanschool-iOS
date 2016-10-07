@@ -7,65 +7,73 @@
 //
 
 import Foundation
-import SwiftyJSON
 import JsonApiClient
 
-public var jsonDateFormatter: NSDateFormatter = {
-    let RFC3339DateFormatter = NSDateFormatter()
-    RFC3339DateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+public var jsonDateFormatter: DateFormatter = {
+    let RFC3339DateFormatter = DateFormatter()
+    RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
     RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-    RFC3339DateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+    RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
     return RFC3339DateFormatter
 }()
 
-public class SebastiaanApiClient: ApiClient {
+open class SebastiaanApiClient: ApiClient {
     static let serverURL = "https://backend-sebastiaanschool.rhcloud.com/"
     static let baseURL = serverURL + "api/"
     
-    public static var sharedApiClient: SebastiaanApiClient = {
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+    open static var sharedApiClient: SebastiaanApiClient = {
+        let config = URLSessionConfiguration.default
         return SebastiaanApiClient(configuration: config)
     }()
     
     enum Endpoints {
-        case AgendaItems
-        case Bulletins
-        case ContactItems
-        case Newsletters
-        case Timeline
+        case agendaItems
+        case bulletins
+        case contactItems
+        case newsletters
+        case timeline
         
-        var url: NSURL {
+        var url: URL {
             let path: String
             switch self {
-            case .AgendaItems:
-                path = "agendaItems/"
-            case .Bulletins:
+            case .agendaItems:
+                path = "agendaItems/?all"
+            case .bulletins:
                 path = "bulletins/"
-            case .ContactItems:
+            case .contactItems:
                 path = "contactItems/"
-            case .Newsletters:
+            case .newsletters:
                 path = "newsletters/"
-            case .Timeline:
+            case .timeline:
                 path = "timeline/"
             }
-            return NSURL(string: SebastiaanApiClient.baseURL + path)!
+            return URL(string: SebastiaanApiClient.baseURL + path)!
         }
     }
     
-    public func fetchAgendaItems(completion: ApiClientResult<[AgendaItem]> -> Void) {
-        let url = Endpoints.AgendaItems.url
-        let request = NSURLRequest(URL:url)
+    open func fetchAgendaItems(_ completion: @escaping (ApiClientResult<[AgendaItem]>) -> Void) {
+        let url = Endpoints.agendaItems.url
+        let request = URLRequest(url:url)
         
         fetchResources(request) { (result: ApiClientResult<[AgendaItem]>) in
             completion(result)
         }
     }
     
-    public func fetchBulletins(completion: ApiClientResult<[Bulletin]> -> Void) {
-        let url = Endpoints.Bulletins.url
-        let request = NSURLRequest(URL: url)
+    open func fetchBulletins(_ completion: @escaping (ApiClientResult<[Bulletin]>) -> Void) {
+        let url = Endpoints.bulletins.url
+        let request = URLRequest(url: url)
         
         fetchResources(request) { (result: ApiClientResult<[Bulletin]>) in
+            completion(result)
+        }
+    }
+    
+    open func fetchContactItems(_ completion: @escaping (ApiClientResult<[ContactItem]>) -> Void) {
+        let url = Endpoints.contactItems.url
+        let request = URLRequest(url: url)
+        
+        fetchResources(request) { (result: ApiClientResult<[ContactItem]>) in
             completion(result)
         }
     }

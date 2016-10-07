@@ -7,12 +7,20 @@
 //
 
 import Foundation
-import JsonApiClient
 
-public class AgendaItem: ReflectedStringConvertible {
+import JsonApiClient
+import RealmSwift
+
+open class AgendaItem: Object, ReflectedStringConvertible {
     dynamic var title: String = ""
     dynamic var type: String = ""
-    dynamic var start: NSDate?
-    dynamic var end: NSDate?
+    dynamic var start: Date?
+    dynamic var end: Date?
     dynamic var urlString: String = ""
+    
+    override open static func primaryKey() -> String? {
+        return "urlString"
+    }
 }
+
+

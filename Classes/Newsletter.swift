@@ -11,13 +11,13 @@ import Foundation
 import JsonApiClient
 import RealmSwift
 
-public class Newsletter: Object, ReflectedStringConvertible {
+open class Newsletter: Object, ReflectedStringConvertible {
     dynamic var title: String = ""
     dynamic var documentUrlString: String = ""
-    dynamic var publishedAt: NSDate = NSDate()
+    dynamic var publishedAt: Date = Date()
     dynamic var urlString: String = ""
 
-    public override static func primaryKey() -> String? {
+    open override static func primaryKey() -> String? {
         return "urlString"
     }
 }

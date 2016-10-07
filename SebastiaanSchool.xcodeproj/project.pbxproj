@@ -16,11 +16,13 @@
 		09ABC07413A1D52D009C3FCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ABC07313A1D52D009C3FCF /* Foundation.framework */; };
 		09BEF34C13D51C3F001BBCDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEF34B13D51C3F001BBCDB /* Security.framework */; };
 		2FCDD6B014A573F500295AAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCDD6AF14A573F500295AAC /* QuartzCore.framework */; };
-		4A0124AE16FC9F2500F744D6 /* SBSBulletinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124AD16FC9F2500F744D6 /* SBSBulletinCell.m */; };
-		4A0124B116FCA71D00F744D6 /* UIView+JLFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B016FCA71D00F744D6 /* UIView+JLFrameAdditions.m */; };
-		4A12099116A9D69000A7259B /* SBSAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */; };
-		4A1966A116A086910011EFBF /* SBSNewsLetterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */; };
-		4A1966A816A08DAE0011EFBF /* SBSNewsLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */; };
+		4A14AB5C1DA823C50019F017 /* SebastiaanStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB5B1DA823C50019F017 /* SebastiaanStyle.swift */; };
+		4A14AB5E1DA82EC70019F017 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB5D1DA82EC70019F017 /* TeamTableViewController.swift */; };
+		4A14AB601DA82F7C0019F017 /* AgendaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB5F1DA82F7C0019F017 /* AgendaTableViewController.swift */; };
+		4A14AB621DA830440019F017 /* NewsLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB611DA830440019F017 /* NewsLetterViewController.swift */; };
+		4A14AB641DA830EE0019F017 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB631DA830EE0019F017 /* Extensions.swift */; };
+		4A14AB661DA8321A0019F017 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB651DA8321A0019F017 /* InfoViewController.swift */; };
+		4A14AB681DA8334A0019F017 /* SebastiaanSchoolAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A14AB671DA8334A0019F017 /* SebastiaanSchoolAppDelegate.swift */; };
 		4A23877919FD2B8E00BF27DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A23877819FD2B8E00BF27DF /* LaunchScreen.storyboard */; };
 		4A2B5BD416C639F000A21460 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2B5BD216C639F000A21460 /* EventKit.framework */; };
 		4A2B5BD516C639F000A21460 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2B5BD316C639F000A21460 /* EventKitUI.framework */; };
@@ -29,36 +31,20 @@
 		4A2DBD501CEBB0AD00E0A675 /* AgendaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DBD4F1CEBB0AD00E0A675 /* AgendaItem.swift */; };
 		4A2DBD521CEBB0F300E0A675 /* AgendaItem+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DBD511CEBB0F300E0A675 /* AgendaItem+Decodable.swift */; };
 		4A2DBD5A1CEBB67200E0A675 /* SebastiaanSchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DBD591CEBB67200E0A675 /* SebastiaanSchoolTests.swift */; };
-		4A31C73517E870FA005FB021 /* SBSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A31C73417E870FA005FB021 /* SBSButton.m */; };
-		4A3F5B5916A87BB9005F742E /* NSUserDefaults+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F5B5816A87BB9005F742E /* NSUserDefaults+SBS.m */; };
-		4A4997CF16FEF65400B8A729 /* SBSAgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997CE16FEF65400B8A729 /* SBSAgendaItem.m */; };
-		4A4997D216FEF68600B8A729 /* SBSBulletin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D116FEF68600B8A729 /* SBSBulletin.m */; };
-		4A4997D516FEF6AB00B8A729 /* SBSContactItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */; };
-		4A4997D816FEF6CF00B8A729 /* SBSNewsLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4997D716FEF6CF00B8A729 /* SBSNewsLetter.m */; };
+		4A4C1E051D7370540070F469 /* BulletinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E041D7370540070F469 /* BulletinViewController.swift */; };
 		4A4C1E071D73780D0070F469 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E061D73780D0070F469 /* ContactItem.swift */; };
 		4A4C1E091D7378800070F469 /* ContactItem+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E081D7378800070F469 /* ContactItem+Decodable.swift */; };
 		4A4C1E0B1D7378C00070F469 /* Newsletter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E0A1D7378C00070F469 /* Newsletter.swift */; };
 		4A4C1E0D1D7378D40070F469 /* Newsletter+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E0C1D7378D40070F469 /* Newsletter+Decodable.swift */; };
+		4A4C1E0F1D7379E80070F469 /* NewsletterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C1E0E1D7379E80070F469 /* NewsletterTableViewController.swift */; };
 		4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA04A16A34CA400F12406 /* Settings.bundle */; };
-		4A69268D17C360E100C1C9A8 /* UIView+AF1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A69268C17C360E100C1C9A8 /* UIView+AF1.m */; };
-		4A71D3AD16A152A800A11C80 /* SBSTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71D3AC16A152A800A11C80 /* SBSTeamTableViewController.m */; };
-		4A71D3B616A155D100A11C80 /* SBSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71D3B516A155D100A11C80 /* SBSInfoViewController.m */; };
 		4A71D3DA16A3123F00A11C80 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A71D3D916A3123F00A11C80 /* MessageUI.framework */; };
 		4A7BE3FF1CEDE0E40010F7E7 /* Bulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BE3FE1CEDE0E40010F7E7 /* Bulletin.swift */; };
 		4A7BE4011CEDE0F20010F7E7 /* Bulletin+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BE4001CEDE0F20010F7E7 /* Bulletin+Decodable.swift */; };
-		4A9C9B6318082479006442E0 /* UIResponder+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C9B6218082479006442E0 /* UIResponder+SBS.m */; };
-		4AA0A97F1730E834005D9BD0 /* NSDate+JLDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0A97E1730E834005D9BD0 /* NSDate+JLDateAdditions.m */; };
 		4AC3F7F616A0AF2600452D33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AC3F7F816A0AF2600452D33 /* Localizable.strings */; };
 		4AC3F7FC16A0AFBB00452D33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AC3F7FE16A0AFBB00452D33 /* InfoPlist.strings */; };
-		4ADC932E16A0050600DAA972 /* SBSSebastiaanSchoolAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC931E16A0050600DAA972 /* SBSSebastiaanSchoolAppDelegate.m */; };
-		4ADC932F16A0050600DAA972 /* SBSBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC932016A0050600DAA972 /* SBSBulletinViewController.m */; };
-		4ADC933B16A0063700DAA972 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC933A16A0063700DAA972 /* main.m */; };
-		4ADC935716A00CBF00DAA972 /* GeneratedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC935616A00CBF00DAA972 /* GeneratedConstants.m */; };
-		4ADFE4E816A0A36100EDAD2A /* SBSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */; };
 		4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AEC503A1786DDE500EB1A05 /* Media.xcassets */; };
 		4AF1F1CB19E56C4D00C6BCF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1F1CD19E56C4D00C6BCF1 /* Main.storyboard */; };
-		4AF4A0B316A86DA600493C20 /* provisiontype in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4A0B216A86DA600493C20 /* provisiontype */; };
-		4AFECD241881368A004E711D /* NSString+SBS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFECD231881368A004E711D /* NSString+SBS.m */; };
 		6332375415E438E900AE2736 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332375315E438E900AE2736 /* libsqlite3.dylib */; };
 		6372FF531613CC3C002132AF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF521613CC3C002132AF /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6372FF561613CC42002132AF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF551613CC42002132AF /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -92,17 +78,14 @@
 		09BEF34B13D51C3F001BBCDB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		20B34588A51E7ACBE49BC5F3 /* Pods-SebastiaanSchool Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SebastiaanSchool Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SebastiaanSchool Tests/Pods-SebastiaanSchool Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FCDD6AF14A573F500295AAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4A0124AC16FC9F2500F744D6 /* SBSBulletinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSBulletinCell.h; sourceTree = "<group>"; };
-		4A0124AD16FC9F2500F744D6 /* SBSBulletinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSBulletinCell.m; sourceTree = "<group>"; };
-		4A0124AF16FCA71D00F744D6 /* UIView+JLFrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JLFrameAdditions.h"; sourceTree = "<group>"; };
-		4A0124B016FCA71D00F744D6 /* UIView+JLFrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JLFrameAdditions.m"; sourceTree = "<group>"; };
-		4A12098F16A9D69000A7259B /* SBSAgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSAgendaTableViewController.h; sourceTree = "<group>"; };
-		4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSAgendaTableViewController.m; sourceTree = "<group>"; };
+		4A14AB5B1DA823C50019F017 /* SebastiaanStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SebastiaanStyle.swift; sourceTree = "<group>"; };
+		4A14AB5D1DA82EC70019F017 /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		4A14AB5F1DA82F7C0019F017 /* AgendaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaTableViewController.swift; sourceTree = "<group>"; };
+		4A14AB611DA830440019F017 /* NewsLetterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsLetterViewController.swift; sourceTree = "<group>"; };
+		4A14AB631DA830EE0019F017 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4A14AB651DA8321A0019F017 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		4A14AB671DA8334A0019F017 /* SebastiaanSchoolAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SebastiaanSchoolAppDelegate.swift; sourceTree = "<group>"; };
 		4A15DA9616A0AE4200D8EB86 /* SebastiaanSchool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SebastiaanSchool-Info.plist"; sourceTree = "<group>"; };
-		4A19669F16A086910011EFBF /* SBSNewsLetterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSNewsLetterTableViewController.h; sourceTree = "<group>"; };
-		4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SBSNewsLetterTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		4A1966A616A08DAE0011EFBF /* SBSNewsLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSNewsLetterViewController.h; sourceTree = "<group>"; };
-		4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSNewsLetterViewController.m; sourceTree = "<group>"; };
 		4A23877819FD2B8E00BF27DF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A2B5BD216C639F000A21460 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		4A2B5BD316C639F000A21460 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -113,39 +96,19 @@
 		4A2DBD571CEBB67200E0A675 /* SebastiaanSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SebastiaanSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2DBD591CEBB67200E0A675 /* SebastiaanSchoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SebastiaanSchoolTests.swift; sourceTree = "<group>"; };
 		4A2DBD5B1CEBB67200E0A675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A31C73317E870FA005FB021 /* SBSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSButton.h; sourceTree = "<group>"; };
-		4A31C73417E870FA005FB021 /* SBSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSButton.m; sourceTree = "<group>"; };
 		4A3B995B16A0781900241D4C /* SebastiaanSchool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SebastiaanSchool.entitlements; sourceTree = "<group>"; };
-		4A3F5B5716A87BB9005F742E /* NSUserDefaults+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SBS.h"; sourceTree = "<group>"; };
-		4A3F5B5816A87BB9005F742E /* NSUserDefaults+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SBS.m"; sourceTree = "<group>"; };
-		4A4997CD16FEF65400B8A729 /* SBSAgendaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSAgendaItem.h; sourceTree = "<group>"; };
-		4A4997CE16FEF65400B8A729 /* SBSAgendaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSAgendaItem.m; sourceTree = "<group>"; };
-		4A4997D016FEF68600B8A729 /* SBSBulletin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSBulletin.h; sourceTree = "<group>"; };
-		4A4997D116FEF68600B8A729 /* SBSBulletin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSBulletin.m; sourceTree = "<group>"; };
-		4A4997D316FEF6AB00B8A729 /* SBSContactItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSContactItem.h; sourceTree = "<group>"; };
-		4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSContactItem.m; sourceTree = "<group>"; };
-		4A4997D616FEF6CF00B8A729 /* SBSNewsLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSNewsLetter.h; sourceTree = "<group>"; };
-		4A4997D716FEF6CF00B8A729 /* SBSNewsLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSNewsLetter.m; sourceTree = "<group>"; };
+		4A4C1E041D7370540070F469 /* BulletinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinViewController.swift; sourceTree = "<group>"; };
 		4A4C1E061D73780D0070F469 /* ContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		4A4C1E081D7378800070F469 /* ContactItem+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactItem+Decodable.swift"; sourceTree = "<group>"; };
 		4A4C1E0A1D7378C00070F469 /* Newsletter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Newsletter.swift; sourceTree = "<group>"; };
 		4A4C1E0C1D7378D40070F469 /* Newsletter+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Newsletter+Decodable.swift"; sourceTree = "<group>"; };
+		4A4C1E0E1D7379E80070F469 /* NewsletterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsletterTableViewController.swift; sourceTree = "<group>"; };
 		4A4EA04A16A34CA400F12406 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4A53EDDE1ADA7C2100C60034 /* libPods-SebastiaanSchool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SebastiaanSchool.a"; path = "Pods/../build/Release-iphoneos/libPods-SebastiaanSchool.a"; sourceTree = "<group>"; };
-		4A69268B17C360E100C1C9A8 /* UIView+AF1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AF1.h"; sourceTree = "<group>"; };
-		4A69268C17C360E100C1C9A8 /* UIView+AF1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AF1.m"; sourceTree = "<group>"; };
 		4A6A4F0018148CAD0080D686 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4A71D3AB16A152A800A11C80 /* SBSTeamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSTeamTableViewController.h; sourceTree = "<group>"; };
-		4A71D3AC16A152A800A11C80 /* SBSTeamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSTeamTableViewController.m; sourceTree = "<group>"; };
-		4A71D3B416A155D100A11C80 /* SBSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSInfoViewController.h; sourceTree = "<group>"; };
-		4A71D3B516A155D100A11C80 /* SBSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSInfoViewController.m; sourceTree = "<group>"; };
 		4A71D3D916A3123F00A11C80 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4A7BE3FE1CEDE0E40010F7E7 /* Bulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bulletin.swift; sourceTree = "<group>"; };
 		4A7BE4001CEDE0F20010F7E7 /* Bulletin+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bulletin+Decodable.swift"; sourceTree = "<group>"; };
-		4A9C9B6118082479006442E0 /* UIResponder+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+SBS.h"; sourceTree = "<group>"; };
-		4A9C9B6218082479006442E0 /* UIResponder+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+SBS.m"; sourceTree = "<group>"; };
-		4AA0A97D1730E834005D9BD0 /* NSDate+JLDateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JLDateAdditions.h"; sourceTree = "<group>"; };
-		4AA0A97E1730E834005D9BD0 /* NSDate+JLDateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JLDateAdditions.m"; sourceTree = "<group>"; };
 		4AC3F7F916A0AF3800452D33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AC3F7FD16A0AFBB00452D33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AD621D419E98A3A002ADF79 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -153,24 +116,7 @@
 		4AD621DB19E9921D002ADF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AD621DC19E99236002ADF79 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		4AD621DE19E9928E002ADF79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		4ADC931E16A0050600DAA972 /* SBSSebastiaanSchoolAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SBSSebastiaanSchoolAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		4ADC931F16A0050600DAA972 /* SBSBulletinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSBulletinViewController.h; sourceTree = "<group>"; };
-		4ADC932016A0050600DAA972 /* SBSBulletinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSBulletinViewController.m; sourceTree = "<group>"; };
-		4ADC933916A0063000DAA972 /* SBSSebastiaanSchool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SBSSebastiaanSchool-Prefix.pch"; sourceTree = "<group>"; };
-		4ADC933A16A0063700DAA972 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4ADC934916A00B4300DAA972 /* generate-constants */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "generate-constants"; sourceTree = "<group>"; };
-		4ADC934B16A00B8700DAA972 /* GeneratedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneratedConstants.h; sourceTree = "<group>"; };
-		4ADC935616A00CBF00DAA972 /* GeneratedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneratedConstants.m; path = "derived-sources/GeneratedConstants.m"; sourceTree = SOURCE_ROOT; };
-		4ADC935C16A0121B00DAA972 /* setEnv-Example.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "setEnv-Example.sh"; sourceTree = "<group>"; };
-		4ADC935E16A012C000DAA972 /* setEnv.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setEnv.sh; sourceTree = "<group>"; };
-		4ADC937B16A0283B00DAA972 /* SBSSebastiaanSchoolAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSSebastiaanSchoolAppDelegate.h; sourceTree = "<group>"; };
-		4ADFE4E616A0A36100EDAD2A /* SBSStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSStyle.h; sourceTree = "<group>"; };
-		4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSStyle.m; sourceTree = "<group>"; };
 		4AEC503A1786DDE500EB1A05 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = SebastiaanSchool/Media.xcassets; sourceTree = "<group>"; };
-		4AF4739D1CEB988A00B00E23 /* SebastiaanSchool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SebastiaanSchool-Bridging-Header.h"; sourceTree = "<group>"; };
-		4AF4A0B216A86DA600493C20 /* provisiontype */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = provisiontype; sourceTree = "<group>"; };
-		4AFECD221881368A004E711D /* NSString+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBS.h"; sourceTree = "<group>"; };
-		4AFECD231881368A004E711D /* NSString+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBS.m"; sourceTree = "<group>"; };
 		5CAF229129176E714DB8AC12 /* Pods-SebastiaanSchoolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SebastiaanSchoolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SebastiaanSchoolTests/Pods-SebastiaanSchoolTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6332375315E438E900AE2736 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6372FF521613CC3C002132AF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -232,11 +178,6 @@
 				4A15DA9616A0AE4200D8EB86 /* SebastiaanSchool-Info.plist */,
 				4A2DBD4B1CEB9B0100E0A675 /* SebastiaanStyleKit.swift */,
 				4AC3F7FE16A0AFBB00452D33 /* InfoPlist.strings */,
-				4ADC934816A00B4300DAA972 /* bin */,
-				4ADC933A16A0063700DAA972 /* main.m */,
-				4ADC933916A0063000DAA972 /* SBSSebastiaanSchool-Prefix.pch */,
-				4ADC934B16A00B8700DAA972 /* GeneratedConstants.h */,
-				4ADC935616A00CBF00DAA972 /* GeneratedConstants.m */,
 				4ADC931916A0050600DAA972 /* Classes */,
 				4ADC932116A0050600DAA972 /* Resources */,
 				4A2DBD581CEBB67200E0A675 /* SebastiaanSchoolTests */,
@@ -310,14 +251,6 @@
 		4A4997CC16FEF60F00B8A729 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4A4997CD16FEF65400B8A729 /* SBSAgendaItem.h */,
-				4A4997CE16FEF65400B8A729 /* SBSAgendaItem.m */,
-				4A4997D016FEF68600B8A729 /* SBSBulletin.h */,
-				4A4997D116FEF68600B8A729 /* SBSBulletin.m */,
-				4A4997D316FEF6AB00B8A729 /* SBSContactItem.h */,
-				4A4997D416FEF6AB00B8A729 /* SBSContactItem.m */,
-				4A4997D616FEF6CF00B8A729 /* SBSNewsLetter.h */,
-				4A4997D716FEF6CF00B8A729 /* SBSNewsLetter.m */,
 				4A2DBD4F1CEBB0AD00E0A675 /* AgendaItem.swift */,
 				4A2DBD511CEBB0F300E0A675 /* AgendaItem+Decodable.swift */,
 				4A7BE3FE1CEDE0E40010F7E7 /* Bulletin.swift */,
@@ -333,28 +266,13 @@
 		4ADBF9871823710C00D9B978 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4ADC931F16A0050600DAA972 /* SBSBulletinViewController.h */,
-				4ADC932016A0050600DAA972 /* SBSBulletinViewController.m */,
-				4A0124AC16FC9F2500F744D6 /* SBSBulletinCell.h */,
-				4A0124AD16FC9F2500F744D6 /* SBSBulletinCell.m */,
-				4A19669F16A086910011EFBF /* SBSNewsLetterTableViewController.h */,
-				4A1966A016A086910011EFBF /* SBSNewsLetterTableViewController.m */,
-				4A1966A616A08DAE0011EFBF /* SBSNewsLetterViewController.h */,
-				4A1966A716A08DAE0011EFBF /* SBSNewsLetterViewController.m */,
-				4ADFE4E616A0A36100EDAD2A /* SBSStyle.h */,
-				4ADFE4E716A0A36100EDAD2A /* SBSStyle.m */,
-				4A71D3AB16A152A800A11C80 /* SBSTeamTableViewController.h */,
-				4A71D3AC16A152A800A11C80 /* SBSTeamTableViewController.m */,
-				4A12098F16A9D69000A7259B /* SBSAgendaTableViewController.h */,
-				4A12099016A9D69000A7259B /* SBSAgendaTableViewController.m */,
-				4A71D3B416A155D100A11C80 /* SBSInfoViewController.h */,
-				4A71D3B516A155D100A11C80 /* SBSInfoViewController.m */,
-				4A31C73317E870FA005FB021 /* SBSButton.h */,
-				4A31C73417E870FA005FB021 /* SBSButton.m */,
-				4A0124AF16FCA71D00F744D6 /* UIView+JLFrameAdditions.h */,
-				4A0124B016FCA71D00F744D6 /* UIView+JLFrameAdditions.m */,
-				4A69268B17C360E100C1C9A8 /* UIView+AF1.h */,
-				4A69268C17C360E100C1C9A8 /* UIView+AF1.m */,
+				4A4C1E041D7370540070F469 /* BulletinViewController.swift */,
+				4A4C1E0E1D7379E80070F469 /* NewsletterTableViewController.swift */,
+				4A14AB5D1DA82EC70019F017 /* TeamTableViewController.swift */,
+				4A14AB611DA830440019F017 /* NewsLetterViewController.swift */,
+				4A14AB5B1DA823C50019F017 /* SebastiaanStyle.swift */,
+				4A14AB5F1DA82F7C0019F017 /* AgendaTableViewController.swift */,
+				4A14AB651DA8321A0019F017 /* InfoViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -362,20 +280,11 @@
 		4ADC931916A0050600DAA972 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4AF4739D1CEB988A00B00E23 /* SebastiaanSchool-Bridging-Header.h */,
 				4A2DBD4D1CEBADF900E0A675 /* SebastiaanApiClient.swift */,
 				4ADBF9871823710C00D9B978 /* UI */,
 				4A4997CC16FEF60F00B8A729 /* Model */,
-				4ADC937B16A0283B00DAA972 /* SBSSebastiaanSchoolAppDelegate.h */,
-				4ADC931E16A0050600DAA972 /* SBSSebastiaanSchoolAppDelegate.m */,
-				4A3F5B5716A87BB9005F742E /* NSUserDefaults+SBS.h */,
-				4A3F5B5816A87BB9005F742E /* NSUserDefaults+SBS.m */,
-				4AA0A97D1730E834005D9BD0 /* NSDate+JLDateAdditions.h */,
-				4AA0A97E1730E834005D9BD0 /* NSDate+JLDateAdditions.m */,
-				4A9C9B6118082479006442E0 /* UIResponder+SBS.h */,
-				4A9C9B6218082479006442E0 /* UIResponder+SBS.m */,
-				4AFECD221881368A004E711D /* NSString+SBS.h */,
-				4AFECD231881368A004E711D /* NSString+SBS.m */,
+				4A14AB671DA8334A0019F017 /* SebastiaanSchoolAppDelegate.swift */,
+				4A14AB631DA830EE0019F017 /* Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -391,17 +300,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		4ADC934816A00B4300DAA972 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				4AF4A0B216A86DA600493C20 /* provisiontype */,
-				4ADC934916A00B4300DAA972 /* generate-constants */,
-				4ADC935C16A0121B00DAA972 /* setEnv-Example.sh */,
-				4ADC935E16A012C000DAA972 /* setEnv.sh */,
-			);
-			path = bin;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,15 +307,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09ABC08E13A1D52E009C3FCF /* Build configuration list for PBXNativeTarget "SebastiaanSchool" */;
 			buildPhases = (
-				B4E067ECE17FCD8308C9D77A /* 📦 Check Pods Manifest.lock */,
-				4A35F07F16AB525500D0E7B3 /* Check and Prep release */,
-				4ADC934716A00A5300DAA972 /* Generate configuration */,
+				B4E067ECE17FCD8308C9D77A /* [CP] Check Pods Manifest.lock */,
 				09ABC06913A1D52D009C3FCF /* Sources */,
 				09ABC06A13A1D52D009C3FCF /* Frameworks */,
 				09ABC06B13A1D52D009C3FCF /* Resources */,
 				4A2DBD4A1CEB99FC00E0A675 /* Set version info */,
-				161ACBE68535F1BEFFF5966D /* 📦 Embed Pods Frameworks */,
-				3977364918850D74857BB19D /* 📦 Copy Pods Resources */,
+				161ACBE68535F1BEFFF5966D /* [CP] Embed Pods Frameworks */,
+				3977364918850D74857BB19D /* [CP] Copy Pods Resources */,
 				4AFE720E1CA7153500278548 /* Fabric */,
 			);
 			buildRules = (
@@ -433,12 +329,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A2DBD5E1CEBB67200E0A675 /* Build configuration list for PBXNativeTarget "SebastiaanSchoolTests" */;
 			buildPhases = (
-				6F69BDB9A5F825C3F9D4BC0D /* 📦 Check Pods Manifest.lock */,
+				6F69BDB9A5F825C3F9D4BC0D /* [CP] Check Pods Manifest.lock */,
 				4A2DBD531CEBB67200E0A675 /* Sources */,
 				4A2DBD541CEBB67200E0A675 /* Frameworks */,
 				4A2DBD551CEBB67200E0A675 /* Resources */,
-				0C992E24BE561963FD66097E /* 📦 Embed Pods Frameworks */,
-				F4F37AE2FA1973511D4BE217 /* 📦 Copy Pods Resources */,
+				0C992E24BE561963FD66097E /* [CP] Embed Pods Frameworks */,
+				F4F37AE2FA1973511D4BE217 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,10 +353,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				TargetAttributes = {
 					09ABC06C13A1D52D009C3FCF = {
 						DevelopmentTeam = T4CMEHXPLL;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -468,10 +365,14 @@
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 						};
 					};
 					4A2DBD561CEBB67200E0A675 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 09ABC06C13A1D52D009C3FCF;
 					};
 				};
@@ -504,7 +405,6 @@
 				4AC3F7F616A0AF2600452D33 /* Localizable.strings in Resources */,
 				4AC3F7FC16A0AFBB00452D33 /* InfoPlist.strings in Resources */,
 				4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */,
-				4AF4A0B316A86DA600493C20 /* provisiontype in Resources */,
 				4A23877919FD2B8E00BF27DF /* LaunchScreen.storyboard in Resources */,
 				4AF1F1CB19E56C4D00C6BCF1 /* Main.storyboard in Resources */,
 				4AEC503B1786DDE500EB1A05 /* Media.xcassets in Resources */,
@@ -521,14 +421,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C992E24BE561963FD66097E /* 📦 Embed Pods Frameworks */ = {
+		0C992E24BE561963FD66097E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,14 +436,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchoolTests/Pods-SebastiaanSchoolTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		161ACBE68535F1BEFFF5966D /* 📦 Embed Pods Frameworks */ = {
+		161ACBE68535F1BEFFF5966D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,14 +451,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3977364918850D74857BB19D /* 📦 Copy Pods Resources */ = {
+		3977364918850D74857BB19D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,34 +480,6 @@
 			shellPath = /bin/sh;
 			shellScript = "git=$(sh /etc/profile; which git)\ngit_release_version=$(\"$git\" describe --tags --always --abbrev=0)\nnumber_of_commits=$(\"$git\" rev-list master | wc -l | tr -d ' ')\ntarget_plist=\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\ndsym_plist=\"$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Info.plist\"\n\nfor plist in \"$target_plist\" \"$dsym_plist\"; do\nif [ -f \"$plist\" ]; then\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $number_of_commits\" \"$plist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString ${git_release_version#*v}\" \"$plist\"\nfi\ndone";
 		};
-		4A35F07F16AB525500D0E7B3 /* Check and Prep release */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check and Prep release";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"disable build step\"\nexit 0;\n\necho \"Detected a ${CONFIGURATION} build\"\nif [  $CONFIGURATION != Release ]; then\n    echo \"Skipping release prep\"\n    exit 0;\nfi\n\nif [ -z \"$(git status --porcelain)\" ]; then\n    echo \"Working directory clean, proceeding with RELEASE build\"\nelse\n    echo \"error: Working directory dirty, stopping build\"\n    exit 1\nfi\n\nbuildVersion=`/usr/libexec/PlistBuddy  -c \"Print CFBundleShortVersionString\" SebastiaanSchool-Info.plist`\n\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\n\necho \"Bumping build number...\"\n\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n\n#cd \"${PROJECT_DIR}\"\ngit add SebastiaanSchool-Info.plist\ngit commit -m \"Bumped build number to $buildnum\"\n\necho \"Tagging build\"\ngit tag -a ios-v${buildVersion}-${buildnum} -m \"Created archive.\"\n";
-		};
-		4ADC934716A00A5300DAA972 /* Generate configuration */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Generate configuration";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nif [ ! -L \"${PROJECT_DIR}/derived-sources\" ]\nthen\naction=\"Create\"\nelif [ \"$(readlink \"${PROJECT_DIR}/derived-sources\")\" != \"${DERIVED_SOURCES_DIR}\" ]\nthen\naction=\"Replace\"\nfi\nif [ -n \"${action}\" ]\nthen\nrm -f \"${PROJECT_DIR}/derived-sources\"\nprintf \"%s link: \" \"${action}\" && ln -sv \"${DERIVED_SOURCES_DIR}\" \"${PROJECT_DIR}/derived-sources\"\nfi\n\necho \"Generating constants based on build configuration.\"\nmkdir -p \"${DERIVED_SOURCES_DIR}\"\n\"${PROJECT_DIR}/bin/generate-constants\" \\\n\"${CODESIGN_IDENTITY}\" \\\n\"${PROVISIONING_PROFILE_REQUIRED}\" \\\n\"${PROVISIONING_PROFILE}\" > \"${DERIVED_SOURCES_DIR}/GeneratedConstants.m\"\n";
-		};
 		4AFE720E1CA7153500278548 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,44 +495,44 @@
 			shellScript = "source \"${PROJECT_DIR}/bin/setEnv.sh\"\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\n";
 			showEnvVarsInLog = 0;
 		};
-		6F69BDB9A5F825C3F9D4BC0D /* 📦 Check Pods Manifest.lock */ = {
+		6F69BDB9A5F825C3F9D4BC0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B4E067ECE17FCD8308C9D77A /* 📦 Check Pods Manifest.lock */ = {
+		B4E067ECE17FCD8308C9D77A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F4F37AE2FA1973511D4BE217 /* 📦 Copy Pods Resources */ = {
+		F4F37AE2FA1973511D4BE217 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,38 +547,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A14AB641DA830EE0019F017 /* Extensions.swift in Sources */,
 				4A4C1E0D1D7378D40070F469 /* Newsletter+Decodable.swift in Sources */,
-				4ADC932E16A0050600DAA972 /* SBSSebastiaanSchoolAppDelegate.m in Sources */,
-				4ADC932F16A0050600DAA972 /* SBSBulletinViewController.m in Sources */,
-				4ADC933B16A0063700DAA972 /* main.m in Sources */,
+				4A4C1E051D7370540070F469 /* BulletinViewController.swift in Sources */,
 				4A7BE3FF1CEDE0E40010F7E7 /* Bulletin.swift in Sources */,
-				4ADC935716A00CBF00DAA972 /* GeneratedConstants.m in Sources */,
-				4A9C9B6318082479006442E0 /* UIResponder+SBS.m in Sources */,
-				4A1966A116A086910011EFBF /* SBSNewsLetterTableViewController.m in Sources */,
-				4A1966A816A08DAE0011EFBF /* SBSNewsLetterViewController.m in Sources */,
 				4A2DBD4C1CEB9B0100E0A675 /* SebastiaanStyleKit.swift in Sources */,
-				4ADFE4E816A0A36100EDAD2A /* SBSStyle.m in Sources */,
-				4A71D3AD16A152A800A11C80 /* SBSTeamTableViewController.m in Sources */,
-				4A71D3B616A155D100A11C80 /* SBSInfoViewController.m in Sources */,
+				4A4C1E0F1D7379E80070F469 /* NewsletterTableViewController.swift in Sources */,
+				4A14AB5C1DA823C50019F017 /* SebastiaanStyle.swift in Sources */,
+				4A14AB661DA8321A0019F017 /* InfoViewController.swift in Sources */,
+				4A14AB681DA8334A0019F017 /* SebastiaanSchoolAppDelegate.swift in Sources */,
 				4A4C1E071D73780D0070F469 /* ContactItem.swift in Sources */,
 				4A2DBD501CEBB0AD00E0A675 /* AgendaItem.swift in Sources */,
-				4A69268D17C360E100C1C9A8 /* UIView+AF1.m in Sources */,
-				4A3F5B5916A87BB9005F742E /* NSUserDefaults+SBS.m in Sources */,
-				4A12099116A9D69000A7259B /* SBSAgendaTableViewController.m in Sources */,
 				4A7BE4011CEDE0F20010F7E7 /* Bulletin+Decodable.swift in Sources */,
-				4A0124AE16FC9F2500F744D6 /* SBSBulletinCell.m in Sources */,
+				4A14AB621DA830440019F017 /* NewsLetterViewController.swift in Sources */,
 				4A4C1E091D7378800070F469 /* ContactItem+Decodable.swift in Sources */,
-				4A0124B116FCA71D00F744D6 /* UIView+JLFrameAdditions.m in Sources */,
 				4A4C1E0B1D7378C00070F469 /* Newsletter.swift in Sources */,
 				4A2DBD521CEBB0F300E0A675 /* AgendaItem+Decodable.swift in Sources */,
-				4A4997CF16FEF65400B8A729 /* SBSAgendaItem.m in Sources */,
 				4A2DBD4E1CEBADF900E0A675 /* SebastiaanApiClient.swift in Sources */,
-				4A4997D216FEF68600B8A729 /* SBSBulletin.m in Sources */,
-				4AFECD241881368A004E711D /* NSString+SBS.m in Sources */,
-				4A31C73517E870FA005FB021 /* SBSButton.m in Sources */,
-				4A4997D516FEF6AB00B8A729 /* SBSContactItem.m in Sources */,
-				4A4997D816FEF6CF00B8A729 /* SBSNewsLetter.m in Sources */,
-				4AA0A97F1730E834005D9BD0 /* NSDate+JLDateAdditions.m in Sources */,
+				4A14AB601DA82F7C0019F017 /* AgendaTableViewController.swift in Sources */,
+				4A14AB5E1DA82EC70019F017 /* TeamTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,13 +622,16 @@
 		09ABC08C13A1D52E009C3FCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jeroen Leenarts (6RTNT4ZKCC)";
@@ -788,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -797,13 +659,16 @@
 		09ABC08D13A1D52E009C3FCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jeroen Leenarts (T4CMEHXPLL)";
@@ -818,10 +683,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "2b728f78-e363-4324-9257-05485b881c51";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -829,10 +695,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05A2E13C4E6FB4BC85E93903 /* Pods-SebastiaanSchool.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = SebastiaanSchool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -854,8 +722,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.sebastiaanschool.contact.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Classes/SebastiaanSchool-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -865,10 +733,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69E0453124AE476FFD091309 /* Pods-SebastiaanSchool.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = SebastiaanSchool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -889,7 +759,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.sebastiaanschool.contact.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Classes/SebastiaanSchool-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -900,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CAF229129176E714DB8AC12 /* Pods-SebastiaanSchoolTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -925,6 +796,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.cocoaheads.SebastiaanSchoolTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SebastiaanSchool.app/SebastiaanSchool";
 			};
 			name = Debug;
@@ -933,6 +805,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4263DFC6A1EC33564940473 /* Pods-SebastiaanSchoolTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -953,6 +826,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.cocoaheads.SebastiaanSchoolTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SebastiaanSchool.app/SebastiaanSchool";
 				VALIDATE_PRODUCT = YES;
 			};

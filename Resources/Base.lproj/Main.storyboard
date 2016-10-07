@@ -1,30 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tm9-iQ-D8D">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tm9-iQ-D8D">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Seb@stiaan-->
         <scene sceneID="MWm-q5-sTS">
             <objects>
-                <viewController id="SzA-Ag-xqx" customClass="SBSInfoViewController" sceneMemberID="viewController">
+                <viewController id="SzA-Ag-xqx" customClass="InfoViewController" customModule="SebastiaanSchool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nrs-sw-ujo"/>
                         <viewControllerLayoutGuide type="bottom" id="V7k-ug-LK7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oed-eV-eme">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="148" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gp-oP-saN" userLabel="bulletinButton" customClass="SBSButton">
-                                <rect key="frame" x="16" y="529" width="568" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gp-oP-saN" userLabel="bulletinButton">
                                 <state key="normal" title="bulletin">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
@@ -32,25 +32,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="fnu-Cf-iSW"/>
+                                    <segue destination="WEZ-9i-ikQ" kind="show" identifier="bulletinSegue" id="cXi-Q5-8Cq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="274" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zd-Tm-qPb" userLabel="yurlButton" customClass="SBSButton">
-                                <rect key="frame" x="308" y="234" width="292" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="274" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zd-Tm-qPb" userLabel="yurlButton">
                                 <state key="normal" title="yurls">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="ytE-lX-weo"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-em-NRs" userLabel="teamButton" customClass="SBSButton">
-                                <rect key="frame" x="16" y="352" width="568" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-em-NRs" userLabel="teamButton">
                                 <state key="normal" title="team"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
@@ -58,13 +53,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="q5q-p3-DV1"/>
+                                    <segue destination="AG2-Cv-f5a" kind="show" identifier="teamSegue" id="Q06-FJ-zPU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-oU-NaT" userLabel="agendaButton" customClass="SBSButton">
-                                <rect key="frame" x="16" y="293" width="568" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-oU-NaT" userLabel="agendaButton">
                                 <state key="normal" title="agenda">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
@@ -72,30 +66,25 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="98Y-Q9-gyK"/>
+                                    <segue destination="t0H-O7-3eK" kind="show" identifier="agendaSegue" id="yNZ-g1-WZR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="286" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m37-qk-KtV" userLabel="twitterButton" customClass="SBSButton">
-                                <rect key="frame" x="0.0" y="234" width="292" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="286" placeholderIntrinsicHeight="51" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m37-qk-KtV" userLabel="twitterButton">
                                 <state key="normal" title="twitter">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="lWt-Bp-Ao9"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skK-2d-REq" userLabel="newsButton" customClass="SBSButton">
-                                <rect key="frame" x="16" y="470" width="568" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skK-2d-REq" userLabel="newsButton">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="b5W-WI-WGb"/>
                                 </constraints>
                                 <state key="normal" title="news">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
@@ -103,25 +92,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="t32-dr-MNX"/>
+                                    <segue destination="gPA-9x-7ww" kind="show" identifier="newsletterSegue" id="eCn-Ng-EvF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCC-Sy-s2C" userLabel="callButton" customClass="SBSButton">
-                                <rect key="frame" x="16" y="411" width="568" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="51" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCC-Sy-s2C" userLabel="callButton">
                                 <state key="normal" title="call">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="parallaxIntensity">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="SzA-Ag-xqx" eventType="touchUpInside" id="zM7-3f-6i7"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="big-logo" translatesAutoresizingMaskIntoConstraints="NO" id="L8c-gJ-6D7">
-                                <rect key="frame" x="0.0" y="64" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="162" id="IEQ-kj-bmI"/>
                                 </constraints>
@@ -132,7 +116,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2Gp-oP-saN" firstAttribute="leading" secondItem="GMG-em-NRs" secondAttribute="leading" id="1oR-xr-pq3"/>
                             <constraint firstItem="skK-2d-REq" firstAttribute="top" secondItem="QCC-Sy-s2C" secondAttribute="bottom" constant="8" id="3LY-t1-Glb"/>
@@ -172,34 +156,48 @@
                         <outlet property="agendaButton" destination="DMU-oU-NaT" id="vxI-fH-sUb"/>
                         <outlet property="bulletinButton" destination="2Gp-oP-saN" id="rM7-7L-REa"/>
                         <outlet property="callButton" destination="QCC-Sy-s2C" id="Rg8-Qn-69U"/>
-                        <outlet property="iconImageView" destination="L8c-gJ-6D7" id="IjL-Mz-BOq"/>
+                        <outlet property="iconImageView" destination="L8c-gJ-6D7" id="hKu-tL-3S5"/>
                         <outlet property="newsButton" destination="skK-2d-REq" id="BP4-WF-oeI"/>
                         <outlet property="teamButton" destination="GMG-em-NRs" id="btf-aC-9DW"/>
                         <outlet property="twitterButton" destination="m37-qk-KtV" id="82s-B2-mvA"/>
                         <outlet property="yurlButton" destination="9Zd-Tm-qPb" id="VBb-4U-wgp"/>
-                        <segue destination="gPA-9x-7ww" kind="show" identifier="newsletterSegue" id="JBF-YI-mPV"/>
-                        <segue destination="AG2-Cv-f5a" kind="show" identifier="teamSegue" id="gkg-GE-64j"/>
-                        <segue destination="w7l-Kc-MI1" kind="show" identifier="bulletinSegue" id="WZs-Ae-t8G"/>
-                        <segue destination="t0H-O7-3eK" kind="show" identifier="agendaSegue" id="rHR-cK-NGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ec-Xp-OWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-9" y="-348"/>
         </scene>
-        <!--Team6-->
+        <!--Team-->
         <scene sceneID="cmn-k4-Skr">
             <objects>
-                <tableViewController id="AG2-Cv-f5a" customClass="SBSTeamTableViewController" sceneMemberID="viewController">
+                <tableViewController id="AG2-Cv-f5a" customClass="TeamTableViewController" customModule="SebastiaanSchool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xH5-kf-VQg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" id="J6p-7b-DEd">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" textLabel="8q1-MZ-n8W" detailTextLabel="N9c-s9-oqe" style="IBUITableViewCellStyleSubtitle" id="J6p-7b-DEd">
+                                <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J6p-7b-DEd" id="E2I-gd-fBO">
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8q1-MZ-n8W">
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N9c-s9-oqe">
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -208,33 +206,37 @@
                             <outlet property="delegate" destination="AG2-Cv-f5a" id="gwo-cn-mTz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Team6" id="SvB-Tz-jwW"/>
+                    <navigationItem key="navigationItem" title="Team" id="SvB-Tz-jwW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaP-2D-Ai7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757" y="554"/>
         </scene>
         <!--Bulletin-->
-        <scene sceneID="Lgq-im-K6F">
+        <scene sceneID="C7H-uP-Rx6">
             <objects>
-                <tableViewController id="w7l-Kc-MI1" customClass="SBSBulletinViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="puh-Lt-fdL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="WEZ-9i-ikQ" customClass="BulletinViewController" customModule="SebastiaanSchool" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Gu-3D-9gJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bulletinCell" textLabel="BXc-tD-NrD" detailTextLabel="v7M-x4-9e4" style="IBUITableViewCellStyleSubtitle" id="QTp-g1-C5i" customClass="SBSBulletinCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bulletinCell" textLabel="N2V-Q4-T7I" detailTextLabel="HEm-MU-FQH" style="IBUITableViewCellStyleSubtitle" id="gxb-zw-sKn">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QTp-g1-C5i" id="pnC-zr-IcZ">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gxb-zw-sKn" id="xtr-Nd-GbO">
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BXc-tD-NrD">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N2V-Q4-T7I">
+                                            <frame key="frameInset" minX="15" minY="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v7M-x4-9e4">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HEm-MU-FQH">
+                                            <frame key="frameInset" minX="15" minY="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -245,28 +247,30 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="w7l-Kc-MI1" id="Dbp-rc-n0O"/>
-                            <outlet property="delegate" destination="w7l-Kc-MI1" id="232-G1-aTl"/>
+                            <outlet property="dataSource" destination="WEZ-9i-ikQ" id="7Fl-MH-OMl"/>
+                            <outlet property="delegate" destination="WEZ-9i-ikQ" id="eTA-aP-7NA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bulletin" id="O04-Sl-J3p"/>
+                    <navigationItem key="navigationItem" title="Bulletin" id="lhK-sW-YyW"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3HC-DR-4At" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLc-oA-P43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="1242"/>
+            <point key="canvasLocation" x="318" y="1255"/>
         </scene>
         <!--Newsletter-->
         <scene sceneID="Ete-mr-5kV">
             <objects>
-                <tableViewController title="Newsletter" id="gPA-9x-7ww" customClass="SBSNewsLetterTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Newsletter" id="gPA-9x-7ww" customClass="NewsletterTableViewController" customModule="SebastiaanSchool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="in6-XZ-Kb7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsletterCell" id="Yeh-hP-4HU">
+                                <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yeh-hP-4HU" id="iox-YN-bNS">
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -285,24 +289,28 @@
         <!--Agenda-->
         <scene sceneID="cQ5-SU-BIS">
             <objects>
-                <tableViewController title="Agenda" id="t0H-O7-3eK" customClass="SBSAgendaTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Agenda" id="t0H-O7-3eK" customClass="AgendaTableViewController" customModule="SebastiaanSchool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SWr-5a-yog">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="agendaCell" textLabel="yOU-My-NhD" detailTextLabel="MJj-d9-nK6" style="IBUITableViewCellStyleSubtitle" id="tqq-4m-ebb">
+                                <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tqq-4m-ebb" id="OU8-PO-Sfv">
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yOU-My-NhD">
+                                            <frame key="frameInset" minX="15" minY="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MJj-d9-nK6">
+                                            <frame key="frameInset" minX="15" minY="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -343,5 +351,5 @@
     <resources>
         <image name="big-logo" width="320" height="320"/>
     </resources>
-    <color key="tintColor" red="0.19215686269999999" green="0.70980392160000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.19215686269999999" green="0.70980392160000005" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

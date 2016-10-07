@@ -7,14 +7,18 @@
 //
 
 import Foundation
-import SwiftyJSON
 import JsonApiClient
 
 extension ContactItem : Decodable {
     public typealias DecodedType = ContactItem
     
-    public static func decode(json: JSON) -> Decoded<ContactItem> {
+    public static func decode(_ json: JSON) -> Decoded<ContactItem> {
         let contactItem = ContactItem()
-        return .Success(contactItem)
+        contactItem.displayName = json["displayName"].stringValue
+        contactItem.email = json["email"].stringValue
+        contactItem.order = json["order"].intValue
+        contactItem.detailText = json["detailText"].stringValue
+        contactItem.urlString = json["url"].stringValue
+        return .success(contactItem)
     }
 }

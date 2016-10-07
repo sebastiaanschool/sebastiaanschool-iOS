@@ -1,25 +1,25 @@
 //
-//  BulletinViewController.swift
+//  AgendaTableViewController.swift
 //  SebastiaanSchool
 //
-//  Created by Jeroen Leenarts on 28-08-16.
+//  Created by Jeroen Leenarts on 07-10-16.
 //
 //
 
 import UIKit
 import RealmSwift
 
-class BulletinViewController: UITableViewController {
+class AgendaTableViewController: UITableViewController {
     let realm = try! Realm()
 
-    var bulletinsArray = try! Realm().objects(Bulletin.self).sorted(byProperty: "publishedAt", ascending: false)
+    var agendaItemsArray = try! Realm().objects(AgendaItem.self).sorted(byProperty: "start", ascending: false)
     var notificationToken: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Set results notification block
-        self.notificationToken = bulletinsArray.addNotificationBlock { (changes: RealmCollectionChange) in
+        self.notificationToken = agendaItemsArray.addNotificationBlock { (changes: RealmCollectionChange) in
             switch changes {
             case .initial:
                 // Results are now populated and can be accessed without blocking the UI
@@ -29,11 +29,11 @@ class BulletinViewController: UITableViewController {
                 // Query results have changed, so apply them to the TableView
                 self.tableView.beginUpdates()
                 self.tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) },
-                    with: .automatic)
+                                          with: .automatic)
                 self.tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) },
-                    with: .automatic)
+                                          with: .automatic)
                 self.tableView.reloadRows(at: modifications.map { IndexPath(row: $0, section: 0) },
-                    with: .automatic)
+                                          with: .automatic)
                 self.tableView.endUpdates()
                 break
             case .error(let err):
@@ -43,6 +43,4 @@ class BulletinViewController: UITableViewController {
             }
         }
     }
-
-}
 }

@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import SwiftyJSON
 import JsonApiClient
 
 extension Newsletter : Decodable {
     public typealias DecodedType = Newsletter
     
-    public static func decode(json: JSON) -> Decoded<Newsletter> {
+    public static func decode(_ json: JSON) -> Decoded<Newsletter> {
         let newsletter = Newsletter()
-        return .Success(newsletter)
+        return .success(newsletter)
     }
 }

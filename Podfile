@@ -8,10 +8,8 @@ project 'SebastiaanSchool.xcodeproj'
 pod 'JsonApiClient' , :git => 'https://github.com/jeroenleenarts/JsonApiClient.git'
 
 target 'SebastiaanSchool' do
-    pod 'ParseUI'
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'ReactiveCocoa'
     pod 'TTTAttributedLabel'
     pod 'RealmSwift'
     pod 'OneSignal'
