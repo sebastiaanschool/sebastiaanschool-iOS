@@ -16,7 +16,7 @@ extension Bulletin : Decodable {
         let bulletin = Bulletin()
         bulletin.title = json["title"].stringValue
         
-        guard let publishedAtString = json["end"].string else {
+        guard let publishedAtString = json["publishedAt"].string else {
             return Decoded.failure(DecodeError.missingKey("publishedAt"))
         }
         guard let publishedAt = jsonDateFormatter.date(from:publishedAtString) else {

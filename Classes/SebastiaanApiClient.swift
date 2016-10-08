@@ -77,4 +77,13 @@ open class SebastiaanApiClient: ApiClient {
             completion(result)
         }
     }
+    
+    open func fetchNewsletters(_ completion: @escaping (ApiClientResult<[Newsletter]>) -> Void) {
+        let url = Endpoints.newsletters.url
+        let request = URLRequest(url: url)
+        
+        fetchResources(request) { (result: ApiClientResult<[Newsletter]>) in
+            completion(result)
+        }
+    }
 }

@@ -18,6 +18,10 @@ class AgendaTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+
+        self.title = NSLocalizedString("Agenda", comment: "Title of Agenda screen")
+
         // Set results notification block
         self.notificationToken = agendaItemsArray.addNotificationBlock { (changes: RealmCollectionChange) in
             switch changes {
