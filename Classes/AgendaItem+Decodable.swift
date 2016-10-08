@@ -16,13 +16,13 @@ extension AgendaItem : Decodable {
         let agendaItem = AgendaItem()
         agendaItem.title = json["title"].stringValue
         if let dateString = json["start"].string {
-            agendaItem.start = jsonDateFormatter.date(from:dateString)
+            agendaItem.start = toDate(dateString)
         }
 
         guard let start = json["start"].string else {
             return Decoded.failure(DecodeError.missingKey("start"))
         }
-        guard let startDate = jsonDateFormatter.date(from:start) else {
+        guard let startDate = toDate(start) else {
             return Decoded.failure(DecodeError.typeMismatch(expected: "Well formatted date string", actual: start))
         }
         
@@ -31,7 +31,7 @@ extension AgendaItem : Decodable {
         guard let end = json["end"].string else {
             return Decoded.failure(DecodeError.missingKey("end"))
         }
-        guard let endDate = jsonDateFormatter.date(from:end) else {
+        guard let endDate = toDate(end) else {
             return Decoded.failure(DecodeError.typeMismatch(expected: "Well formatted date string", actual: end))
         }
         

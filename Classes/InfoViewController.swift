@@ -18,4 +18,9 @@ class InfoViewController : UIViewController {
     @IBOutlet weak var newsButton: UIButton!
     @IBOutlet weak var bulletinButton: UIButton!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
 }

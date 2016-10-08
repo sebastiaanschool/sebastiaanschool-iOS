@@ -16,11 +16,11 @@ extension Newsletter : Decodable {
         let newsletter = Newsletter()
         newsletter.title = json["title"].stringValue
         newsletter.documentUrlString = json["documentUrl"].stringValue
-
+        
         guard let publishedAtString = json["publishedAt"].string else {
             return Decoded.failure(DecodeError.missingKey("publishedAt"))
         }
-        guard let publishedAt = jsonDateFormatter.date(from:publishedAtString) else {
+        guard let publishedAt = toDate(publishedAtString) else {
             return Decoded.failure(DecodeError.typeMismatch(expected: "Well formatted date string", actual: publishedAtString))
         }
 
