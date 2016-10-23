@@ -11,13 +11,13 @@ import RealmSwift
 
 class TeamTableViewController: UITableViewController {
     let realm = try! Realm()
-
+    
     var contactItemsArray = try! Realm().objects(ContactItem.self).sorted(byProperty: "order", ascending: false)
     var notificationToken: NotificationToken?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         SebastiaanApiClient.sharedApiClient.fetchContactItems { [weak self](contactItemsResult) in
             switch contactItemsResult {
             case .success(let contactItems):
@@ -29,12 +29,12 @@ class TeamTableViewController: UITableViewController {
                 print("Error: \(contactItemsResult)")
             }
         }
-
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-
+            
         self.title = NSLocalizedString("Team", comment: "Title of Team screen")
 
-
+        
         // Set results notification block
         self.notificationToken = contactItemsArray.addNotificationBlock { (changes: RealmCollectionChange) in
             switch changes {
@@ -60,18 +60,19 @@ class TeamTableViewController: UITableViewController {
             }
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath)
-
+        
         let contactItem = contactItemsArray[indexPath.row]
         cell.textLabel?.text = contactItem.displayName
         cell.detailTextLabel?.text = contactItem.detailText
-
+        
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactItemsArray.count
     }
 }
+
