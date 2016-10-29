@@ -19,6 +19,12 @@ class SebastiaanSchoolAppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
 
+        // Apply UIAppearance
+        self.window?.tintColor = SebastiaanStyle.sebastiaanBlueColor
+        UINavigationBar.appearance().barTintColor = SebastiaanStyle.sebastiaanBlueColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().tintColor = .white
+        
         return true
     }
 }
