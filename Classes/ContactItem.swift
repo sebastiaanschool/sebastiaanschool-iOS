@@ -13,7 +13,7 @@ import RealmSwift
 
 open class ContactItem: Object, ReflectedStringConvertible {
     dynamic var displayName: String = ""
-    dynamic var email: String = ""
+    dynamic var email: String?
     dynamic var order: Int = 0
     dynamic var detailText: String = ""
     dynamic var urlString: String = ""
