@@ -16,7 +16,7 @@ extension ContactItem : Decodable {
     public static func decode(_ json: JSON) -> Decoded<ContactItem> {
         let contactItem = ContactItem()
         contactItem.displayName = json["displayName"].stringValue
-        contactItem.email = json["email"].stringValue
+        contactItem.email = json["email"].string
         contactItem.order = json["order"].intValue
         contactItem.detailText = json["detailText"].stringValue
         contactItem.urlString = json["url"].stringValue
