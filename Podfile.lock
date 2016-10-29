@@ -1,21 +1,21 @@
 PODS:
-  - Crashlytics (3.8.2):
+  - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.9)
-  - JsonApiClient (0.4.1)
-  - OneSignal (2.1.16)
-  - Realm (2.0.2):
-    - Realm/Headers (= 2.0.2)
-  - Realm/Headers (2.0.2)
-  - RealmSwift (2.0.2):
-    - Realm (= 2.0.2)
+  - Fabric (1.6.11)
+  - JsonApiClient (0.4.2):
+    - SwiftyJSON (~> 3.1)
+  - Realm (2.0.3):
+    - Realm/Headers (= 2.0.3)
+  - Realm/Headers (2.0.3)
+  - RealmSwift (2.0.3):
+    - Realm (= 2.0.3)
+  - SwiftyJSON (3.1.1)
   - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - JsonApiClient (from `https://github.com/jeroenleenarts/JsonApiClient.git`)
-  - OneSignal
   - RealmSwift
   - TTTAttributedLabel
 
@@ -25,18 +25,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   JsonApiClient:
-    :commit: b93bbd37483ca0881b6ac264903f33b420f3f2bc
+    :commit: 0cddbbaaa211b99c7f424a5828839c286d4bf62c
     :git: https://github.com/jeroenleenarts/JsonApiClient.git
 
 SPEC CHECKSUMS:
-  Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
-  Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
-  JsonApiClient: c08f6883cfa567a5f6fe3f81c78e6556d60c2b34
-  OneSignal: 7a4272f857d3005949f83a373868c5c98d02f203
-  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
-  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  JsonApiClient: 3c677b0c963c7a0e24860f2927d15d0b430cfcd5
+  Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
+  RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 9d236d66b46aaf742e40176f1b37bcdd1c0a6e46
+PODFILE CHECKSUM: 0a7425c2855c27ad57b21a2cdde64a88274e4cba
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

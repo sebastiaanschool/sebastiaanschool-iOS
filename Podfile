@@ -12,7 +12,6 @@ target 'SebastiaanSchool' do
     pod 'Crashlytics'
     pod 'TTTAttributedLabel'
     pod 'RealmSwift'
-    pod 'OneSignal'
 end
 
 target 'SebastiaanSchoolTests' do

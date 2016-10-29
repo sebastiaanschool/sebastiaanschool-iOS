@@ -8,6 +8,7 @@
 
 import Foundation
 import JsonApiClient
+import SwiftyJSON
 
 extension Newsletter : Decodable {
     public typealias DecodedType = Newsletter

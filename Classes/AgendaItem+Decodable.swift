@@ -8,6 +8,7 @@
 
 import Foundation
 import JsonApiClient
+import SwiftyJSON
 
 extension AgendaItem : Decodable {
     public typealias DecodedType = AgendaItem
