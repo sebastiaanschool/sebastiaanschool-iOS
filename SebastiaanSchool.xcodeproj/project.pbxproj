@@ -15,7 +15,6 @@
 		09ABC07213A1D52D009C3FCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ABC07113A1D52D009C3FCF /* UIKit.framework */; };
 		09ABC07413A1D52D009C3FCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ABC07313A1D52D009C3FCF /* Foundation.framework */; };
 		09BEF34C13D51C3F001BBCDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEF34B13D51C3F001BBCDB /* Security.framework */; };
-		2075C02EC21543699A3107CA /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DDE31AFB4347F594B7F2CA /* libPods-test.a */; };
 		2FCDD6B014A573F500295AAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCDD6AF14A573F500295AAC /* QuartzCore.framework */; };
 		4A0124AE16FC9F2500F744D6 /* SBSBulletinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124AD16FC9F2500F744D6 /* SBSBulletinCell.m */; };
 		4A0124B116FCA71D00F744D6 /* UIView+JLFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0124B016FCA71D00F744D6 /* UIView+JLFrameAdditions.m */; };
@@ -39,7 +38,6 @@
 		4A4BF3B716C6BA4100497DC0 /* SBSEditTeamMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF3B616C6BA4100497DC0 /* SBSEditTeamMemberViewController.m */; };
 		4A4EA04B16A34CA400F12406 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A4EA04A16A34CA400F12406 /* Settings.bundle */; };
 		4A4EA05916A35B1F00F12406 /* SBSStaffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4EA05716A35B1F00F12406 /* SBSStaffViewController.m */; };
-		4A53EDDF1ADA7C2100C60034 /* libPods-SebastiaanSchool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A53EDDE1ADA7C2100C60034 /* libPods-SebastiaanSchool.a */; };
 		4A69268D17C360E100C1C9A8 /* UIView+AF1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A69268C17C360E100C1C9A8 /* UIView+AF1.m */; };
 		4A6A4F0118148CAD0080D686 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6A4F0018148CAD0080D686 /* XCTest.framework */; };
 		4A6A4F0218148CAD0080D686 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ABC07313A1D52D009C3FCF /* Foundation.framework */; };
@@ -74,6 +72,7 @@
 		6372FF581613CC47002132AF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF571613CC47002132AF /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		97E18B1F1624CB5700B17A67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E18B1E1624CB5700B17A67 /* CoreLocation.framework */; };
+		BE812E408FDFD9D0C8D02743 /* Pods_SebastiaanSchool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55295A0D02E9C877454BEDFD /* Pods_SebastiaanSchool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05FD963BA9CBABF2274A4F57 /* Pods-SebastiaanSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SebastiaanSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool.release.xcconfig"; sourceTree = "<group>"; };
 		092354B213A1D7EB00DA740F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		092354B413A1D7F000DA740F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		092354B613A1D83C00DA740F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -96,10 +96,7 @@
 		09ABC07113A1D52D009C3FCF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		09ABC07313A1D52D009C3FCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09BEF34B13D51C3F001BBCDB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		18EA73B477626DEA0281A1B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		230849AA73B644A69882684B /* Pods-SebastiaanSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SebastiaanSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool.release.xcconfig"; sourceTree = "<group>"; };
 		2FCDD6AF14A573F500295AAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3FEA4D0C50CC4385A21F5C1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0124AC16FC9F2500F744D6 /* SBSBulletinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSBulletinCell.h; sourceTree = "<group>"; };
 		4A0124AD16FC9F2500F744D6 /* SBSBulletinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBSBulletinCell.m; sourceTree = "<group>"; };
 		4A0124AF16FCA71D00F744D6 /* UIView+JLFrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JLFrameAdditions.h"; sourceTree = "<group>"; };
@@ -192,18 +189,14 @@
 		4AF4A0B216A86DA600493C20 /* provisiontype */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = provisiontype; sourceTree = "<group>"; };
 		4AFECD221881368A004E711D /* NSString+SBS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBS.h"; sourceTree = "<group>"; };
 		4AFECD231881368A004E711D /* NSString+SBS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBS.m"; sourceTree = "<group>"; };
-		4BAF55658D2C1C4CD42E181E /* Pods-SebastiaanSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SebastiaanSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool.debug.xcconfig"; sourceTree = "<group>"; };
+		55295A0D02E9C877454BEDFD /* Pods_SebastiaanSchool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SebastiaanSchool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6332375315E438E900AE2736 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6372FF521613CC3C002132AF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6372FF551613CC42002132AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6372FF571613CC47002132AF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		84DDE31AFB4347F594B7F2CA /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		AF6C3986F338E72100BD97CE /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
-		B8E52AAF81BBF0F3CCE931C3 /* libPods-SebastiaanSchool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SebastiaanSchool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA8E5865D2492D778B6D0FFE /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
-		E02D40804C724D9C795A3CBE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C89A7D3639DB7CD936EDE0B9 /* Pods-SebastiaanSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SebastiaanSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +222,7 @@
 				092354B313A1D7EB00DA740F /* CFNetwork.framework in Frameworks */,
 				09ABC07213A1D52D009C3FCF /* UIKit.framework in Frameworks */,
 				09ABC07413A1D52D009C3FCF /* Foundation.framework in Frameworks */,
-				4A53EDDF1ADA7C2100C60034 /* libPods-SebastiaanSchool.a in Frameworks */,
+				BE812E408FDFD9D0C8D02743 /* Pods_SebastiaanSchool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +233,6 @@
 				4A6A4F0118148CAD0080D686 /* XCTest.framework in Frameworks */,
 				4A6A4F0318148CAD0080D686 /* UIKit.framework in Frameworks */,
 				4A6A4F0218148CAD0080D686 /* Foundation.framework in Frameworks */,
-				2075C02EC21543699A3107CA /* libPods-test.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +258,7 @@
 				4A6A4F0418148CAD0080D686 /* SebastiaanSchool Tests */,
 				09ABC07013A1D52D009C3FCF /* Frameworks */,
 				09ABC06E13A1D52D009C3FCF /* Products */,
-				A24BF0F42EDC12589DDE4535 /* Pods */,
+				B1A3ACC22155E4F91BCBD1D8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,10 +293,8 @@
 				09BEF34B13D51C3F001BBCDB /* Security.framework */,
 				092354B413A1D7F000DA740F /* SystemConfiguration.framework */,
 				09ABC07113A1D52D009C3FCF /* UIKit.framework */,
-				3FEA4D0C50CC4385A21F5C1F /* libPods.a */,
 				4A6A4F0018148CAD0080D686 /* XCTest.framework */,
-				84DDE31AFB4347F594B7F2CA /* libPods-test.a */,
-				B8E52AAF81BBF0F3CCE931C3 /* libPods-SebastiaanSchool.a */,
+				55295A0D02E9C877454BEDFD /* Pods_SebastiaanSchool.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -432,15 +422,11 @@
 			path = bin;
 			sourceTree = "<group>";
 		};
-		A24BF0F42EDC12589DDE4535 /* Pods */ = {
+		B1A3ACC22155E4F91BCBD1D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				18EA73B477626DEA0281A1B4 /* Pods.debug.xcconfig */,
-				E02D40804C724D9C795A3CBE /* Pods.release.xcconfig */,
-				CA8E5865D2492D778B6D0FFE /* Pods-test.debug.xcconfig */,
-				AF6C3986F338E72100BD97CE /* Pods-test.release.xcconfig */,
-				4BAF55658D2C1C4CD42E181E /* Pods-SebastiaanSchool.debug.xcconfig */,
-				230849AA73B644A69882684B /* Pods-SebastiaanSchool.release.xcconfig */,
+				C89A7D3639DB7CD936EDE0B9 /* Pods-SebastiaanSchool.debug.xcconfig */,
+				05FD963BA9CBABF2274A4F57 /* Pods-SebastiaanSchool.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -452,14 +438,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09ABC08E13A1D52E009C3FCF /* Build configuration list for PBXNativeTarget "SebastiaanSchool" */;
 			buildPhases = (
-				061F38E026A23183305C6263 /* Check Pods Manifest.lock */,
+				0FA12633FF11B46EA534A8F7 /* [CP] Check Pods Manifest.lock */,
 				4A35F07F16AB525500D0E7B3 /* Check and Prep release */,
 				4ADC934716A00A5300DAA972 /* Generate configuration */,
 				09ABC06913A1D52D009C3FCF /* Sources */,
 				09ABC06A13A1D52D009C3FCF /* Frameworks */,
 				09ABC06B13A1D52D009C3FCF /* Resources */,
-				5ABC975BEE204B45B88A5D02 /* Copy Pods Resources */,
-				4A22EF211A3A3C880047CBD3 /* Upload DSYM files to Parse.com */,
+				4A22EF211A3A3C880047CBD3 /* Upload DSYM files to Crashlytics */,
+				8A08EE46471322B358023870 /* [CP] Embed Pods Frameworks */,
+				3E89C117F87F041355BBE395 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -474,11 +461,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A6A4F1118148CAD0080D686 /* Build configuration list for PBXNativeTarget "SebastiaanSchool Tests" */;
 			buildPhases = (
-				88CF2DF0A23546FF9ACCBF6F /* Check Pods Manifest.lock */,
 				4A6A4EFB18148CAD0080D686 /* Sources */,
 				4A6A4EFC18148CAD0080D686 /* Frameworks */,
 				4A6A4EFD18148CAD0080D686 /* Resources */,
-				488EFC67C80B46AC995909BA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -496,10 +481,11 @@
 		09ABC06413A1D52D009C3FCF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					09ABC06C13A1D52D009C3FCF = {
 						DevelopmentTeam = T4CMEHXPLL;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -565,49 +551,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		061F38E026A23183305C6263 /* Check Pods Manifest.lock */ = {
+		0FA12633FF11B46EA534A8F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		488EFC67C80B46AC995909BA /* Copy Pods Resources */ = {
+		3E89C117F87F041355BBE395 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4A22EF211A3A3C880047CBD3 /* Upload DSYM files to Parse.com */ = {
+		4A22EF211A3A3C880047CBD3 /* Upload DSYM files to Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Upload DSYM files to Parse.com";
+			name = "Upload DSYM files to Crashlytics";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=/usr/local/bin:$PATH\ncd parse\n\nparse symbols -p \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"";
+			shellScript = "source \"${PROJECT_DIR}/bin/setEnv.sh\"\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}";
 		};
 		4A35F07F16AB525500D0E7B3 /* Check and Prep release */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -637,34 +623,19 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nif [ ! -L \"${PROJECT_DIR}/derived-sources\" ]\nthen\naction=\"Create\"\nelif [ \"$(readlink \"${PROJECT_DIR}/derived-sources\")\" != \"${DERIVED_SOURCES_DIR}\" ]\nthen\naction=\"Replace\"\nfi\nif [ -n \"${action}\" ]\nthen\nrm -f \"${PROJECT_DIR}/derived-sources\"\nprintf \"%s link: \" \"${action}\" && ln -sv \"${DERIVED_SOURCES_DIR}\" \"${PROJECT_DIR}/derived-sources\"\nfi\n\necho \"Generating constants based on build configuration.\"\nmkdir -p \"${DERIVED_SOURCES_DIR}\"\n\"${PROJECT_DIR}/bin/generate-constants\" \\\n\"${CODESIGN_IDENTITY}\" \\\n\"${PROVISIONING_PROFILE_REQUIRED}\" \\\n\"${PROVISIONING_PROFILE}\" > \"${DERIVED_SOURCES_DIR}/GeneratedConstants.m\"\n";
 		};
-		5ABC975BEE204B45B88A5D02 /* Copy Pods Resources */ = {
+		8A08EE46471322B358023870 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88CF2DF0A23546FF9ACCBF6F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SebastiaanSchool/Pods-SebastiaanSchool-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -769,18 +740,22 @@
 		09ABC08C13A1D52E009C3FCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jeroen Leenarts (6RTNT4ZKCC)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -793,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -802,13 +777,16 @@
 		09ABC08D13A1D52E009C3FCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jeroen Leenarts (T4CMEHXPLL)";
@@ -823,7 +801,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "2b728f78-e363-4324-9257-05485b881c51";
 				SDKROOT = iphoneos;
@@ -832,7 +810,7 @@
 		};
 		09ABC08F13A1D52E009C3FCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BAF55658D2C1C4CD42E181E /* Pods-SebastiaanSchool.debug.xcconfig */;
+			baseConfigurationReference = C89A7D3639DB7CD936EDE0B9 /* Pods-SebastiaanSchool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -849,13 +827,15 @@
 				GCC_PREFIX_HEADER = "SBSSebastiaanSchool-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.sebastiaanschool.contact.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -863,7 +843,7 @@
 		};
 		09ABC09013A1D52E009C3FCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230849AA73B644A69882684B /* Pods-SebastiaanSchool.release.xcconfig */;
+			baseConfigurationReference = 05FD963BA9CBABF2274A4F57 /* Pods-SebastiaanSchool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -879,13 +859,15 @@
 				GCC_PREFIX_HEADER = "SBSSebastiaanSchool-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SebastiaanSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.sebastiaanschool.contact.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -894,7 +876,6 @@
 		};
 		4A6A4F0F18148CAD0080D686 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA8E5865D2492D778B6D0FFE /* Pods-test.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SebastiaanSchool.app/SebastiaanSchool";
@@ -920,7 +901,8 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "SebastiaanSchool Tests/SebastiaanSchool Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.sebastiaanschool.contact.app.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -929,7 +911,6 @@
 		};
 		4A6A4F1018148CAD0080D686 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF6C3986F338E72100BD97CE /* Pods-test.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SebastiaanSchool.app/SebastiaanSchool";
@@ -951,7 +932,8 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "SebastiaanSchool Tests/SebastiaanSchool Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.sebastiaanschool.contact.app.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;

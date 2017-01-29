@@ -1,22 +1,20 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7'
-
-workspace 'SebastiaanSchool'
-xcodeproj 'SebastiaanSchool.xcodeproj'
+platform :ios, '9.0'
+use_frameworks!
 
 target 'SebastiaanSchool' do
     pod 'ParseUI'
-    pod 'ParseCrashReporting'
-    pod 'ReactiveCocoa'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'ReactiveObjC'
     pod 'TTTAttributedLabel'
 end
 
-target :test, :exclusive => true do 
-    pod 'KIF', '~> 3.0'
-    link_with 'SebastiaanSchool Tests'
+#target :test, :exclusive => true do 
+#    pod 'KIF', '~> 3.0'
+#    link_with 'SebastiaanSchool Tests'
 
-    pod 'OCMock'
-end
+#    pod 'OCMock'
+#end
 
 post_install do | installer |
     require 'fileutils'

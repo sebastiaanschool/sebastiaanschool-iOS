@@ -6,8 +6,6 @@
 // You should have received a copy of the license along with this
 // work.  If not, see <http://creativecommons.org/licenses/by-nc/3.0/>.
 
-#import <ParseCrashReporting/ParseCrashReporting.h>
-
 #import "SBSSebastiaanSchoolAppDelegate.h"
 #import "SBSInfoViewController.h"
 
@@ -15,6 +13,9 @@
 #import "SBSBulletin.h"
 #import "SBSContactItem.h"
 #import "SBSNewsLetter.h"
+
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 typedef NS_ENUM (NSInteger, SBSNotificationType) {
     SBSNotificationTypeInfo = 0,
@@ -37,11 +38,13 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [SBSContactItem registerSubclass];
     [SBSNewsLetter  registerSubclass];
     
-    [ParseCrashReporting enable];
-    [Parse setApplicationId:PARSE_APPLICATION_ID
-                  clientKey:PARSE_CLIENT_KEY];
-    
-    [PFUser enableRevocableSessionInBackground];
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId = PARSE_APPLICATION_ID;
+        configuration.clientKey = PARSE_CLIENT_KEY;
+        configuration.server = @"https://parseapi.back4app.com";
+//        configuration.localDatastoreEnabled = YES; // If you need to enable local data store
+    }]];
+    [PFUser enableRevocableSessionInBackground]; // If you're using Legacy Sessions
     if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
         [PFUser logOut];
     }
@@ -57,6 +60,8 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [Fabric with:@[CrashlyticsKit]];
+    
     // Apply UIAppearance
     self.window.tintColor = [SBSStyle sebastiaanBlueColor];
     [[UINavigationBar appearance] setBarTintColor:[SBSStyle sebastiaanBlueColor]];
@@ -67,16 +72,8 @@ typedef NS_ENUM (NSInteger, SBSNotificationType) {
     [self.window makeKeyAndVisible];
     
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    else
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
-    }
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 
     
     NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];

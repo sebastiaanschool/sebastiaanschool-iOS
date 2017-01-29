@@ -101,7 +101,7 @@ NSString * const SBSUserRoleDidChangeNotification = @"SBSUserRoleDidChangeNotifi
             } else {
                 NSAssert(matchingRoles.count == 1, @"There should be exactly one staff role");
                 
-                PFQuery *roleQuery = [[matchingRoles[0] relationforKey:@"users"] query];
+                PFQuery *roleQuery = [[matchingRoles[0] relationForKey:@"users"] query];
                 @weakify(self);
                 [roleQuery findObjectsInBackgroundWithBlock:^(NSArray *staffUsers, NSError *error) {
                     @strongify(self);

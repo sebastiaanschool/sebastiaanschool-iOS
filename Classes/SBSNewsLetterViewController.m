@@ -12,7 +12,7 @@
 //  Created by Jeroen Leenarts on 11-01-13.
 //
 //
-
+#import <Parse/Parse.h>
 #import "SBSNewsLetterViewController.h"
 
 @interface SBSNewsLetterViewController ()

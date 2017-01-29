@@ -24,3 +24,8 @@ export PARSE_REST_API_KEY="dummy"
 
 export PARSE_MASTER_KEY="dummy"
 
+#Fabric info
+export FABRIC_API_KEY="dummy"
+export FABRIC_BUILD_SECRET="dummy"
+
+

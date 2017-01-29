@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>nl.sebastiaanschool.contact.app</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -59,11 +59,11 @@
 			<key>TintColor</key>
 			<dict>
 				<key>Blue</key>
-				<real>0.90196078400000002</real>
+				<real>0.901960784</real>
 				<key>Green</key>
-				<real>0.67058823499999998</real>
+				<real>0.670588235</real>
 				<key>Red</key>
-				<real>0.0</real>
+				<real>0</real>
 			</dict>
 			<key>Translucent</key>
 			<false/>
